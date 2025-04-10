@@ -5,7 +5,7 @@
   margin: 0 auto;
   padding: 0rem;
   font-weight: normal;
-  overflow-x: scroll !important;
+  /* overflow-x: scroll !important; */
   background-color: white !important;
 }
 
