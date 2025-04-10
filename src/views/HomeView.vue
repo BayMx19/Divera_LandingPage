@@ -249,13 +249,289 @@
 
     <!-- endsection why choose us -->
     <!-- section our services -->
-    <div class="row">
-      <div class="col-sm-12"></div>
-    </div>
+    <section class="py-5 bg-light" id="data-trend">
+      <div class="container">
+        <h2
+          class="text-center font-weight-bold mb-5 fables-second-text-color"
+          style="margin-bottom: 16px !important"
+        >
+          Our Services
+        </h2>
+        <p class="text-center fables-forth-text-color mb-5">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos reiciendis cum aliquid
+          quam, consequatur.quisquam consectetur culpa commodi maxime in harum sunt nam.
+        </p>
+
+        <div class="row">
+          <div
+            class="col-12 col-sm-6 col-lg-4 pt-3 pt-md-5 wow zoomIn"
+            data-wow-delay=".4s"
+            data-wow-duration="1.5s"
+          >
+            <div class="row text-center text-md-left">
+              <div class="col-12 col-md-3">
+                <span class="fables-iconhead-set-light fables-second-text-color fa-3x"></span>
+              </div>
+              <div class="col-12 col-md-9 pl-md-0">
+                <h2 class="fables-main-text-color font-20 my-2 mt-md-0 semi-font">
+                  Free Updates & Support
+                </h2>
+                <div class="font-15 fables-forth-text-color">
+                  Lorem ipsum dolor sit amet adipiscing elit. Aenean ac lorem pretium laoreet enim
+                  at.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-12 col-sm-6 col-lg-4 pt-3 pt-md-5 wow zoomIn"
+            data-wow-delay=".8s"
+            data-wow-duration="1.5s"
+          >
+            <div class="row text-center text-md-left">
+              <div class="col-12 col-md-3">
+                <span class="fables-iconscreen fables-second-text-color fa-3x"></span>
+              </div>
+              <div class="col-12 col-md-9 pl-md-0">
+                <h2 class="fables-main-text-color font-20 my-2 mt-md-0 semi-font">
+                  Highly Customizable
+                </h2>
+                <div class="font-15 fables-forth-text-color">
+                  Lorem ipsum dolor sit amet adipiscing elit. Aenean ac lorem pretium laoreet enim
+                  at.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-12 col-sm-6 col-lg-4 pt-3 pt-md-5 wow zoomIn"
+            data-wow-delay="1.2s"
+            data-wow-duration="1.5s"
+          >
+            <div class="row text-center text-md-left">
+              <div class="col-12 col-md-3">
+                <span class="fables-iconfile fables-second-text-color fa-3x"></span>
+              </div>
+              <div class="col-12 col-md-9 pl-md-0">
+                <h2 class="fables-main-text-color font-20 my-2 mt-md-0 semi-font">
+                  Drag & Drop Page Builder
+                </h2>
+                <div class="font-15 fables-forth-text-color">
+                  Lorem ipsum dolor sit amet adipiscing elit. Aenean ac lorem pretium laoreet enim
+                  at.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-12 col-sm-6 col-lg-4 pt-3 pt-md-5 wow zoomIn"
+            data-wow-delay="1.6s"
+            data-wow-duration="1.5s"
+          >
+            <div class="row text-center text-md-left">
+              <div class="col-12 col-md-3">
+                <span class="fables-iconhead-set-light fables-second-text-color fa-3x"></span>
+              </div>
+              <div class="col-12 col-md-9 pl-md-0">
+                <h2 class="fables-main-text-color font-20 my-2 mt-md-0 semi-font">
+                  Free Updates & Support
+                </h2>
+                <div class="font-15 fables-forth-text-color">
+                  Lorem ipsum dolor sit amet adipiscing elit. Aenean ac lorem pretium laoreet enim
+                  at.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-12 col-sm-6 col-lg-4 pt-3 pt-md-5 wow zoomIn"
+            data-wow-delay="2s"
+            data-wow-duration="1.5s"
+          >
+            <div class="row text-center text-md-left">
+              <div class="col-12 col-md-3">
+                <span class="fables-iconscreen fables-second-text-color fa-3x"></span>
+              </div>
+              <div class="col-12 col-md-9 pl-md-0">
+                <h2 class="fables-main-text-color font-20 my-2 mt-md-0 semi-font">
+                  Highly Customizable
+                </h2>
+                <div class="font-15 fables-forth-text-color">
+                  Lorem ipsum dolor sit amet adipiscing elit. Aenean ac lorem pretium laoreet enim
+                  at.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-12 col-sm-6 col-lg-4 pt-3 pt-md-5 wow zoomIn"
+            data-wow-delay="2.4s"
+            data-wow-duration="1.5s"
+          >
+            <div class="row text-center text-md-left">
+              <div class="col-12 col-md-3">
+                <span class="fables-iconfile fables-second-text-color fa-3x"></span>
+              </div>
+              <div class="col-12 col-md-9 pl-md-0">
+                <h2 class="fables-main-text-color font-20 my-2 mt-md-0 semi-font">
+                  Drag & Drop Page Builder
+                </h2>
+                <div class="font-15 fables-forth-text-color">
+                  Lorem ipsum dolor sit amet adipiscing elit. Aenean ac lorem pretium laoreet enim
+                  at.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <!-- endsection our services -->
     <!-- section portfolio -->
     <div class="row">
-      <div class="col-sm-12"></div>
+      <div class="container mb-4 py-5 mb-md-5">
+        <div class="row">
+          <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+            <div class="text-center">
+              <h2 class="fables-main-text-color font-35 font-weight-bold mb-4">Latest Works</h2>
+              <p class="fables-forth-text-color">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos reiciendis cum
+                aliquid quam, consequatur. quisquam consectetur culpa commodi maxime in harum sunt
+                nam.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-filter">
+          <div class="portfolioFilter my-3 clearfix">
+            <a href="#" data-filter="*" class="current">ALL</a>
+            <a href="#" data-filter=".webDesign" class="fables-forth-text-color">Web design</a>
+            <a href="#" data-filter=".appDesign" class="fables-forth-text-color">App design</a>
+            <a href="#" data-filter=".brand" class="fables-forth-text-color">Brand</a>
+            <a href="#" data-filter=".development" class="fables-forth-text-color">Development</a>
+          </div>
+          <div class="portfolioContainer row filter-masonry">
+            <div class="drawings places col-sm-6 col-md-3 mb-2">
+              <div
+                class="filter-img-block position-relative image-container translate-effect-right"
+              >
+                <img src="/assets/custom/images/index-testimonial1.jpg" alt="image" class="w-100" />
+                <div class="img-filter-overlay fables-main-color-transparent row m-0">
+                  <a href="#" class="gallery-filter-icon white-color fables-second-hover-color"
+                    ><span class="fables-iconlink"></span
+                  ></a>
+                  <a
+                    data-fancybox="gallery"
+                    href="/assets/custom/images/index-testimonial1.jpg"
+                    class="gallery-filter-icon white-color fables-second-hover-color"
+                    ><span class="fables-iconsearch-icon"></span
+                  ></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="webDesign food col-sm-6 col-md-3 mb-2">
+              <div
+                class="filter-img-block position-relative image-container translate-effect-right"
+              >
+                <img src="/assets/custom/images/index-testimonial2.jpg" alt="image" class="w-100" />
+                <div class="img-filter-overlay fables-main-color-transparent row m-0">
+                  <a href="#" class="gallery-filter-icon white-color fables-second-hover-color"
+                    ><span class="fables-iconlink"></span
+                  ></a>
+                  <a
+                    data-fancybox="gallery"
+                    href="/assets/custom/images/index-testimonial2.jpg"
+                    class="gallery-filter-icon white-color fables-second-hover-color"
+                    ><span class="fables-iconsearch-icon"></span
+                  ></a>
+                </div>
+              </div>
+            </div>
+            <div class="webDesign objects col-sm-6 col-md-3 mb-2">
+              <div
+                class="filter-img-block position-relative image-container translate-effect-right"
+              >
+                <img src="/assets/custom/images/index-testimonial3.jpg" alt="image" class="w-100" />
+                <div class="img-filter-overlay fables-main-color-transparent row m-0">
+                  <a href="#" class="gallery-filter-icon white-color fables-second-hover-color"
+                    ><span class="fables-iconlink"></span
+                  ></a>
+                  <a
+                    data-fancybox="gallery"
+                    href="/assets/custom/images/index-testimonial3.jpg"
+                    class="gallery-filter-icon white-color fables-second-hover-color"
+                    ><span class="fables-iconsearch-icon"></span
+                  ></a>
+                </div>
+              </div>
+            </div>
+            <div class="appDesign brand col-sm-6 col-md-3 mb-2">
+              <div
+                class="filter-img-block position-relative image-container translate-effect-right"
+              >
+                <img src="/assets/custom/images/index-testimonial4.jpg" alt="image" class="w-100" />
+                <div class="img-filter-overlay fables-main-color-transparent row m-0">
+                  <a href="#" class="gallery-filter-icon white-color fables-second-hover-color"
+                    ><span class="fables-iconlink"></span
+                  ></a>
+                  <a
+                    data-fancybox="gallery"
+                    href="/assets/custom/images/index-testimonial4.jpg"
+                    class="gallery-filter-icon white-color fables-second-hover-color"
+                    ><span class="fables-iconsearch-icon"></span
+                  ></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="webDesign col-sm-6 col-md-3 mb-2">
+              <div
+                class="filter-img-block position-relative image-container translate-effect-right"
+              >
+                <img src="/assets/custom/images/index-testimonial5.jpg" alt="image" class="w-100" />
+                <div class="img-filter-overlay fables-main-color-transparent row m-0">
+                  <a href="#" class="gallery-filter-icon white-color fables-second-hover-color"
+                    ><span class="fables-iconlink"></span
+                  ></a>
+                  <a
+                    data-fancybox="gallery"
+                    href="/assets/custom/images/index-testimonial5.jpg"
+                    class="gallery-filter-icon white-color fables-second-hover-color"
+                    ><span class="fables-iconsearch-icon"></span
+                  ></a>
+                </div>
+              </div>
+            </div>
+            <div class="webDesign col-sm-6 col-md-3 mb-2">
+              <div
+                class="filter-img-block position-relative image-container translate-effect-right"
+              >
+                <img src="/assets/custom/images/index-testimonial5.jpg" alt="image" class="w-100" />
+                <div class="img-filter-overlay fables-main-color-transparent row m-0">
+                  <a href="#" class="gallery-filter-icon white-color fables-second-hover-color"
+                    ><span class="fables-iconlink"></span
+                  ></a>
+                  <a
+                    data-fancybox="gallery"
+                    href="/assets/custom/images/index-testimonial5.jpg"
+                    class="gallery-filter-icon white-color fables-second-hover-color"
+                    ><span class="fables-iconsearch-icon"></span
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="text-center">
+            <a
+              href="#"
+              class="btn fables-main-border-color fables-main-text-color mt-md-4 px-5 py-2 fables-btn-rounded fables-main-hover-background-color white-color-hover"
+              >Show All Projects</a
+            >
+          </div>
+        </div>
+      </div>
     </div>
     <!-- endsection portfolio -->
     <!-- section kata2 iklan -->
