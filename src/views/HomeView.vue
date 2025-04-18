@@ -5,7 +5,7 @@
 
 <template>
   <main>
-    <div class="fables-transparent py-3 py-lg-0">
+    <div class="fables-transparent py-3 py-lg-0 position-fixed">
       <div class="container">
         <div class="row align-items-center">
           <div class="col-12">
