@@ -28,7 +28,7 @@
                 <li class="scroll-to-section"><a href="#about">Layanan Kami</a></li>
                 <li class="scroll-to-section"><a href="#pricing">Portofolio</a></li>
                 <li>
-                  <div class="gradient-button">
+                  <div class="btn-navbar-btn">
                     <a id="contact" href="#contact"><i class="fa fa-whatsapp"></i> Hubungi Kami</a>
                   </div>
                 </li>
@@ -65,11 +65,9 @@
                       </p>
                     </div>
                     <div class="col-lg-12 btn-header">
-                      <div class="btn btn-primary">
-                        <a href="#contact"
-                          ><i class="fab fa-whatsapp"></i> Jadwalkan Konsultasi Gratis
-                        </a>
-                      </div>
+                      <a href="#contact" class="btn btn-header-btn">
+                        <i class="fab fa-whatsapp"></i> Jadwalkan Konsultasi Gratis
+                      </a>
                     </div>
                   </div>
                 </div>

@@ -489,7 +489,7 @@ header
 .background-header .main-nav .nav li:last-child a:hover,
 .header-area .main-nav .nav li:nth-child(6) a:hover,
 .background-header .main-nav .nav li:nth-child(6) a:hover {
-  color: #fff !important;
+  color: #fff;
 }
 
 .header-area .main-nav .nav li a {
@@ -2526,22 +2526,42 @@ form textarea:focus {
   border: 3px solid #036ece;
 }
 
-.btn-header .btn {
+.btn-header-btn {
   padding: 8px 30px;
-  /* font-size: 1rem; */
-  background-color: #036ece !important;
+  background-color: #036ece;
+  color: white;
+  border: 3px solid #036ece;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.btn-header-btn:hover {
+  background-color: white;
+  color: #036ece;
+  border-color: #036ece;
+}
+
+.btn-navbar-btn a {
+  /* padding: 8px 30px; */
+  background-color: #036ece;
   color: white !important;
   border: 3px solid #036ece !important;
   border-radius: 30px;
+  font-weight: bold !important;
   text-decoration: none;
-  font-weight: bold;
+  display: inline-block;
+  transition: all 0.3s ease;
 }
 
-.btn-header .btn:hover {
+.btn-navbar-btn a:hover {
   background-color: white !important;
   color: #036ece !important;
-  border: 3px solid #036ece !important;
+  border: 3px solid #036ece;
 }
+
 /* Optional: Add spacing between form fields */
 form .row > div {
   margin-bottom: 15px;
