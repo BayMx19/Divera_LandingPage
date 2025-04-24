@@ -463,7 +463,7 @@
 
         <div class="row justify-content-center mt-4">
           <div class="col-lg-8">
-            <form action="https://formspree.io/f/your-form-id" method="POST">
+            <form action="https://formspree.io/f/xnndqklq" method="POST">
               <div class="row gy-3">
                 <div class="col-md-6">
                   <input type="text" name="name" class="form-control" placeholder="Nama" required />
