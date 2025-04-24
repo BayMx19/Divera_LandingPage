@@ -175,7 +175,7 @@
           <div class="col-md-6 d-flex">
             <div class="me-3 fs-3">🔧</div>
             <div>
-              <h5 class="text-blue">Solusi Web yang Disesuaikan</h5>
+              <h5 class="text-blue text-bold">Solusi Web yang Disesuaikan</h5>
               <p class="text-black">
                 Kami merancang aplikasi yang benar-benar sesuai dengan karakter dan kebutuhan bisnis
                 Anda.
@@ -186,7 +186,7 @@
           <div class="col-md-6 d-flex">
             <div class="me-3 fs-3">💡</div>
             <div>
-              <h5 class="text-blue">Tim Profesional & Berkomitmen</h5>
+              <h5 class="text-blue text-bold">Tim Profesional & Berkomitmen</h5>
               <p class="text-black">
                 Fokus pada kualitas, hasil rapi, responsif, dan tepat waktu adalah komitmen kami di
                 setiap proyek.
@@ -197,7 +197,7 @@
           <div class="col-md-6 d-flex">
             <div class="me-3 fs-3">🔁</div>
             <div>
-              <h5 class="text-blue">Garansi Revisi</h5>
+              <h5 class="text-blue text-bold">Garansi Revisi</h5>
               <p class="text-black">
                 Kami memberikan garansi revisi sesuai kesepakatan—karena kepuasan Anda adalah
                 prioritas utama kami.
@@ -208,7 +208,7 @@
           <div class="col-md-6 d-flex">
             <div class="me-3 fs-3">🛠️</div>
             <div>
-              <h5 class="text-blue">Free Maintenance</h5>
+              <h5 class="text-blue text-bold">Free Maintenance</h5>
               <p class="text-black">
                 Kami tetap mendampingi setelah aplikasi selesai dengan layanan perawatan gratis di
                 awal masa pakai.
@@ -219,7 +219,7 @@
           <div class="col-md-6 d-flex">
             <div class="me-3 fs-3">🤝</div>
             <div>
-              <h5 class="text-blue">Komunikasi Terbuka</h5>
+              <h5 class="text-blue text-bold">Komunikasi Terbuka</h5>
               <p class="text-black">
                 Anda terlibat dalam proses sejak awal—kami percaya kolaborasi menghasilkan solusi
                 yang lebih baik.
@@ -230,7 +230,7 @@
           <div class="col-md-6 d-flex">
             <div class="me-3 fs-3">📊</div>
             <div>
-              <h5 class="text-blue">Hasil Terukur</h5>
+              <h5 class="text-blue text-bold">Hasil Terukur</h5>
               <p class="text-black">
                 Fokus kami bukan hanya menyelesaikan proyek, tapi menciptakan dampak nyata dan
                 terukur untuk bisnis Anda.

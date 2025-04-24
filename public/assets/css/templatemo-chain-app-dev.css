@@ -206,6 +206,9 @@ p {
 .text-blue {
   color: #036ece !important;
 }
+.text-bold {
+  font-weight: bold !important;
+}
 img {
   width: 100%;
   overflow: hidden;
@@ -1237,7 +1240,7 @@ About Us
 */
 
 .about-us {
-  padding-top: 130px;
+  padding-top: 80px;
   position: relative;
 }
 
@@ -1296,7 +1299,7 @@ About Us
 .about-us:after {
   background-image: url(../images/about-bg.jpg);
   width: 777px;
-  height: 1132px;
+  height: 664px;
   content: '';
   position: absolute;
   background-repeat: no-repeat;
