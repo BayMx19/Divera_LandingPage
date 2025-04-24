@@ -1,6 +1,4 @@
-<script setup>
-// import TheWelcome from '../components/TheWelcome.vue'
-</script>
+<script setup></script>
 
 <template>
   <main>
@@ -31,9 +29,7 @@
                 <li class="scroll-to-section"><a href="#pricing">Portofolio</a></li>
                 <li>
                   <div class="gradient-button">
-                    <a id="modal_trigger" href="#modal"
-                      ><i class="fa fa-whatsapp"></i> Hubungi Kami</a
-                    >
+                    <a id="contact" href="#contact"><i class="fa fa-whatsapp"></i> Hubungi Kami</a>
                   </div>
                 </li>
               </ul>
@@ -338,9 +334,115 @@
     <!-- EndSection -->
 
     <!-- Start Section Portfolio -->
+    <section id="portfolio" class="portfolio section">
+      <div class="container">
+        <div class="row mt-4 mb-4">
+          <div class="col-lg-8 offset-lg-2 text-center">
+            <div class="section-heading">
+              <h4>Portofolio <b class="text-blue">DiveraTech</b></h4>
+              <p class="text-black">
+                Beberapa proyek web terbaik yang telah kami bangun bersama klien-klien kami. Klik
+                panah untuk melihat lebih banyak karya kami.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="row mb-4">
+          <div class="swiper portfolioSwiper">
+            <div class="swiper-wrapper">
+              <!-- 9 Slide -->
+              <div class="swiper-slide">
+                <img
+                  src="/assets/images/Portfolio/1.png"
+                  alt="Bansos Kelurahan Campurrejo"
+                  class="rounded w-100"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="/assets/images/Portfolio/2.png"
+                  alt="Employee Recruitment System (PT Eternity Tech International)"
+                  class="rounded w-100"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="/assets/images/Portfolio/3.png"
+                  alt="Sikejar (Posyandu Jambu Kediri)"
+                  class="rounded w-100"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="/assets/images/Portfolio/4.png"
+                  alt="UsedCar Prediction"
+                  class="rounded w-100"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="/assets/images/Portfolio/5.png"
+                  alt="Posyandu Kumis Kucing Website"
+                  class="rounded w-100"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="/assets/images/Portfolio/6.png"
+                  alt="Employment Recruiter System (CV. Multitech Jaya Agung)"
+                  class="rounded w-100"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img src="/assets/images/Portfolio/7.png" alt="SentUs.id" class="rounded w-100" />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="/assets/images/Portfolio/8.png"
+                  alt="IMNHerbalStore"
+                  class="rounded w-100"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="/assets/images/Portfolio/9.png"
+                  alt="Gendifo (Gendro’s Digital Platform)"
+                  class="rounded w-100"
+                />
+              </div>
+            </div>
+            <div class="swiper-caption text-center">
+              <p id="swiper-caption-text">Bansos Kelurahan Campurrejo</p>
+            </div>
+
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+          </div>
+        </div>
+      </div>
+    </section>
     <!-- Endsection -->
 
     <!-- Start Section Kalimat Iklan -->
+    <div id="contact" class="cta-section" style="background-color: #036ece">
+      <div class="container">
+        <div class="row justify-content-center align-items-center text-center">
+          <div class="col-12">
+            <h2 class="cta-heading">Jangan lewatkan peluang ini!</h2>
+            <p class="cta-text">
+              Mari bangun citra profesional melalui media digital dan tingkatkan jangkauan interaksi
+              dengan pelanggan bersama <b>DiveraTech</b>.
+            </p>
+            <div class="cta-button">
+              <a href="https://wa.me/+6282191927762" class="btn btn-primary" target="_blank"
+                ><i class="fab fa-whatsapp"></i> Hubungi Kami</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- EndSection -->
 
     <!-- Start Section Contact Us -->
@@ -350,3 +452,27 @@
     <!-- EndSection   -->
   </main>
 </template>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const swiper = new Swiper('.portfolioSwiper', {
+    loop: true,
+    centeredSlides: true,
+    slidesPerView: 3,
+    spaceBetween: 30,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  })
+
+  swiper.on('slideChange', function () {
+    const activeSlide = swiper.slides[swiper.activeIndex]
+    const caption = activeSlide.querySelector('img').alt
+    document.getElementById('swiper-caption-text').textContent = caption
+  })
+})
+</script>

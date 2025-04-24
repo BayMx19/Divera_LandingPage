@@ -1304,9 +1304,133 @@ Layanan
   position: absolute;
   background-repeat: no-repeat;
   right: 0;
-  top: 80%;
+  top: 50%;
+
   transform: translateY(-50%);
   z-index: 0;
+  margin-bottom: 50% !important;
+}
+
+/* Portfolio */
+.portfolioSwiper {
+  padding: 40px 0;
+}
+
+.portfolioSwiper .swiper-slide {
+  opacity: 0.5;
+  transition:
+    transform 0.5s ease,
+    opacity 0.5s ease;
+  transform: scale(0.9);
+  transition: transform 0.3s ease;
+}
+
+.portfolioSwiper .swiper-slide-active {
+  opacity: 1;
+  transform: scale(1.2);
+  z-index: 2;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+.swiper-caption {
+  font-family: 'Open Sans', sans-serif;
+  margin-top: 0px;
+  font-size: 18px;
+  color: #333;
+  font-weight: bold !important;
+}
+
+.swiper-caption p {
+  margin: 0px !important;
+  font-size: 18px;
+  color: #036ece;
+  padding: 0px !important;
+  font-weight: bold !important;
+}
+.swiper-button-next,
+.swiper-button-prev {
+  color: #000;
+}
+
+@media (max-width: 768px) {
+  .portfolioSwiper .swiper-slide {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  .portfolioSwiper .swiper-slide-active {
+    transform: scale(1);
+  }
+
+  .portfolioSwiper {
+    padding: 20px 0;
+  }
+
+  .swiper {
+    overflow: visible;
+  }
+
+  .swiper-wrapper {
+    padding-inline: 20px;
+  }
+
+  .swiper-slide img {
+    border-radius: 12px;
+  }
+}
+
+/* CTA IKLAN */
+.cta-section {
+  font-family: 'Open Sans', sans-serif;
+  padding: 50px 0;
+}
+
+.cta-heading {
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: white !important;
+}
+
+.cta-text {
+  color: white !important;
+  margin-bottom: 30px;
+}
+
+.cta-button .btn {
+  padding: 8px 30px;
+  /* font-size: 1rem; */
+  background-color: white;
+  color: #036ece;
+  border: 5px solid white;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.cta-button .btn:hover {
+  background-color: #036ece;
+  color: white !important;
+  border: 5px solid white;
+}
+
+@media (max-width: 768px) {
+  .cta-heading {
+    font-size: 2rem;
+  }
+
+  .cta-text {
+    font-size: 1rem;
+  }
+
+  .cta-button .btn {
+    padding: 8px 30px;
+    font-size: 1rem;
+  }
 }
 
 /*
