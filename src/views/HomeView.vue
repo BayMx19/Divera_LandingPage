@@ -446,7 +446,7 @@
     <!-- EndSection -->
 
     <!-- Start Section Contact Us -->
-    <section id="contact-us" class="contact section py-5">
+    <section id="contact-us" class="contact section mt-5">
       <div class="container">
         <div class="row">
           <div class="col-lg-8 offset-lg-2 text-center">
