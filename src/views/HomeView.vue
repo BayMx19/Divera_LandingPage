@@ -64,8 +64,8 @@
                         modern.
                       </p>
                     </div>
-                    <div class="col-lg-12">
-                      <div class="gradient-button first-button scroll-to-section">
+                    <div class="col-lg-12 btn-header">
+                      <div class="btn btn-primary">
                         <a href="#contact"
                           ><i class="fab fa-whatsapp"></i> Jadwalkan Konsultasi Gratis
                         </a>
@@ -446,9 +446,183 @@
     <!-- EndSection -->
 
     <!-- Start Section Contact Us -->
+    <section id="contact-us" class="contact section py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 offset-lg-2 text-center">
+            <div class="section-heading">
+              <h4 class="text-blue">Hubungi Kami</h4>
+              <p class="text-black">
+                <span class="text-bold-2 d-block mt-2"
+                  >Siap ngobrol soal kebutuhan IT Anda? Dapatkan solusi yang lebih baik untuk bisnis
+                  Anda dengan bekerjasama bersama ahli yang profesional di bidangnya dengan hubungi
+                  kami langsung atau isi form di bawah ini.</span
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row justify-content-center mt-4">
+          <div class="col-lg-8">
+            <form action="https://formspree.io/f/your-form-id" method="POST">
+              <div class="row gy-3">
+                <div class="col-md-6">
+                  <input type="text" name="name" class="form-control" placeholder="Nama" required />
+                </div>
+                <div class="col-md-6">
+                  <input
+                    type="email"
+                    name="email"
+                    class="form-control"
+                    placeholder="Email"
+                    required
+                  />
+                </div>
+                <div class="col-md-6">
+                  <input
+                    type="text"
+                    name="phone"
+                    class="form-control"
+                    placeholder="Telepon"
+                    required
+                  />
+                </div>
+                <div class="col-md-6">
+                  <input
+                    type="text"
+                    name="company"
+                    class="form-control"
+                    placeholder="Perusahaan (Opsional)"
+                  />
+                </div>
+                <div class="col-12">
+                  <textarea
+                    name="message"
+                    class="form-control"
+                    rows="5"
+                    placeholder="Pesan"
+                    required
+                  ></textarea>
+                </div>
+                <div
+                  class="col-12 d-flex justify-content-center gap-3 flex-wrap mt-3 btn-kirim-contact"
+                >
+                  <button type="submit" class="btn btn-primary px-4 py-2">Kirim Sekarang</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- EndSection -->
 
     <!-- Start Section Footer -->
+    <footer id="newsletter">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 offset-lg-2">
+            <div class="section-heading">
+              <h4>Join our mailing list to receive the news &amp; latest trends</h4>
+            </div>
+          </div>
+          <div class="col-lg-6 offset-lg-3">
+            <form id="search" action="#" method="GET">
+              <div class="row">
+                <div class="col-lg-6 col-sm-6">
+                  <fieldset>
+                    <input
+                      type="address"
+                      name="address"
+                      class="email"
+                      placeholder="Email Address..."
+                      autocomplete="on"
+                      required
+                    />
+                  </fieldset>
+                </div>
+                <div class="col-lg-6 col-sm-6">
+                  <fieldset>
+                    <button type="submit" class="main-button">
+                      Subscribe Now <i class="fa fa-angle-right"></i>
+                    </button>
+                  </fieldset>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-3">
+            <div class="footer-widget">
+              <h4>Contact Us</h4>
+              <p>Rio de Janeiro - RJ, 22795-008, Brazil</p>
+              <p><a href="#">010-020-0340</a></p>
+              <p><a href="#">info@company.co</a></p>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="footer-widget">
+              <h4>About Us</h4>
+              <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Testimonials</a></li>
+                <li><a href="#">Pricing</a></li>
+              </ul>
+              <ul>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Testimonials</a></li>
+                <li><a href="#">Pricing</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="footer-widget">
+              <h4>Useful Links</h4>
+              <ul>
+                <li><a href="#">Free Apps</a></li>
+                <li><a href="#">App Engine</a></li>
+                <li><a href="#">Programming</a></li>
+                <li><a href="#">Development</a></li>
+                <li><a href="#">App News</a></li>
+              </ul>
+              <ul>
+                <li><a href="#">App Dev Team</a></li>
+                <li><a href="#">Digital Web</a></li>
+                <li><a href="#">Normal Apps</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="footer-widget">
+              <h4>About Our Company</h4>
+              <div class="logo">
+                <img src="/assets/images/white-logo.png" alt="" />
+              </div>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                incididunt ut labore et dolore.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-12">
+            <div class="copyright-text">
+              <p>
+                Copyright © 2022 Chain App Dev Company. All Rights Reserved. <br />Design:
+                <a href="https://templatemo.com/" target="_blank" title="css templates"
+                  >TemplateMo</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
     <!-- EndSection   -->
   </main>
 </template>

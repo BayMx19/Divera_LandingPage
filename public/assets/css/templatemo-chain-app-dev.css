@@ -209,6 +209,10 @@ p {
 .text-bold {
   font-weight: bold !important;
 }
+
+.text-bold-2 {
+  font-weight: 1000px !important;
+}
 img {
   width: 100%;
   overflow: hidden;
@@ -1399,6 +1403,7 @@ Layanan
 .cta-text {
   color: white !important;
   margin-bottom: 30px;
+  font-size: 20px;
 }
 
 .cta-button .btn {
@@ -1406,7 +1411,7 @@ Layanan
   /* font-size: 1rem; */
   background-color: white;
   color: #036ece;
-  border: 5px solid white;
+  border: 3px solid white;
   border-radius: 30px;
   text-decoration: none;
   font-weight: bold;
@@ -1415,7 +1420,7 @@ Layanan
 .cta-button .btn:hover {
   background-color: #036ece;
   color: white !important;
-  border: 5px solid white;
+  border: 3px solid white;
 }
 
 @media (max-width: 768px) {
@@ -1835,7 +1840,7 @@ footer {
   background-position: center top;
   background-repeat: no-repeat;
   background-size: cover;
-  margin-top: 130px;
+  /* margin-top: 130px; */
   padding-top: 300px;
   padding-bottom: 60px;
 }
@@ -2470,4 +2475,74 @@ responsive
   form#contact {
     padding: 30px;
   }
+}
+
+/* Form Field Styling */
+form input,
+form textarea {
+  border: 1px solid #ccc;
+  border-radius: 16px !important;
+  padding: 10px 20px !important;
+  width: 100%;
+  font-size: 1rem;
+  background-color: #fff;
+  color: #333;
+  transition:
+    border-color 0.3s,
+    box-shadow 0.3s;
+}
+
+form input:focus,
+form textarea:focus {
+  border-color: #036ece;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(3, 110, 206, 0.2);
+}
+
+/* Button Styling */
+.btn {
+  padding: 12px 24px;
+  border-radius: 30px !important;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-kirim-contact .btn {
+  padding: 8px 30px;
+  /* font-size: 1rem; */
+  background-color: #036ece;
+  color: white !important;
+  border: 3px solid #036ece !important;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.btn-kirim-contact .btn:hover {
+  background-color: white !important;
+  color: #036ece !important;
+  border: 3px solid #036ece;
+}
+
+.btn-header .btn {
+  padding: 8px 30px;
+  /* font-size: 1rem; */
+  background-color: #036ece !important;
+  color: white !important;
+  border: 3px solid #036ece !important;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.btn-header .btn:hover {
+  background-color: white !important;
+  color: #036ece !important;
+  border: 3px solid #036ece !important;
+}
+/* Optional: Add spacing between form fields */
+form .row > div {
+  margin-bottom: 15px;
 }
