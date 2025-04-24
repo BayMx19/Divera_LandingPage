@@ -1235,29 +1235,29 @@ Services Style
 
 /*
 ---------------------------------------------
-About Us
+Layanan
 ---------------------------------------------
 */
 
-.about-us {
+.layanan {
   padding-top: 80px;
   position: relative;
 }
 
-.about-us .section-heading {
+.layanan .section-heading {
   margin-bottom: 45px;
 }
 
-.about-us .section-heading,
-.about-us .box-item,
-.about-us p,
-.about-us .box-item .gradient-button,
-.about-us .box-item span {
+.layanan .section-heading,
+.layanan .box-item,
+.layanan p,
+.layanan .box-item .gradient-button,
+.layanan .box-item span {
   position: relative;
   z-index: 1;
 }
 
-.about-us .box-item {
+.layanan .box-item {
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.07);
   padding: 10px 30px;
   background-color: #fff;
@@ -1265,7 +1265,7 @@ About Us
   margin-bottom: 30px;
 }
 
-.about-us .box-item h4 a {
+.layanan .box-item h4 a {
   font-size: 20px;
   font-weight: 700;
   margin-top: 8px;
@@ -1273,30 +1273,30 @@ About Us
   transition: all 0.3s;
 }
 
-.about-us .box-item p {
+.layanan .box-item p {
   margin-bottom: 0px;
 }
 
-.about-us .box-item:hover h4 a {
+.layanan .box-item:hover h4 a {
   color: #036ece;
 }
 
-.about-us .gradient-button {
+.layanan .gradient-button {
   margin-top: 30px;
   margin-bottom: 10px;
 }
 
-.about-us span {
+.layanan span {
   font-size: 14px;
   color: #7a7a7a;
 }
 
-.about-us .right-image {
+.layanan .right-image {
   position: relative;
   z-index: 1;
 }
 
-.about-us:after {
+.layanan:after {
   background-image: url(../images/about-bg.jpg);
   width: 777px;
   height: 664px;

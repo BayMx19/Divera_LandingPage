@@ -244,7 +244,7 @@
     <!-- EndSection -->
 
     <!-- Start Section Layanan -->
-    <div id="about" class="about-us section">
+    <div id="layanan" class="layanan section">
       <div class="container">
         <div class="row">
           <!-- Kiri: Deskripsi dan Layanan -->
