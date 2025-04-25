@@ -526,7 +526,7 @@
             <div class="footer-widget">
               <h4>About Us</h4>
               <div class="logo">
-                <img src="/assets/images/white-logo.png" alt="" />
+                <img src="/assets/images/Logo/Logo-White.png" alt="" />
               </div>
               <p>Build Smarter. Launch Faster. With <b class="text-bold">DiveraTech</b></p>
               <p><i class="fas fa-envelope"></i> diveratech@gmail.com</p>
