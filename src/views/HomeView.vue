@@ -387,7 +387,7 @@
               <div class="swiper-slide">
                 <img
                   src="/assets/images/Portfolio/6.png"
-                  alt="Employment Recruiter System (CV. Multitech Jaya Agung)"
+                  alt="Employment Recruiter System (CV. Multitech Jaya Agung)"
                   class="rounded w-100"
                 />
               </div>
@@ -520,56 +520,49 @@
     <!-- Start Section Footer -->
     <footer id="newsletter">
       <div class="container">
-        <div class="row">
-          <div class="col-lg-3">
-            <div class="footer-widget">
-              <h4>Contact Us</h4>
-              <p>Rio de Janeiro - RJ, 22795-008, Brazil</p>
-              <p><a href="#">010-020-0340</a></p>
-              <p><a href="#">info@company.co</a></p>
-            </div>
-          </div>
-          <div class="col-lg-3">
+        <div class="row" style="margin-left: 150px">
+          <!-- <div class="col-lg-2"></div> -->
+          <div class="col-lg-4">
             <div class="footer-widget">
               <h4>About Us</h4>
-              <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Testimonials</a></li>
-                <li><a href="#">Pricing</a></li>
-              </ul>
-              <ul>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Testimonials</a></li>
-                <li><a href="#">Pricing</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-lg-3">
-            <div class="footer-widget">
-              <h4>Useful Links</h4>
-              <ul>
-                <li><a href="#">Free Apps</a></li>
-                <li><a href="#">App Engine</a></li>
-                <li><a href="#">Programming</a></li>
-                <li><a href="#">Development</a></li>
-                <li><a href="#">App News</a></li>
-              </ul>
-              <ul>
-                <li><a href="#">App Dev Team</a></li>
-                <li><a href="#">Digital Web</a></li>
-                <li><a href="#">Normal Apps</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-lg-3">
-            <div class="footer-widget">
-              <h4>About Our Company</h4>
               <div class="logo">
                 <img src="/assets/images/white-logo.png" alt="" />
               </div>
               <p>Build Smarter. Launch Faster. With <b class="text-bold">DiveraTech</b></p>
+              <p><i class="fas fa-envelope"></i> diveratech@gmail.com</p>
+              <p><i class="fab fa-whatsapp"></i> (+62) 821-9192-7762</p>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="footer-widget">
+              <h4>Link</h4>
+              <ul>
+                <li><a href="#">Beranda</a></li>
+                <li><a href="#">Tentang Kami</a></li>
+                <li><a href="#">Layanan Kami</a></li>
+                <li><a href="#">Portofolio</a></li>
+                <li><a href="#">Hubungi Kami</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-5">
+            <div class="footer-widget">
+              <h4>Temukan Kami</h4>
+              <ul>
+                <li>
+                  <a href="#"
+                    ><iframe
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d284.5283834054441!2d112.54795408583715!3d-7.231603532068185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7801bc912dd3d5%3A0xb3adb4ba8a9d9d5!2sDiveraTech!5e0!3m2!1sen!2sid!4v1745601481503!5m2!1sen!2sid"
+                      width="400"
+                      height="300"
+                      style="border: 0"
+                      allowfullscreen=""
+                      loading="lazy"
+                      referrerpolicy="no-referrer-when-downgrade"
+                    ></iframe
+                  ></a>
+                </li>
+              </ul>
             </div>
           </div>
           <div class="col-lg-12">

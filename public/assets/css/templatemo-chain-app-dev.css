@@ -1385,6 +1385,10 @@ Layanan
 
   .swiper-slide img {
     border-radius: 12px;
+    height: auto;
+  }
+  .swiper-caption {
+    margin-bottom: 50px;
   }
 }
 
