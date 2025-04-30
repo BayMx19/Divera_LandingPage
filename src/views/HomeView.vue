@@ -200,7 +200,7 @@ export default {
                       </p>
                     </div>
                     <div class="col-lg-12 btn-header">
-                      <a href="#contact" class="btn btn-header-btn">
+                      <a href="#cta-section" class="btn btn-header-btn">
                         <i class="fab fa-whatsapp"></i> Jadwalkan Konsultasi Gratis
                       </a>
                     </div>
@@ -447,7 +447,7 @@ export default {
                   Anda tumbuh lewat solusi digital yang tepat sasaran.
                 </p> -->
                 <div class="col-lg-12 btn-header">
-                  <a href="#contact" class="btn btn-header-btn">
+                  <a href="#cta-section" class="btn btn-header-btn">
                     <i class="fab fa-whatsapp"></i> Jadwalkan Konsultasi Gratis
                   </a>
                 </div>
