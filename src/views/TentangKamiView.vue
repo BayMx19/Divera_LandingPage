@@ -345,11 +345,7 @@ export default {
       <div class="container">
         <div class="row justify-content-center align-items-center text-center">
           <div class="col-12">
-            <h2 class="cta-heading">Jangan lewatkan peluang ini!</h2>
-            <p class="cta-text">
-              Mari bangun citra profesional melalui media digital dan tingkatkan jangkauan interaksi
-              dengan pelanggan bersama <b>DiveraTech</b>.
-            </p>
+            <h2 class="cta-heading">Siap bertransformasi secara digital bersama DiveraTech?</h2>
             <div class="cta-button">
               <a href="https://wa.me/+6282191927762" class="btn btn-primary" target="_blank"
                 ><i class="fab fa-whatsapp"></i> Hubungi Kami</a
