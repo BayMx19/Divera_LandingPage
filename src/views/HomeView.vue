@@ -559,7 +559,7 @@ export default {
     <!-- Endsection -->
 
     <!-- Start Section Kalimat Iklan -->
-    <div id="cta-section" class="cta-section" style="background-color: #036ece; padding-top: 100px">
+    <div id="cta-section" class="cta-section" style="background-color: #036ece">
       <div class="container">
         <div class="row justify-content-center align-items-center text-center">
           <div class="col-12">
@@ -666,19 +666,27 @@ export default {
                 <img src="/assets/images/Logo/Logo-White.png" alt="" />
               </div>
               <p>Build Smarter. Launch Faster. With <b class="text-bold">DiveraTech</b></p>
-              <p><i class="fas fa-envelope"></i> diveratech@gmail.com</p>
-              <p><i class="fab fa-whatsapp"></i> (+62) 821-9192-7762</p>
+              <p>
+                <a href="mailto:diveratech@gmail.com"
+                  ><i class="fas fa-envelope"></i> diveratech@gmail.com</a
+                >
+              </p>
+              <p>
+                <a href="https://wa.me/+6282191927762"
+                  ><i class="fab fa-whatsapp"></i> (+62) 821-9192-7762</a
+                >
+              </p>
             </div>
           </div>
           <div class="col-lg-3 col-md-3 col-sm-12">
             <div class="footer-widget">
               <h4>Link</h4>
               <ul>
-                <li><a href="#">Beranda</a></li>
-                <li><a href="#">Tentang Kami</a></li>
-                <li><a href="#">Layanan Kami</a></li>
-                <li><a href="#">Portofolio</a></li>
-                <li><a href="#">Hubungi Kami</a></li>
+                <li><a href="/">Beranda</a></li>
+                <li><a href="/tentang-kami">Tentang Kami</a></li>
+                <li><a href="#layanan">Layanan Kami</a></li>
+                <li><a href="#portofolio">Portofolio</a></li>
+                <li><a href="#cta-section">Hubungi Kami</a></li>
               </ul>
             </div>
           </div>

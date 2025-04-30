@@ -2612,3 +2612,146 @@ form textarea:focus {
 form .row > div {
   margin-bottom: 15px;
 }
+
+.Komitmen {
+  padding: 60px 150px;
+  background-color: white;
+  border-radius: 30px;
+}
+
+.komitmen-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.komitmen-text {
+  flex: 1 1 55%;
+}
+
+.komitmen-text h2 {
+  font-size: 2rem;
+  color: #036ece;
+  margin-bottom: 20px;
+}
+
+.komitmen-text p {
+  font-size: 15px;
+  margin-bottom: 20px;
+  color: #333;
+  line-height: 1.7;
+}
+
+.komitmen-text ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.komitmen-text ul li {
+  margin-bottom: 12px;
+  padding-left: 25px;
+  position: relative;
+  color: #222;
+  font-weight: 600;
+}
+
+.komitmen-text ul li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #036ece;
+  font-weight: bold;
+}
+
+.komitmen-image {
+  flex: 1 1 40%;
+  text-align: center;
+}
+
+.komitmen-image img {
+  max-width: 100%;
+  height: auto;
+  /* border-radius: 20px; */
+  /* box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); */
+}
+
+.vmv-section {
+  padding: 80px 20px;
+  background-color: #f4f8ff;
+  border-radius: 30px;
+  text-align: center;
+  font-family: 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.vmv-section h2 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #036ece;
+  margin-bottom: 40px;
+}
+
+.vmv-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.vmv-card {
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  padding: 30px;
+  max-width: 400px;
+  flex: 1 1 300px;
+  text-align: left;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  font-weight: 500;
+}
+
+/* Hover Effect */
+.vmv-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+.vmv-card h3 {
+  font-size: 1.6rem;
+  color: #036ece;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.vmv-card p,
+.vmv-card ul {
+  font-size: 15px;
+  color: #333;
+  line-height: 30px;
+  font-weight: 300;
+  margin: 0;
+  padding-left: 0;
+}
+
+.vmv-card ul {
+  list-style: none;
+  margin-top: 10px;
+}
+
+.vmv-card ul li {
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 20px;
+  font-weight: 500;
+}
+
+.vmv-card ul li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #036ece;
+  font-weight: bold;
+}
