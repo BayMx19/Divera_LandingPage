@@ -1860,6 +1860,10 @@ footer .section-heading h4 {
   margin-right: 13%;
   text-align: center;
 }
+footer .footer-widget {
+  display: inline-block;
+  margin-right: 20px;
+}
 
 footer #search {
   margin-bottom: 80px;
@@ -1909,22 +1913,25 @@ footer #search button:hover {
 
 .footer-widget p {
   margin-bottom: 15px;
+  width: 500px;
 }
 
 .footer-widget p,
 .footer-widget p a {
   color: #fff;
+  width: 500px;
 }
 
 .footer-widget ul {
   display: inline;
-  max-width: 40%;
+  max-width: 70%;
   float: left;
   margin-right: 10%;
 }
 
 .footer-widget ul li {
   margin-bottom: 10px;
+  width: 200px;
 }
 
 .footer-widget ul li:last-child {
@@ -2349,24 +2356,56 @@ responsive
   }
   footer .section-heading h4 {
     color: #2a2a2a;
+    text-align: center;
   }
   footer #search {
     margin-bottom: 45px;
   }
   footer {
-    padding-top: 0px;
-    text-align: center;
+    padding-top: 100px; /* Atur padding agar background tetap sesuai */
+    padding-bottom: 40px;
+    background-size: contain; /* Pastikan gambar latar belakang tetap proporsional */
+    background-position: top center;
+    background-repeat: no-repeat;
+  }
+  .row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  .footer-widget {
+    width: 100%; /* Pastikan widget footer tetap 100% lebar di perangkat mobile */
+    margin-bottom: 30px;
+    display: block;
   }
   .footer-widget ul {
-    display: block;
     width: 100%;
+    margin: 0;
+    padding: 0;
     float: none;
-    text-align: center;
-    margin: 0 auto;
+    list-style: none;
+  }
+  .footer-widget ul li {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .footer-widget ul li a {
+    display: inline-block;
+    width: 100%;
+    word-wrap: break-word;
   }
   .footer-widget h4 {
-    margin-top: 45px;
-    margin-bottom: 20px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-size: 18px;
+    text-align: left;
+  }
+  .footer-widget p,
+  .footer-widget p a {
+    width: 100%;
+    word-wrap: break-word;
+    word-break: break-word;
+    overflow-wrap: break-word;
   }
   footer #search input {
     border: 1px solid #eee;
@@ -2383,6 +2422,19 @@ responsive
   footer #search input::placeholder {
     color: #2a2a2a;
   }
+  footer .copyright-text p {
+    font-size: 14px;
+    padding: 0 15px;
+  }
+  .footer-widget .logo img {
+    max-width: 150px;
+  }
+
+  iframe {
+    width: 100% !important;
+    height: auto !important;
+  }
+
   .header-area .main-nav .logo h4 {
     font-size: 30px;
   }

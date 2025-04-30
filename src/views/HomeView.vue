@@ -1,4 +1,139 @@
-<script setup></script>
+<script>
+import $ from 'jquery' // Pastikan jQuery sudah di-import
+
+export default {
+  name: 'YourComponent',
+  mounted() {
+    // Script yang sudah ada, dimasukkan ke dalam mounted() Vue.js
+    const swiper = new Swiper('.portfolioSwiper', {
+      loop: true,
+      centeredSlides: true,
+      slidesPerView: 3,
+      spaceBetween: 30,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    })
+
+    $(window).scroll(function () {
+      var scroll = $(window).scrollTop()
+      var box = $('.header-text').height()
+      var header = $('header').height()
+
+      if (scroll >= box - header) {
+        $('header').addClass('background-header')
+      } else {
+        $('header').removeClass('background-header')
+      }
+    })
+
+    swiper.on('slideChange', function () {
+      const activeSlide = swiper.slides[swiper.activeIndex]
+      const caption = activeSlide.querySelector('img').alt
+      document.getElementById('swiper-caption-text').textContent = caption
+    })
+
+    // Menu Dropdown Toggle
+    if ($('.menu-trigger').length) {
+      $('.menu-trigger').on('click', function () {
+        $(this).toggleClass('active')
+        $('.header-area .nav').slideToggle(200)
+      })
+    }
+
+    // Menu elevator animation
+    $('.scroll-to-section a[href*=\\#]:not([href=\\#])').on('click', function () {
+      if (
+        location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') &&
+        location.hostname == this.hostname
+      ) {
+        var target = $(this.hash)
+        target = target.length ? target : $('[name=' + this.hash.slice(1) + ']')
+        if (target.length) {
+          var width = $(window).width()
+          if (width < 991) {
+            $('.menu-trigger').removeClass('active')
+            $('.header-area .nav').slideUp(200)
+          }
+          $('html,body').animate(
+            {
+              scrollTop: target.offset().top + 1,
+            },
+            700,
+          )
+          return false
+        }
+      }
+    })
+
+    $(document).ready(function () {
+      $(document).on('scroll', this.onScroll)
+
+      //smoothscroll
+      $('.scroll-to-section a[href^="#"]').on('click', function (e) {
+        e.preventDefault()
+        $(document).off('scroll')
+
+        $('.scroll-to-section a').each(function () {
+          $(this).removeClass('active')
+        })
+        $(this).addClass('active')
+
+        var target = this.hash,
+          menu = target
+        var target = $(this.hash)
+        $('html, body')
+          .stop()
+          .animate(
+            {
+              scrollTop: target.offset().top + 1,
+            },
+            500,
+            'swing',
+            function () {
+              window.location.hash = target
+              $(document).on('scroll', this.onScroll)
+            },
+          )
+      })
+    })
+
+    // Handling scroll and active navigation
+    this.onScroll = function () {
+      var scrollPos = $(document).scrollTop()
+      $('.nav a').each(function () {
+        var currLink = $(this)
+        var refElement = $(currLink.attr('href'))
+        if (
+          refElement.position().top <= scrollPos &&
+          refElement.position().top + refElement.height() > scrollPos
+        ) {
+          $('.nav ul li a').removeClass('active')
+          currLink.addClass('active')
+        } else {
+          currLink.removeClass('active')
+        }
+      })
+    }
+
+    // Window Resize Mobile Menu Fix
+    this.mobileNav = function () {
+      var width = $(window).width()
+      $('.submenu').on('click', function () {
+        if (width < 767) {
+          $('.submenu ul').removeClass('active')
+          $(this).find('ul').toggleClass('active')
+        }
+      })
+    }
+  },
+}
+</script>
 
 <template>
   <main>
@@ -24,12 +159,12 @@
               <!-- ***** Menu Start ***** -->
               <ul class="nav">
                 <li class="scroll-to-section"><a href="#top" class="active">Beranda</a></li>
-                <li class="scroll-to-section"><a href="#services">Tentang Kami</a></li>
-                <li class="scroll-to-section"><a href="#about">Layanan Kami</a></li>
-                <li class="scroll-to-section"><a href="#pricing">Portofolio</a></li>
+                <li class="scroll-to-section"><a href="/tentang-kami">Tentang Kami</a></li>
+                <li class="scroll-to-section"><a href="#layanan">Layanan Kami</a></li>
+                <li class="scroll-to-section"><a href="#portofolio">Portofolio</a></li>
                 <li>
                   <div class="btn-navbar-btn">
-                    <a id="contact" href="#contact"><i class="fa fa-whatsapp"></i> Hubungi Kami</a>
+                    <a href="#cta-section"><i class="fa fa-whatsapp"></i> Hubungi Kami</a>
                   </div>
                 </li>
               </ul>
@@ -238,9 +373,9 @@
     <!-- EndSection -->
 
     <!-- Start Section Layanan -->
-    <div id="layanan" class="layanan section">
+    <div class="layanan section">
       <div class="container">
-        <div class="row">
+        <div id="layanan" class="row">
           <!-- Kiri: Deskripsi dan Layanan -->
           <div class="col-lg-6 align-self-center">
             <div class="section-heading">
@@ -311,8 +446,10 @@
                   Kami hadir bukan hanya untuk membuat website, tapi menjadi mitra yang membantu
                   Anda tumbuh lewat solusi digital yang tepat sasaran.
                 </p> -->
-                <div class="gradient-button">
-                  <a href="#">Jadwalkan Konsultasi</a>
+                <div class="col-lg-12 btn-header">
+                  <a href="#contact" class="btn btn-header-btn">
+                    <i class="fab fa-whatsapp"></i> Jadwalkan Konsultasi Gratis
+                  </a>
                 </div>
                 <span class="text-black">*Konsultasi gratis untuk semua calon klien</span>
               </div>
@@ -332,7 +469,7 @@
     <!-- EndSection -->
 
     <!-- Start Section Portfolio -->
-    <section id="portfolio" class="portfolio section">
+    <section id="portofolio" style="padding-top: 70px" class="portfolio section">
       <div class="container">
         <div class="row mt-4 mb-4">
           <div class="col-lg-8 offset-lg-2 text-center">
@@ -422,7 +559,7 @@
     <!-- Endsection -->
 
     <!-- Start Section Kalimat Iklan -->
-    <div id="contact" class="cta-section" style="background-color: #036ece">
+    <div id="cta-section" class="cta-section" style="background-color: #036ece; padding-top: 100px">
       <div class="container">
         <div class="row justify-content-center align-items-center text-center">
           <div class="col-12">
@@ -444,7 +581,7 @@
     <!-- EndSection -->
 
     <!-- Start Section Contact Us -->
-    <section id="contact-us" class="contact section mt-5">
+    <section id="contact" class="contact section mt-5">
       <div class="container">
         <div class="row">
           <div class="col-lg-8 offset-lg-2 text-center">
@@ -522,7 +659,7 @@
       <div class="container">
         <div class="row" style="margin-left: 150px">
           <!-- <div class="col-lg-2"></div> -->
-          <div class="col-lg-4">
+          <div class="col-lg-4 col-md-4 col-sm-12">
             <div class="footer-widget">
               <h4>About Us</h4>
               <div class="logo">
@@ -533,7 +670,7 @@
               <p><i class="fab fa-whatsapp"></i> (+62) 821-9192-7762</p>
             </div>
           </div>
-          <div class="col-lg-3">
+          <div class="col-lg-3 col-md-3 col-sm-12">
             <div class="footer-widget">
               <h4>Link</h4>
               <ul>
@@ -545,7 +682,7 @@
               </ul>
             </div>
           </div>
-          <div class="col-lg-5">
+          <div class="col-lg-5 col-md-5 col-sm-12">
             <div class="footer-widget">
               <h4>Temukan Kami</h4>
               <ul>
@@ -565,11 +702,11 @@
               </ul>
             </div>
           </div>
-          <div class="col-lg-12">
-            <div class="copyright-text">
-              <p>Copyright © 2025 DiveraTech. All Rights Reserved. <br /></p>
-            </div>
-          </div>
+        </div>
+      </div>
+      <div class="col-lg-12">
+        <div class="copyright-text">
+          <p>Copyright © 2025 DiveraTech. All Rights Reserved. <br /></p>
         </div>
       </div>
     </footer>
@@ -577,27 +714,3 @@
     <!-- EndSection   -->
   </main>
 </template>
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-  const swiper = new Swiper('.portfolioSwiper', {
-    loop: true,
-    centeredSlides: true,
-    slidesPerView: 3,
-    spaceBetween: 30,
-    autoplay: {
-      delay: 3000,
-      disableOnInteraction: false,
-    },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-  })
-
-  swiper.on('slideChange', function () {
-    const activeSlide = swiper.slides[swiper.activeIndex]
-    const caption = activeSlide.querySelector('img').alt
-    document.getElementById('swiper-caption-text').textContent = caption
-  })
-})
-</script>
