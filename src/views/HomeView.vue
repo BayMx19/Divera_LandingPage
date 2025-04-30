@@ -581,7 +581,7 @@ export default {
     <!-- EndSection -->
 
     <!-- Start Section Contact Us -->
-    <section id="contact" class="contact section mt-5">
+    <section id="contact" class="contact section mt-5 mb-5">
       <div class="container">
         <div class="row">
           <div class="col-lg-8 offset-lg-2 text-center">
@@ -657,7 +657,7 @@ export default {
     <!-- Start Section Footer -->
     <footer id="newsletter">
       <div class="container">
-        <div class="row" style="margin-left: 150px">
+        <div class="row">
           <!-- <div class="col-lg-2"></div> -->
           <div class="col-lg-4 col-md-4 col-sm-12">
             <div class="footer-widget">
@@ -687,12 +687,12 @@ export default {
               <h4>Temukan Kami</h4>
               <ul>
                 <li>
-                  <a href="#"
-                    ><iframe
+                  <a href="#">
+                    <iframe
                       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d284.5283834054441!2d112.54795408583715!3d-7.231603532068185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7801bc912dd3d5%3A0xb3adb4ba8a9d9d5!2sDiveraTech!5e0!3m2!1sen!2sid!4v1745601481503!5m2!1sen!2sid"
+                      style="border: 0"
                       width="400"
                       height="300"
-                      style="border: 0"
                       allowfullscreen=""
                       loading="lazy"
                       referrerpolicy="no-referrer-when-downgrade"
