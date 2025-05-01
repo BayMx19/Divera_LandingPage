@@ -195,8 +195,8 @@ export default {
                       <h2 style="color: #036ece">Transformasikan Bisnis Anda Bersama DiveraTech</h2>
                       <p>
                         Kami siap membantu mempercepat transformasi digital Anda melalui solusi
-                        website yang cerdas, efisien, dan dirancang khusus untuk kebutuhan bisnis
-                        modern.
+                        Aplikasi Website dan Mobile yang cerdas, efisien, dan dirancang khusus untuk
+                        kebutuhan bisnis modern.
                       </p>
                     </div>
                     <div class="col-lg-12 btn-header">
@@ -238,7 +238,7 @@ export default {
               <p class="text-black">
                 Data terbaru menunjukkan bahwa bisnis dengan solusi digital sendiri lebih unggul
                 dalam loyalitas pelanggan, efisiensi, dan pengalaman pengguna. Saatnya
-                bertransformasi.
+                bertransformasi bersama <b>DiveraTech</b>.
               </p>
             </div>
           </div>
@@ -304,7 +304,7 @@ export default {
           <div class="col-md-6 d-flex">
             <div class="me-3 fs-3">🔧</div>
             <div>
-              <h5 class="text-blue text-bold">Solusi Web yang Disesuaikan</h5>
+              <h5 class="text-blue text-bold">Solusi Aplikasi yang Disesuaikan</h5>
               <p class="text-black">
                 Kami merancang aplikasi yang benar-benar sesuai dengan karakter dan kebutuhan bisnis
                 Anda.
@@ -382,70 +382,43 @@ export default {
               <h4>Layanan <b class="text-blue">DiveraTech</b></h4>
               <img src="/assets/images/heading-line-dec.png" alt="" />
               <p class="text-black">
-                Kami menyediakan solusi web yang dirancang khusus untuk menunjang kebutuhan digital
-                bisnis Anda, dari awal hingga tahap dukungan berkelanjutan.
+                Kami menyediakan solusi aplikasi website dan mobile yang dirancang khusus untuk
+                menunjang kebutuhan digital bisnis Anda, dari awal hingga tahap dukungan
+                berkelanjutan.
               </p>
             </div>
             <div class="row">
               <div class="col-lg-6">
                 <div class="box-item">
-                  <h4><a href="#">Landing Page</a></h4>
-                  <!-- <p class="text-black">
-                    Desain halaman promosi yang menarik dan cepat diakses, cocok untuk kampanye
-                    produk atau layanan spesifik.
-                  </p> -->
+                  <h4 class="text-layanan text-bold text-small">Landing Page / Company Profile</h4>
                 </div>
               </div>
               <div class="col-lg-6">
                 <div class="box-item">
-                  <h4><a href="#">Company Profile</a></h4>
-                  <!-- <p class="text-black">
-                    Website profesional yang menampilkan profil, visi, layanan, dan portofolio
-                    bisnis Anda secara menyeluruh.
-                  </p> -->
+                  <h4 class="text-layanan text-bold text-small">Custom Website App</h4>
                 </div>
               </div>
               <div class="col-lg-6">
                 <div class="box-item">
-                  <h4><a href="#">e-Commerce</a></h4>
-                  <!-- <p class="text-black">
-                    Sistem toko online lengkap untuk memperluas jangkauan penjualan Anda, aman dan
-                    responsif di berbagai perangkat.
-                  </p> -->
+                  <h4 class="text-layanan text-bold text-small">E-Commerce</h4>
                 </div>
               </div>
               <div class="col-lg-6">
                 <div class="box-item">
-                  <h4><a href="#">Custom Web App</a></h4>
-                  <!-- <p class="text-black">
-                    Aplikasi web yang dirancang sesuai alur kerja internal bisnis Anda, dari
-                    dashboard hingga sistem manajemen data.
-                  </p> -->
+                  <h4 class="text-layanan text-bold text-small">Custom Mobile App</h4>
                 </div>
               </div>
               <div class="col-lg-6">
                 <div class="box-item">
-                  <h4><a href="#">Re-desain Website</a></h4>
-                  <!-- <p class="text-black">
-                    Pembaruan tampilan dan fungsionalitas website lama agar lebih modern, cepat, dan
-                    ramah pengguna.
-                  </p> -->
+                  <h4 class="text-layanan text-bold text-small">Re-desain Website/Mobile App</h4>
                 </div>
               </div>
               <div class="col-lg-6">
                 <div class="box-item">
-                  <h4><a href="#">Maintenance & Support</a></h4>
-                  <!-- <p class="text-black">
-                    Dukungan teknis dan pemeliharaan sistem agar website Anda tetap optimal, aman,
-                    dan bebas dari kendala.
-                  </p> -->
+                  <h4 class="text-layanan text-bold text-small">Maintenance & Support</h4>
                 </div>
               </div>
               <div class="col-lg-12">
-                <!-- <p class="text-black">
-                  Kami hadir bukan hanya untuk membuat website, tapi menjadi mitra yang membantu
-                  Anda tumbuh lewat solusi digital yang tepat sasaran.
-                </p> -->
                 <div class="col-lg-12 btn-header">
                   <a href="#cta-section" class="btn btn-header-btn">
                     <i class="fab fa-whatsapp"></i> Jadwalkan Konsultasi Gratis
@@ -476,8 +449,8 @@ export default {
             <div class="section-heading">
               <h4>Portofolio <b class="text-blue">DiveraTech</b></h4>
               <p class="text-black">
-                Beberapa proyek web terbaik yang telah kami bangun bersama klien-klien kami. Klik
-                panah untuk melihat lebih banyak karya kami.
+                Beberapa proyek aplikasi terbaik yang telah kami bangun bersama klien-klien kami.
+                Klik panah untuk melihat lebih banyak karya kami.
               </p>
             </div>
           </div>

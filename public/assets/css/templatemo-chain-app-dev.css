@@ -2755,3 +2755,14 @@ form .row > div {
   color: #036ece;
   font-weight: bold;
 }
+
+.text-small {
+  font-size: 16px !important;
+}
+
+.text-layanan {
+  color: #000 !important;
+}
+.text-layanan:hover {
+  color: #036ece !important;
+}

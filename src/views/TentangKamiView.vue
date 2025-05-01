@@ -231,9 +231,9 @@ export default {
               <h4>Apa itu <b class="text-blue"> DiveraTech?</b></h4>
               <p class="text-black">
                 <b>DiveraTech</b> adalah mitra digital yang siap membantu Anda membangun solusi
-                teknologi secara cerdas dan tepat sasaran. Kami tidak hanya membuat aplikasi—kami
-                menciptakan nilai dan efisiensi melalui teknologi yang terukur dan relevan dengan
-                kebutuhan Anda.
+                teknologi secara cerdas dan tepat sasaran. Kami tidak hanya membuat aplikasi, kami
+                juga menciptakan nilai dan efisiensi melalui teknologi yang terukur dan relevan
+                dengan kebutuhan Anda.
               </p>
             </div>
           </div>
@@ -249,18 +249,18 @@ export default {
         <div class="komitmen-text">
           <h2 class="text-blue text-bold">Komitmen Kami</h2>
           <p>
-            Kami tidak hanya membangun website dan aplikasi mobile, tetapi juga mengembangkan sistem
-            informasi berbasis web, dashboard analitik, dan berbagai solusi teknologi custom lainnya
-            yang disesuaikan dengan kebutuhan unik klien kami.
+            Kami tidak hanya membangun aplikasi website dan aplikasi mobile, tetapi juga
+            mengembangkan sistem informasi berbasis web, dashboard analitik, dan berbagai solusi
+            teknologi custom lainnya yang disesuaikan dengan kebutuhan unik bisnis anda.
           </p>
           <p>
             Di <b>DiveraTech</b>, kami percaya bahwa teknologi seharusnya menyederhanakan, bukan
             mempersulit. Itulah sebabnya kami berkomitmen untuk:
           </p>
           <ul>
-            <li><strong>Menyederhanakan proses teknologi</strong></li>
-            <li><strong>Memaksimalkan fungsionalitas</strong></li>
-            <li><strong>Menciptakan solusi yang berdampak nyata bagi bisnis Anda</strong></li>
+            <li><b>Menyederhanakan proses teknologi</b></li>
+            <li><b>Memaksimalkan fungsionalitas</b></li>
+            <li><b>Menciptakan solusi yang berdampak nyata bagi bisnis Anda</b></li>
           </ul>
         </div>
         <div class="komitmen-image">
