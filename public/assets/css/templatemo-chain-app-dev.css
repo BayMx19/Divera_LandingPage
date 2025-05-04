@@ -1051,6 +1051,7 @@ Services Style
 
 .services .section-heading p {
   margin-top: 10px;
+  font-weight: 400;
   /* margin-left: 18%;
   margin-right: 18%; */
 }
@@ -1124,6 +1125,7 @@ Services Style
   transition: all 0.3s;
   font-size: 15px;
   margin-bottom: 20px;
+  font-weight: 400;
 }
 
 .service-item:hover h4,
@@ -1148,6 +1150,7 @@ Services Style
 
 .why-us .section-heading p {
   margin-top: 10px;
+  font-weight: 400;
   /* margin-left: 18%;
   margin-right: 18%; */
 }
@@ -1408,6 +1411,7 @@ Layanan
   color: white !important;
   margin-bottom: 30px;
   font-size: 20px;
+  font-weight: 400 !important;
 }
 
 .cta-button .btn {
@@ -2731,7 +2735,7 @@ form .row > div {
   font-size: 15px;
   color: #333;
   line-height: 30px;
-  font-weight: 300;
+  font-weight: 800;
   margin: 0;
   padding-left: 0;
 }
@@ -2745,7 +2749,7 @@ form .row > div {
   margin-bottom: 10px;
   position: relative;
   padding-left: 20px;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .vmv-card ul li::before {
@@ -2765,4 +2769,8 @@ form .row > div {
 }
 .text-layanan:hover {
   color: #036ece !important;
+}
+
+.text-weight-400 {
+  font-weight: 400 !important;
 }

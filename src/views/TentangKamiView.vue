@@ -229,7 +229,7 @@ export default {
           <div class="col-lg-8 offset-lg-2 text-center">
             <div class="section-heading">
               <h4>Apa itu <b class="text-blue"> DiveraTech?</b></h4>
-              <p class="text-black">
+              <p class="text-black text-weight-400">
                 <b>DiveraTech</b> adalah mitra digital yang siap membantu Anda membangun solusi
                 teknologi secara cerdas dan tepat sasaran. Kami tidak hanya membuat aplikasi, kami
                 juga menciptakan nilai dan efisiensi melalui teknologi yang terukur dan relevan
@@ -247,13 +247,13 @@ export default {
     <section class="Komitmen">
       <div class="komitmen-wrapper">
         <div class="komitmen-text">
-          <h2 class="text-blue text-bold">Komitmen Kami</h2>
-          <p>
+          <h3 class="text-blue text-bold mb-2">Komitmen Kami</h3>
+          <p class="text-weight-400">
             Kami tidak hanya membangun aplikasi website dan aplikasi mobile, tetapi juga
             mengembangkan sistem informasi berbasis web, dashboard analitik, dan berbagai solusi
             teknologi custom lainnya yang disesuaikan dengan kebutuhan unik bisnis anda.
           </p>
-          <p>
+          <p class="text-weight-400">
             Di <b>DiveraTech</b>, kami percaya bahwa teknologi seharusnya menyederhanakan, bukan
             mempersulit. Itulah sebabnya kami berkomitmen untuk:
           </p>
@@ -347,7 +347,10 @@ export default {
           <div class="col-12">
             <h2 class="cta-heading">Siap bertransformasi secara digital bersama DiveraTech?</h2>
             <div class="cta-button">
-              <a href="https://wa.me/+6282191927762" class="btn btn-primary" target="_blank"
+              <a
+                href="https://wa.me/6281330865531?text=Halo%20DiveraTech%2C%20saya%20tertarik%20untuk%20konsultasi%20proyek%20aplikasi.%20Boleh%20dibantu%3F"
+                class="btn btn-primary"
+                target="_blank"
                 ><i class="fab fa-whatsapp"></i> Hubungi Kami</a
               >
             </div>
@@ -366,7 +369,7 @@ export default {
             <div class="section-heading">
               <h4 class="text-blue">Hubungi Kami</h4>
               <p class="text-black">
-                <span class="text-bold-2 d-block mt-2"
+                <span class="text-bold-2 d-block mt-2 text-weight-400"
                   >Siap ngobrol soal kebutuhan IT Anda? Dapatkan solusi yang lebih baik untuk bisnis
                   Anda dengan bekerjasama bersama ahli yang profesional di bidangnya dengan hubungi
                   kami langsung atau isi form di bawah ini.</span
@@ -443,15 +446,28 @@ export default {
               <div class="logo">
                 <img src="/assets/images/Logo/Logo-White.png" alt="" />
               </div>
-              <p>Build Smarter. Launch Faster. With <b class="text-bold">DiveraTech</b></p>
+              <p class="text-weight-400">
+                Build Smarter. Launch Faster. With <b class="text-bold">DiveraTech</b>
+              </p>
               <p>
                 <a href="mailto:diveratech@gmail.com"
                   ><i class="fas fa-envelope"></i> diveratech@gmail.com</a
                 >
               </p>
               <p>
-                <a href="https://wa.me/+6282191927762"
-                  ><i class="fab fa-whatsapp"></i> (+62) 821-9192-7762</a
+                <a
+                  href="https://wa.me/6281330865531?text=Halo%20DiveraTech%2C%20saya%20tertarik%20untuk%20konsultasi%20proyek%20aplikasi.%20Boleh%20dibantu%3F"
+                  ><i class="fab fa-whatsapp"></i> (+62) 813-3086-5531</a
+                >
+              </p>
+              <p>
+                <a href="https://www.instagram.com/diveratech/"
+                  ><i class="fab fa-instagram"></i> Instagram</a
+                >
+              </p>
+              <p>
+                <a href="https://www.linkedin.com/company/diveratech/"
+                  ><i class="fab fa-linkedin"></i> LinkedIn</a
                 >
               </p>
             </div>
@@ -492,7 +508,7 @@ export default {
       </div>
       <div class="col-lg-12">
         <div class="copyright-text">
-          <p>Copyright © 2025 DiveraTech. All Rights Reserved. <br /></p>
+          <p>Copyright © 2025 <b>DiveraTech</b>. All Rights Reserved. <br /></p>
         </div>
       </div>
     </footer>

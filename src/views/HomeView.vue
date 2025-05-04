@@ -305,7 +305,7 @@ export default {
             <div class="me-3 fs-3">🔧</div>
             <div>
               <h5 class="text-blue text-bold">Solusi Aplikasi yang Disesuaikan</h5>
-              <p class="text-black">
+              <p class="text-black text-weight-400">
                 Kami merancang aplikasi yang benar-benar sesuai dengan karakter dan kebutuhan bisnis
                 Anda.
               </p>
@@ -316,7 +316,7 @@ export default {
             <div class="me-3 fs-3">💡</div>
             <div>
               <h5 class="text-blue text-bold">Tim Profesional & Berkomitmen</h5>
-              <p class="text-black">
+              <p class="text-black text-weight-400">
                 Fokus pada kualitas, hasil rapi, responsif, dan tepat waktu adalah komitmen kami di
                 setiap proyek.
               </p>
@@ -327,7 +327,7 @@ export default {
             <div class="me-3 fs-3">🔁</div>
             <div>
               <h5 class="text-blue text-bold">Garansi Revisi</h5>
-              <p class="text-black">
+              <p class="text-black text-weight-400">
                 Kami memberikan garansi revisi sesuai kesepakatan—karena kepuasan Anda adalah
                 prioritas utama kami.
               </p>
@@ -338,7 +338,7 @@ export default {
             <div class="me-3 fs-3">🛠️</div>
             <div>
               <h5 class="text-blue text-bold">Free Maintenance</h5>
-              <p class="text-black">
+              <p class="text-black text-weight-400">
                 Kami tetap mendampingi setelah aplikasi selesai dengan layanan perawatan gratis di
                 awal masa pakai.
               </p>
@@ -349,7 +349,7 @@ export default {
             <div class="me-3 fs-3">🤝</div>
             <div>
               <h5 class="text-blue text-bold">Komunikasi Terbuka</h5>
-              <p class="text-black">
+              <p class="text-black text-weight-400">
                 Anda terlibat dalam proses sejak awal—kami percaya kolaborasi menghasilkan solusi
                 yang lebih baik.
               </p>
@@ -360,7 +360,7 @@ export default {
             <div class="me-3 fs-3">📊</div>
             <div>
               <h5 class="text-blue text-bold">Hasil Terukur</h5>
-              <p class="text-black">
+              <p class="text-black text-weight-400">
                 Fokus kami bukan hanya menyelesaikan proyek, tapi menciptakan dampak nyata dan
                 terukur untuk bisnis Anda.
               </p>
@@ -381,7 +381,7 @@ export default {
             <div class="section-heading">
               <h4>Layanan <b class="text-blue">DiveraTech</b></h4>
               <img src="/assets/images/heading-line-dec.png" alt="" />
-              <p class="text-black">
+              <p class="text-black text-weight-400">
                 Kami menyediakan solusi aplikasi website dan mobile yang dirancang khusus untuk
                 menunjang kebutuhan digital bisnis Anda, dari awal hingga tahap dukungan
                 berkelanjutan.
@@ -448,9 +448,9 @@ export default {
           <div class="col-lg-8 offset-lg-2 text-center">
             <div class="section-heading">
               <h4>Portofolio <b class="text-blue">DiveraTech</b></h4>
-              <p class="text-black">
+              <p class="text-black text-weight-400">
                 Beberapa proyek aplikasi terbaik yang telah kami bangun bersama klien-klien kami.
-                Klik panah untuk melihat lebih banyak karya kami.
+                Klik panah untuk melihat lebih banyak.
               </p>
             </div>
           </div>
@@ -542,7 +542,10 @@ export default {
               dengan pelanggan bersama <b>DiveraTech</b>.
             </p>
             <div class="cta-button">
-              <a href="https://wa.me/+6282191927762" class="btn btn-primary" target="_blank"
+              <a
+                href="https://wa.me/6281330865531?text=Halo%20DiveraTech%2C%20saya%20tertarik%20untuk%20konsultasi%20proyek%20aplikasi.%20Boleh%20dibantu%3F"
+                class="btn btn-primary"
+                target="_blank"
                 ><i class="fab fa-whatsapp"></i> Hubungi Kami</a
               >
             </div>
@@ -561,7 +564,7 @@ export default {
             <div class="section-heading">
               <h4 class="text-blue">Hubungi Kami</h4>
               <p class="text-black">
-                <span class="text-bold-2 d-block mt-2"
+                <span class="text-bold-2 d-block mt-2 text-weight-400"
                   >Siap ngobrol soal kebutuhan IT Anda? Dapatkan solusi yang lebih baik untuk bisnis
                   Anda dengan bekerjasama bersama ahli yang profesional di bidangnya dengan hubungi
                   kami langsung atau isi form di bawah ini.</span
@@ -638,15 +641,28 @@ export default {
               <div class="logo">
                 <img src="/assets/images/Logo/Logo-White.png" alt="" />
               </div>
-              <p>Build Smarter. Launch Faster. With <b class="text-bold">DiveraTech</b></p>
+              <p class="text-weight-400">
+                Build Smarter. Launch Faster. With <b class="text-bold">DiveraTech</b>
+              </p>
               <p>
                 <a href="mailto:diveratech@gmail.com"
                   ><i class="fas fa-envelope"></i> diveratech@gmail.com</a
                 >
               </p>
               <p>
-                <a href="https://wa.me/+6282191927762"
-                  ><i class="fab fa-whatsapp"></i> (+62) 821-9192-7762</a
+                <a
+                  href="https://wa.me/6281330865531?text=Halo%20DiveraTech%2C%20saya%20tertarik%20untuk%20konsultasi%20proyek%20aplikasi.%20Boleh%20dibantu%3F"
+                  ><i class="fab fa-whatsapp"></i> (+62) 813-3086-5531</a
+                >
+              </p>
+              <p>
+                <a href="https://www.instagram.com/diveratech/"
+                  ><i class="fab fa-instagram"></i> Instagram</a
+                >
+              </p>
+              <p>
+                <a href="https://www.linkedin.com/company/diveratech/"
+                  ><i class="fab fa-linkedin"></i> LinkedIn</a
                 >
               </p>
             </div>
@@ -687,7 +703,7 @@ export default {
       </div>
       <div class="col-lg-12">
         <div class="copyright-text">
-          <p>Copyright © 2025 DiveraTech. All Rights Reserved. <br /></p>
+          <p>Copyright © 2025 <b>DiveraTech</b>. All Rights Reserved. <br /></p>
         </div>
       </div>
     </footer>
