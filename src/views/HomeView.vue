@@ -193,7 +193,7 @@ export default {
                   <div class="row">
                     <div class="col-lg-12">
                       <h2 style="color: #036ece">Transformasikan Bisnis Anda Bersama DiveraTech</h2>
-                      <p>
+                      <p style="text-align: justify !important">
                         Kami siap membantu mempercepat transformasi digital Anda melalui solusi
                         Aplikasi Website dan Mobile yang cerdas, efisien, dan dirancang khusus untuk
                         kebutuhan bisnis modern.

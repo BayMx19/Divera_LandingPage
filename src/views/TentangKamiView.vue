@@ -248,12 +248,12 @@ export default {
       <div class="komitmen-wrapper">
         <div class="komitmen-text">
           <h3 class="text-blue text-bold mb-2">Komitmen Kami</h3>
-          <p class="text-weight-400">
+          <p class="text-weight-400" style="text-align: justify !important">
             Kami tidak hanya membangun aplikasi website dan aplikasi mobile, tetapi juga
             mengembangkan sistem informasi berbasis web, dashboard analitik, dan berbagai solusi
             teknologi custom lainnya yang disesuaikan dengan kebutuhan unik bisnis anda.
           </p>
-          <p class="text-weight-400">
+          <p class="text-weight-400" style="text-align: justify !important">
             Di <b>DiveraTech</b>, kami percaya bahwa teknologi seharusnya menyederhanakan, bukan
             mempersulit. Itulah sebabnya kami berkomitmen untuk:
           </p>
@@ -273,7 +273,7 @@ export default {
 
     <!-- Start Section VMV -->
     <section class="vmv-section">
-      <h2>Visi, Misi, dan Nilai-nilai Kami</h2>
+      <h2>Visi, Misi, dan Nilai - Nilai Kami</h2>
       <div class="vmv-cards">
         <!-- Visi -->
         <div class="vmv-card">
@@ -311,7 +311,7 @@ export default {
 
         <!-- Nilai-nilai -->
         <div class="vmv-card">
-          <h3>Nilai-nilai</h3>
+          <h3>Nilai - Nilai</h3>
           <ul>
             <li>
               <strong>Inovasi:</strong> Kami berkomitmen untuk selalu mencari solusi terbaru dan

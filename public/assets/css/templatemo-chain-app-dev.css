@@ -1102,6 +1102,8 @@ Services Style
   background-color: #fff;
   border-radius: 10px;
   border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+
   transition: all 0.3s;
 }
 
@@ -1376,6 +1378,7 @@ Layanan
 
   .portfolioSwiper {
     padding: 20px 0;
+    padding-bottom: 60px;
   }
 
   .swiper {
@@ -1391,7 +1394,18 @@ Layanan
     height: auto;
   }
   .swiper-caption {
-    margin-bottom: 50px;
+    margin-bottom: 16px;
+    font-size: 14px;
+    text-align: center;
+    white-space: normal; /* biarkan teks turun baris */
+    overflow: visible; /* tampilkan semuanya */
+    max-height: none; /* jangan batasi tinggi */
+  }
+
+  .swiper-caption p {
+    font-size: 14px;
+    white-space: normal;
+    overflow: visible;
   }
 }
 
@@ -2526,6 +2540,26 @@ responsive
   form#contact {
     padding: 30px;
   }
+  .Komitmen {
+    padding: 50px 20px !important; /* padding atas-bawah 40px, kiri-kanan 20px */
+  }
+
+  .komitmen-text h2 {
+    font-size: 1.5rem; /* agar judul proporsional di mobile */
+  }
+
+  .komitmen-text p {
+    font-size: 14px;
+  }
+
+  .komitmen-text ul li {
+    font-size: 14px;
+  }
+
+  .komitmen-wrapper {
+    flex-direction: column; /* stack atas-bawah */
+    gap: 20px;
+  }
 }
 
 /* Form Field Styling */
@@ -2705,7 +2739,9 @@ form .row > div {
 
 .vmv-card {
   background-color: #fff;
-  border-radius: 20px;
+  border-radius: 10px;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
   padding: 30px;
   max-width: 400px;
@@ -2721,6 +2757,8 @@ form .row > div {
 .vmv-card:hover {
   transform: scale(1.03);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  background-color: #036ece !important;
+  transition: all 0.3s;
 }
 
 .vmv-card h3 {
@@ -2759,7 +2797,15 @@ form .row > div {
   color: #036ece;
   font-weight: bold;
 }
-
+.vmv-card:hover h3,
+.vmv-card:hover p,
+.vmv-card:hover ul,
+.vmv-card:hover ul li {
+  color: white !important;
+}
+.vmv-card:hover ul li::before {
+  color: white !important;
+}
 .text-small {
   font-size: 16px !important;
 }
