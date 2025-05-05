@@ -1127,7 +1127,7 @@ Services Style
   transition: all 0.3s;
   font-size: 15px;
   margin-bottom: 20px;
-  font-weight: 400;
+  font-weight: 400 !important;
 }
 
 .service-item:hover h4,
@@ -2701,7 +2701,7 @@ form .row > div {
 .komitmen-text p {
   font-size: 15px;
   margin-bottom: 20px;
-  color: #333;
+  color: #000;
   line-height: 1.7;
 }
 
@@ -2794,9 +2794,9 @@ form .row > div {
 .vmv-card p,
 .vmv-card ul {
   font-size: 15px;
-  color: #333;
+  color: #000;
   line-height: 30px;
-  font-weight: 800;
+  font-weight: 400;
   margin: 0;
   padding-left: 0;
 }
@@ -2810,7 +2810,7 @@ form .row > div {
   margin-bottom: 10px;
   position: relative;
   padding-left: 20px;
-  font-weight: 400;
+  font-weight: 400 !important;
 }
 
 .vmv-card ul li::before {
