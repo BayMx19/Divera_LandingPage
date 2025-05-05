@@ -1,10 +1,20 @@
 <script>
-import $ from 'jquery' // Pastikan jQuery sudah di-import
-
+import $ from 'jquery'
 export default {
+  created() {},
   name: 'YourComponent',
+  data() {
+    return {
+      kategoriAktif: 'all',
+      kategoriList: [
+        { label: 'Semua', value: 'all' },
+        { label: 'Website Development', value: 'web' },
+        { label: 'Mobile Development', value: 'mobile' },
+        // { label: 'UI/UX Design', value: 'uiux' },
+      ],
+    }
+  },
   mounted() {
-    // Script yang sudah ada, dimasukkan ke dalam mounted() Vue.js
     const swiper = new Swiper('.portfolioSwiper', {
       loop: true,
       centeredSlides: true,
@@ -19,7 +29,7 @@ export default {
         prevEl: '.swiper-button-prev',
       },
     })
-
+    // this.initSwiper()
     $(window).scroll(function () {
       var scroll = $(window).scrollTop()
       var box = $('.header-text').height()
@@ -38,7 +48,6 @@ export default {
       document.getElementById('swiper-caption-text').textContent = caption
     })
 
-    // Menu Dropdown Toggle
     if ($('.menu-trigger').length) {
       $('.menu-trigger').on('click', function () {
         $(this).toggleClass('active')
@@ -46,7 +55,6 @@ export default {
       })
     }
 
-    // Menu elevator animation
     $('.scroll-to-section a[href*=\\#]:not([href=\\#])').on('click', function () {
       if (
         location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') &&
@@ -74,7 +82,6 @@ export default {
     $(document).ready(function () {
       $(document).on('scroll', this.onScroll)
 
-      //smoothscroll
       $('.scroll-to-section a[href^="#"]').on('click', function (e) {
         e.preventDefault()
         $(document).off('scroll')
@@ -103,7 +110,6 @@ export default {
       })
     })
 
-    // Handling scroll and active navigation
     this.onScroll = function () {
       var scrollPos = $(document).scrollTop()
       $('.nav a').each(function () {
@@ -121,7 +127,6 @@ export default {
       })
     }
 
-    // Window Resize Mobile Menu Fix
     this.mobileNav = function () {
       var width = $(window).width()
       $('.submenu').on('click', function () {
@@ -131,6 +136,47 @@ export default {
         }
       })
     }
+    const startYear = 2025
+    const currentYear = new Date().getFullYear()
+    const yearText = currentYear > startYear ? `${startYear} - ${currentYear}` : `${startYear}`
+    document.getElementById('copyright').innerHTML =
+      `Copyright © ${yearText} <b>DiveraTech</b>. All Rights Reserved. <br />`
+  },
+  methods: {
+    filterPortfolio(category) {
+      const slides = document.querySelectorAll('.portfolioSwiper .swiper-slide')
+      let visibleCount = 0
+      slides.forEach((slide) => {
+        const cat = slide.getAttribute('data-category')
+        if (category === 'all' || cat === category) {
+          slide.style.display = 'block'
+          visibleCount++
+        } else {
+          slide.style.display = 'none'
+        }
+      })
+
+      // Optional: Reset Swiper to index 0
+      const swiperInstance = document.querySelector('.portfolioSwiper')?.swiper
+      if (swiperInstance) swiperInstance.slideTo(0)
+      const captionText = document.getElementById('swiper-caption-text')
+      if (visibleCount === 0) {
+        captionText.innerText = 'Tidak ada data'
+      } else {
+        // Ambil alt dari slide pertama yang masih terlihat
+        const firstVisible = Array.from(slides).find((s) => s.style.display !== 'none')
+        if (firstVisible) {
+          const img = firstVisible.querySelector('img')
+          captionText.innerText = img?.alt || ''
+        }
+      }
+    },
+    gantiKategori(kategori) {
+      this.kategoriAktif = kategori
+      this.$nextTick(() => {
+        this.filterPortfolio(kategori)
+      })
+    },
   },
 }
 </script>
@@ -238,7 +284,7 @@ export default {
               <p class="text-black">
                 Data terbaru menunjukkan bahwa bisnis dengan solusi digital sendiri lebih unggul
                 dalam loyalitas pelanggan, efisiensi, dan pengalaman pengguna. Saatnya
-                bertransformasi bersama <b>DiveraTech</b>.
+                bertransformasi bersama <b class="text-blue">DiveraTech</b>.
               </p>
             </div>
           </div>
@@ -382,9 +428,9 @@ export default {
               <h4>Layanan <b class="text-blue">DiveraTech</b></h4>
               <img src="/assets/images/heading-line-dec.png" alt="" />
               <p class="text-black text-weight-400">
-                Kami menyediakan solusi aplikasi website dan mobile yang dirancang khusus untuk
-                menunjang kebutuhan digital bisnis Anda, dari awal hingga tahap dukungan
-                berkelanjutan.
+                Kami menyediakan solusi aplikasi website dan mobile secara kustom yang dirancang
+                khusus untuk menunjang kebutuhan digital bisnis Anda, dari awal hingga tahap
+                dukungan berkelanjutan.
               </p>
             </div>
             <div class="row">
@@ -452,6 +498,16 @@ export default {
                 Beberapa proyek aplikasi terbaik yang telah kami bangun bersama klien-klien kami.
                 Klik panah untuk melihat lebih banyak.
               </p>
+              <div class="portfolio-filters text-center mb-4 mt-3">
+                <button
+                  v-for="kategori in kategoriList"
+                  :key="kategori.value"
+                  :class="['filter-button', kategoriAktif === kategori.value ? 'active' : '']"
+                  @click="gantiKategori(kategori.value)"
+                >
+                  {{ kategori.label }}
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -459,59 +515,59 @@ export default {
           <div class="swiper portfolioSwiper">
             <div class="swiper-wrapper">
               <!-- 9 Slide -->
-              <div class="swiper-slide">
+              <div class="swiper-slide" data-category="web">
                 <img
                   src="/assets/images/Portfolio/1.png"
                   alt="Bansos Kelurahan Campurrejo"
                   class="rounded w-100"
                 />
               </div>
-              <div class="swiper-slide">
+              <div class="swiper-slide" data-category="web">
                 <img
                   src="/assets/images/Portfolio/2.png"
                   alt="Employee Recruitment System (PT Eternity Tech International)"
                   class="rounded w-100"
                 />
               </div>
-              <div class="swiper-slide">
+              <div class="swiper-slide" data-category="web">
                 <img
                   src="/assets/images/Portfolio/3.png"
                   alt="Sikejar (Posyandu Jambu Kediri)"
                   class="rounded w-100"
                 />
               </div>
-              <div class="swiper-slide">
+              <div class="swiper-slide" data-category="web">
                 <img
                   src="/assets/images/Portfolio/4.png"
                   alt="UsedCar Prediction"
                   class="rounded w-100"
                 />
               </div>
-              <div class="swiper-slide">
+              <div class="swiper-slide" data-category="web">
                 <img
                   src="/assets/images/Portfolio/5.png"
                   alt="Posyandu Kumis Kucing Website"
                   class="rounded w-100"
                 />
               </div>
-              <div class="swiper-slide">
+              <div class="swiper-slide" data-category="web">
                 <img
                   src="/assets/images/Portfolio/6.png"
                   alt="Employment Recruiter System (CV. Multitech Jaya Agung)"
                   class="rounded w-100"
                 />
               </div>
-              <div class="swiper-slide">
+              <div class="swiper-slide" data-category="web">
                 <img src="/assets/images/Portfolio/7.png" alt="SentUs.id" class="rounded w-100" />
               </div>
-              <div class="swiper-slide">
+              <div class="swiper-slide" data-category="web">
                 <img
                   src="/assets/images/Portfolio/8.png"
                   alt="IMNHerbalStore"
                   class="rounded w-100"
                 />
               </div>
-              <div class="swiper-slide">
+              <div class="swiper-slide" data-category="web">
                 <img
                   src="/assets/images/Portfolio/9.png"
                   alt="Gendifo (Gendro’s Digital Platform)"
@@ -644,30 +700,13 @@ export default {
               <p class="text-weight-400">
                 Build Smarter. Launch Faster. With <b class="text-bold">DiveraTech</b>
               </p>
-              <p>
-                <a href="mailto:diveratech@gmail.com"
-                  ><i class="fas fa-envelope"></i> diveratech@gmail.com</a
-                >
-              </p>
-              <p>
-                <a
-                  href="https://wa.me/6281330865531?text=Halo%20DiveraTech%2C%20saya%20tertarik%20untuk%20konsultasi%20proyek%20aplikasi.%20Boleh%20dibantu%3F"
-                  ><i class="fab fa-whatsapp"></i> (+62) 813-3086-5531</a
-                >
-              </p>
-              <p>
-                <a href="https://www.instagram.com/diveratech/"
-                  ><i class="fab fa-instagram"></i> Instagram</a
-                >
-              </p>
-              <p>
-                <a href="https://www.linkedin.com/company/diveratech/"
-                  ><i class="fab fa-linkedin"></i> LinkedIn</a
-                >
+              <p class="text-weight-400" style="text-align: justify !important">
+                DiveraTech adalah mitra terpercaya untuk pengembangan aplikasi website dan mobile
+                yang efisien dan tepat sasaran dengan harga terjangkau
               </p>
             </div>
           </div>
-          <div class="col-lg-3 col-md-3 col-sm-12">
+          <div class="col-lg-2 col-md-2 col-sm-12">
             <div class="footer-widget">
               <h4>Link</h4>
               <ul>
@@ -679,17 +718,46 @@ export default {
               </ul>
             </div>
           </div>
-          <div class="col-lg-5 col-md-5 col-sm-12">
+          <div class="col-lg-3 col-md-3 col-sm-12">
+            <div class="footer-widget">
+              <h4>Hubungi Kami</h4>
+              <ul>
+                <li>
+                  <a href="mailto:diveratech@gmail.com"
+                    ><i class="fas fa-envelope"></i> diveratech@gmail.com</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://wa.me/6281330865531?text=Halo%20DiveraTech%2C%20saya%20tertarik%20untuk%20konsultasi%20proyek%20aplikasi.%20Boleh%20dibantu%3F"
+                    ><i class="fab fa-whatsapp"></i> (+62) 813-3086-5531</a
+                  >
+                </li>
+                <li>
+                  <a href="https://www.instagram.com/diveratech/"
+                    ><i class="fab fa-instagram"></i> Instagram</a
+                  >
+                </li>
+                <li>
+                  <a href="https://www.linkedin.com/company/diveratech/"
+                    ><i class="fab fa-linkedin"></i> LinkedIn</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-3 col-sm-12">
             <div class="footer-widget">
               <h4>Temukan Kami</h4>
               <ul>
                 <li>
                   <a href="#">
                     <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d284.5283834054441!2d112.54795408583715!3d-7.231603532068185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7801bc912dd3d5%3A0xb3adb4ba8a9d9d5!2sDiveraTech!5e0!3m2!1sen!2sid!4v1745601481503!5m2!1sen!2sid"
-                      style="border: 0"
-                      width="400"
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3958.0813735149236!2d112.54547827499947!3d-7.231559192774584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7801bc912dd3d5%3A0xb3adb4ba8a9d9d5!2sDiveraTech!5e0!3m2!1sen!2sid!4v1746434422737!5m2!1sen!2sid"
+                      width="350"
                       height="300"
+                      style="border: 0"
                       allowfullscreen=""
                       loading="lazy"
                       referrerpolicy="no-referrer-when-downgrade"
@@ -703,7 +771,7 @@ export default {
       </div>
       <div class="col-lg-12">
         <div class="copyright-text">
-          <p>Copyright © 2025 <b>DiveraTech</b>. All Rights Reserved. <br /></p>
+          <p id="copyright"></p>
         </div>
       </div>
     </footer>

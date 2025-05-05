@@ -1365,6 +1365,29 @@ Layanan
 .swiper-button-prev {
   color: #000;
 }
+.portfolio-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.filter-button {
+  padding: 8px 20px;
+  border: none;
+  background: #f0f0f0;
+  border-radius: 25px;
+  font-weight: 600;
+  color: #333;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.filter-button.active,
+.filter-button:hover {
+  background: #036ece;
+  color: #fff;
+}
 
 @media (max-width: 768px) {
   .portfolioSwiper .swiper-slide {
