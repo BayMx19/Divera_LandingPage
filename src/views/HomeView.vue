@@ -518,7 +518,7 @@ export default {
               <div class="swiper-slide" data-category="web">
                 <img
                   src="/assets/images/Portfolio/1.png"
-                  alt="Bansos Kelurahan Campurrejo"
+                  alt="Bansos Kelurahan Campurrejo, Kediri, Jawa Timur"
                   class="rounded w-100"
                 />
               </div>
@@ -532,21 +532,21 @@ export default {
               <div class="swiper-slide" data-category="web">
                 <img
                   src="/assets/images/Portfolio/3.png"
-                  alt="Sikejar (Posyandu Jambu Kediri)"
+                  alt="SIKEJAR (Posyandu Jambu Kediri, Jawa Timur)"
                   class="rounded w-100"
                 />
               </div>
               <div class="swiper-slide" data-category="web">
                 <img
                   src="/assets/images/Portfolio/4.png"
-                  alt="UsedCar Prediction"
+                  alt="UsedCar Prediction with Machine Learning KNN Methods"
                   class="rounded w-100"
                 />
               </div>
               <div class="swiper-slide" data-category="web">
                 <img
                   src="/assets/images/Portfolio/5.png"
-                  alt="Posyandu Kumis Kucing Website"
+                  alt="Posyandu Kumis Kucing Website, Kecamatan Panceng, Gresik, Jawa Timur"
                   class="rounded w-100"
                 />
               </div>
@@ -570,13 +570,13 @@ export default {
               <div class="swiper-slide" data-category="web">
                 <img
                   src="/assets/images/Portfolio/9.png"
-                  alt="Gendifo (Gendro’s Digital Platform)"
+                  alt="Gendifo (Gendro’s Digital Platform), Pasuruan, Jawa Timur"
                   class="rounded w-100"
                 />
               </div>
             </div>
             <div class="swiper-caption text-center">
-              <p id="swiper-caption-text">Bansos Kelurahan Campurrejo</p>
+              <p id="swiper-caption-text">Bansos Kelurahan Campurrejo, Kediri, Jawa Timur</p>
             </div>
 
             <div class="swiper-button-next"></div>
