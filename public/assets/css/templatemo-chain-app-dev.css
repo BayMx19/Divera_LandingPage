@@ -164,7 +164,7 @@ hgroup {
 
 html,
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif !important;
   font-weight: 400;
   background-color: #fff;
   -ms-text-size-adjust: 100%;

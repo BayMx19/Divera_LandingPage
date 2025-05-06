@@ -194,11 +194,11 @@ export default {
           <div class="col-12">
             <nav class="main-nav">
               <!-- ***** Logo Start ***** -->
-              <a href="index.html" class="logo">
+              <a href="" class="logo">
                 <img
-                  src="/assets/images/Logo/Logo-removebg.png"
+                  src="/assets/images/Logo/LogoDiveraTech_Lengkap_BGPutih.png"
                   style="height: 50px"
-                  alt="Chain App Dev"
+                  alt="DiveraTech"
                 />
               </a>
               <!-- ***** Logo End ***** -->
@@ -695,7 +695,7 @@ export default {
             <div class="footer-widget">
               <h4>About Us</h4>
               <div class="logo">
-                <img src="/assets/images/Logo/Logo-White.png" alt="" />
+                <img src="/assets/images/Logo/LogoDiveraTech_Lengkap_BGBiru.png" alt="" />
               </div>
               <p class="text-weight-400">
                 Build Smarter. Launch Faster. With <b class="text-bold">DiveraTech</b>
