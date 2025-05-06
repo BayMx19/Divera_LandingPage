@@ -196,7 +196,7 @@ export default {
               <!-- ***** Logo Start ***** -->
               <a href="" class="logo">
                 <img
-                  src="/assets/images/Logo/LogoDiveraTech_Lengkap_BGPutih.png"
+                  src="/assets/images/Logo/LogoDiveraTech_Lengkap_BGTransparent_TextBiru.png"
                   style="height: 50px"
                   alt="DiveraTech"
                 />
@@ -695,7 +695,10 @@ export default {
             <div class="footer-widget">
               <h4>About Us</h4>
               <div class="logo">
-                <img src="/assets/images/Logo/LogoDiveraTech_Lengkap_BGBiru.png" alt="" />
+                <img
+                  src="/assets/images/Logo/LogoDiveraTech_Lengkap_BGTransparent_TextPutih.png"
+                  alt=""
+                />
               </div>
               <p class="text-weight-400">
                 Build Smarter. Launch Faster. With <b class="text-bold">DiveraTech</b>
