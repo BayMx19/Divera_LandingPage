@@ -836,7 +836,12 @@ export default {
             </div>
             <div class="text-faq">
               <span
-                style="text-align: center !important; font-size: 15px; font-weight: 400 !important"
+                style="
+                  color: black !important;
+                  text-align: center !important;
+                  font-size: 15px;
+                  font-weight: 400 !important;
+                "
                 >*Ada pertanyaan lain? Hubungi kami
                 <a
                   href="https://wa.me/6281330865531?text=Halo%20DiveraTech%2C%20saya%20tertarik%20untuk%20konsultasi%20proyek%20aplikasi.%20Boleh%20dibantu%3F"
