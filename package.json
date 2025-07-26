@@ -11,7 +11,9 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^7.0.0",
     "axios": "^1.11.0",
+    "bootstrap-icons": "^1.13.1",
     "jquery": "^3.7.1",
     "swiper": "^11.2.6",
     "vue": "^3.5.13",

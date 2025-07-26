@@ -1,5 +1,7 @@
 <script>
 import $ from 'jquery'
+import '@fortawesome/fontawesome-free/css/all.min.css'
+
 export default {
   created() {},
   name: 'YourComponent',
@@ -129,7 +131,7 @@ export default {
               <a href="" class="logo">
                 <img
                   :src="'/assets/images/Logo/LogoDiveraTech_Lengkap_BGTransparent_TextBiru.png'"
-                  style="height: 50px; margin-top: 25px !important"
+                  style="height: 50px"
                   alt="DiveraTech"
                 />
               </a>
@@ -146,7 +148,7 @@ export default {
                   <div class="btn-navbar-btn">
                     <a
                       href="https://wa.me/6281330865531?text=Halo%20DiveraTech%2C%20saya%20tertarik%20untuk%20konsultasi%20proyek%20aplikasi.%20Boleh%20dibantu%3F"
-                      ><i class="fa fa-whatsapp"></i> Hubungi Kami</a
+                      ><i class="bi bi-whatsapp icon-bold"></i> Hubungi Kami</a
                     >
                   </div>
                 </li>

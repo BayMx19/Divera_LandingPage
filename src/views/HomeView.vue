@@ -4,12 +4,14 @@ import { Swiper } from 'swiper'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import axios from 'axios'
+import '@fortawesome/fontawesome-free/css/all.min.css'
+
 export default {
   created() {},
   name: 'YourComponent',
   data() {
     return {
-      baseUrl: 'http://127.0.0.1:8000',
+      baseUrl: 'https://backoffice.diveratech.site/',
       faqList: [],
       kategoriAktif: 'All',
       kategoriList: [],
@@ -41,14 +43,20 @@ export default {
       grabCursor: true,
       speed: 600,
       breakpoints: {
-        576: {
-          slidesPerView: 3,
+        // Mobile
+        0: {
+          slidesPerView: 1,
+          spaceBetween: 16,
         },
+        // Tablet
         768: {
-          slidesPerView: 3,
+          slidesPerView: 2,
+          spaceBetween: 20,
         },
+        // Desktop
         992: {
           slidesPerView: 3,
+          spaceBetween: 30,
         },
       },
     })
@@ -164,7 +172,7 @@ export default {
       `Copyright © ${yearText} <b>DiveraTech</b>. All Rights Reserved. <br />`
 
     axios
-      .get('http://127.0.0.1:8000/data-faq', {
+      .get('https://backoffice.diveratech.site/data-faq', {
         headers: {
           Accept: 'application/json',
         },
@@ -283,7 +291,7 @@ export default {
               <a href="" class="logo">
                 <img
                   :src="'/assets/images/Logo/LogoDiveraTech_Lengkap_BGTransparent_TextBiru.png'"
-                  style="height: 50px; margin-top: 25px !important"
+                  style="height: 50px"
                   alt="DiveraTech"
                 />
               </a>
@@ -298,7 +306,7 @@ export default {
                   <div class="btn-navbar-btn">
                     <a
                       href="https://wa.me/6281330865531?text=Halo%20DiveraTech%2C%20saya%20tertarik%20untuk%20konsultasi%20proyek%20aplikasi.%20Boleh%20dibantu%3F"
-                      ><i class="fa fa-whatsapp"></i> Hubungi Kami</a
+                      ><i class="bi bi-whatsapp icon-bold"></i> Hubungi Kami</a
                     >
                   </div>
                 </li>
@@ -385,7 +393,9 @@ export default {
 
         <div class="row gy-4">
           <div class="col-md-6 d-flex">
-            <div class="me-3 fs-3" style="color: #036ece"><i class="fas fa-sliders-h"></i></div>
+            <div class="me-3 fs-3" style="color: #036ece">
+              <i class="bi bi-sliders icon-bold"></i>
+            </div>
             <div>
               <h5 class="text-blue text-bold">Aplikasi Bisnis yang Disesuaikan Penuh</h5>
               <p class="text-black text-weight-400">
@@ -396,7 +406,9 @@ export default {
           </div>
 
           <div class="col-md-6 d-flex">
-            <div class="me-3 fs-3" style="color: #036ece"><i class="fas fa-users-cog"></i></div>
+            <div class="me-3 fs-3" style="color: #036ece">
+              <i class="bi bi-person-gear icon-bold"></i>
+            </div>
             <div>
               <h5 class="text-blue text-bold">Tim Profesional dan Berpengalaman</h5>
               <p class="text-black text-weight-400">
@@ -407,7 +419,9 @@ export default {
           </div>
 
           <div class="col-md-6 d-flex">
-            <div class="me-3 fs-3" style="color: #036ece"><i class="fas fa-sync-alt"></i></div>
+            <div class="me-3 fs-3" style="color: #036ece">
+              <i class="bi bi-arrow-repeat icon-bold"></i>
+            </div>
             <div>
               <h5 class="text-blue text-bold">Garansi Revisi Sesuai Kesepakatan</h5>
               <p class="text-black text-weight-400">
@@ -418,7 +432,9 @@ export default {
           </div>
 
           <div class="col-md-6 d-flex">
-            <div class="me-3 fs-3" style="color: #036ece"><i class="fas fa-tools"></i></div>
+            <div class="me-3 fs-3" style="color: #036ece">
+              <i class="bi bi-tools icon-bold"></i>
+            </div>
             <div>
               <h5 class="text-blue text-bold">Free Maintenance Awal Masa Pakai</h5>
               <p class="text-black text-weight-400">
@@ -429,7 +445,9 @@ export default {
           </div>
 
           <div class="col-md-6 d-flex">
-            <div class="me-3 fs-3" style="color: #036ece"><i class="fas fa-handshake"></i></div>
+            <div class="me-3 fs-3" style="color: #036ece">
+              <i class="bi bi-person-check icon-bold"></i>
+            </div>
             <div>
               <h5 class="text-blue text-bold">Kolaboratif dan Transparan</h5>
               <p class="text-black text-weight-400">
@@ -440,7 +458,9 @@ export default {
           </div>
 
           <div class="col-md-6 d-flex">
-            <div class="me-3 fs-3" style="color: #036ece"><i class="fas fa-chart-line"></i></div>
+            <div class="me-3 fs-3" style="color: #036ece">
+              <i class="bi bi-graph-up-arrow icon-bold"></i>
+            </div>
             <div>
               <h5 class="text-blue text-bold">Fokus Hasil dan Berdampak</h5>
               <p class="text-black text-weight-400">
@@ -734,7 +754,7 @@ export default {
             <!-- Card 1 -->
             <div class="swiper-slide">
               <div class="step-card">
-                <div class="icon mb-2"><i class="fas fa-comments"></i></div>
+                <div class="icon mb-2"><i class="bi bi-chat-dots icon-bold"></i></div>
                 <h5 class="mb-4 text-bold">1. Konsultasi</h5>
                 <p class="mb-4" style="font-weight: 400 !important; text-align: left !important">
                   Kami akan mendengarkan kebutuhan Anda dan memberikan solusi terbaik secara teknis
@@ -746,7 +766,7 @@ export default {
             <!-- Card 2 -->
             <div class="swiper-slide">
               <div class="step-card">
-                <div class="icon mb-2"><i class="fas fa-file"></i></div>
+                <div class="icon mb-2"><i class="bi bi-file-earmark icon-bold"></i></div>
                 <h5 class="mb-4 text-bold">2. Perjanjian Jasa & Syarat Ketentuan</h5>
                 <p class="mb-4" style="font-weight: 400 !important; text-align: left !important">
                   Detail layanan, harga, serta timeline akan disepakati bersama dalam dokumen resmi.
@@ -757,7 +777,7 @@ export default {
             <!-- Card 3 -->
             <div class="swiper-slide">
               <div class="step-card">
-                <div class="icon mb-2"><i class="fas fa-money-bills"></i></div>
+                <div class="icon mb-2"><i class="bi bi-cash-coin icon-bold"></i></div>
                 <h5 class="mb-4 text-bold">3. Pembayaran</h5>
                 <p class="mb-4" style="font-weight: 400 !important; text-align: left !important">
                   Pembayaran dilakukan sesuai kesepakatan sebagai tanda persetujuan dan komitmen
@@ -769,7 +789,7 @@ export default {
             <!-- Card 4 -->
             <div class="swiper-slide">
               <div class="step-card">
-                <div class="icon mb-2"><i class="fas fa-code"></i></div>
+                <div class="icon mb-2"><i class="bi bi-code-slash icon-bold"></i></div>
                 <h5 class="mb-4 text-bold">4. Proses Pengerjaan</h5>
                 <p class="mb-4" style="font-weight: 400 !important; text-align: left !important">
                   Tim kami mulai mengerjakan sesuai timeline dan kebutuhan Anda.
@@ -780,7 +800,7 @@ export default {
             <!-- Card 5 -->
             <div class="swiper-slide">
               <div class="step-card">
-                <div class="icon mb-2"><i class="fas fa-vial-circle-check"></i></div>
+                <div class="icon mb-2"><i class="bi bi-check2-square icon-bold"></i></div>
                 <h5 class="mb-4 text-bold">5. Testing & Finalisasi</h5>
                 <p class="mb-4" style="font-weight: 400 !important; text-align: left !important">
                   Setelah selesai, kami lakukan uji coba dan serah terima produk final.
