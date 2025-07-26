@@ -3,33 +3,7 @@ import $ from 'jquery'
 export default {
   created() {},
   name: 'YourComponent',
-  data() {
-    return {
-      kategoriAktif: 'all',
-      kategoriList: [
-        { label: 'Semua', value: 'all' },
-        { label: 'Website Development', value: 'web' },
-        { label: 'Mobile Development', value: 'mobile' },
-        // { label: 'UI/UX Design', value: 'uiux' },
-      ],
-    }
-  },
   mounted() {
-    const swiper = new Swiper('.portfolioSwiper', {
-      loop: true,
-      centeredSlides: true,
-      slidesPerView: 3,
-      spaceBetween: 30,
-      autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-      },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-    })
-    // this.initSwiper()
     $(window).scroll(function () {
       var scroll = $(window).scrollTop()
       var box = $('.header-text').height()
@@ -40,12 +14,6 @@ export default {
       } else {
         $('header').removeClass('background-header')
       }
-    })
-
-    swiper.on('slideChange', function () {
-      const activeSlide = swiper.slides[swiper.activeIndex]
-      const caption = activeSlide.querySelector('img').alt
-      document.getElementById('swiper-caption-text').textContent = caption
     })
 
     if ($('.menu-trigger').length) {
@@ -142,42 +110,7 @@ export default {
     document.getElementById('copyright').innerHTML =
       `Copyright © ${yearText} <b>DiveraTech</b>. All Rights Reserved. <br />`
   },
-  methods: {
-    filterPortfolio(category) {
-      const slides = document.querySelectorAll('.portfolioSwiper .swiper-slide')
-      let visibleCount = 0
-      slides.forEach((slide) => {
-        const cat = slide.getAttribute('data-category')
-        if (category === 'all' || cat === category) {
-          slide.style.display = 'block'
-          visibleCount++
-        } else {
-          slide.style.display = 'none'
-        }
-      })
-
-      // Optional: Reset Swiper to index 0
-      const swiperInstance = document.querySelector('.portfolioSwiper')?.swiper
-      if (swiperInstance) swiperInstance.slideTo(0)
-      const captionText = document.getElementById('swiper-caption-text')
-      if (visibleCount === 0) {
-        captionText.innerText = 'Tidak ada data'
-      } else {
-        // Ambil alt dari slide pertama yang masih terlihat
-        const firstVisible = Array.from(slides).find((s) => s.style.display !== 'none')
-        if (firstVisible) {
-          const img = firstVisible.querySelector('img')
-          captionText.innerText = img?.alt || ''
-        }
-      }
-    },
-    gantiKategori(kategori) {
-      this.kategoriAktif = kategori
-      this.$nextTick(() => {
-        this.filterPortfolio(kategori)
-      })
-    },
-  },
+  methods: {},
 }
 </script>
 <template>
@@ -195,8 +128,8 @@ export default {
               <!-- ***** Logo Start ***** -->
               <a href="" class="logo">
                 <img
-                  src="/assets/images/Logo/LogoDiveraTech_Lengkap_BGTransparent_TextBiru.png"
-                  style="height: 50px"
+                  :src="'/assets/images/Logo/LogoDiveraTech_Lengkap_BGTransparent_TextBiru.png'"
+                  style="height: 50px; margin-top: 25px !important"
                   alt="DiveraTech"
                 />
               </a>
@@ -211,7 +144,10 @@ export default {
                 <li class="scroll-to-section"><a href="/#portofolio">Portofolio</a></li>
                 <li>
                   <div class="btn-navbar-btn">
-                    <a href="#cta-section"><i class="fa fa-whatsapp"></i> Hubungi Kami</a>
+                    <a
+                      href="https://wa.me/6281330865531?text=Halo%20DiveraTech%2C%20saya%20tertarik%20untuk%20konsultasi%20proyek%20aplikasi.%20Boleh%20dibantu%3F"
+                      ><i class="fa fa-whatsapp"></i> Hubungi Kami</a
+                    >
                   </div>
                 </li>
               </ul>
@@ -241,12 +177,12 @@ export default {
                     <div class="col-lg-12">
                       <h2 style="color: #036ece">Tentang Kami</h2>
                       <p class="motto" style="font-size: 1.2rem; font-weight: 500">
-                        “Build Smarter. Launch Faster. With DiveraTech”
+                        “Build Smarter. Launch Faster. With <strong>DiveraTech</strong>!”
                       </p>
                     </div>
                     <div class="col-lg-12 btn-header">
                       <a href="#cta-section" class="btn btn-header-btn">
-                        <i class="fab fa-whatsapp"></i> Jadwalkan Konsultasi Gratis
+                        Mulai Konsultasi Gratis!
                       </a>
                     </div>
                   </div>
@@ -258,7 +194,7 @@ export default {
                   data-wow-duration="1s"
                   data-wow-delay="0.5s"
                 >
-                  <img src="/assets/images/tentang-kami.png" alt="" />
+                  <img :src="'/assets/images/tentang-kami.png'" alt="" />
                 </div>
               </div>
             </div>
@@ -269,20 +205,33 @@ export default {
     <!-- EndSection -->
 
     <!-- Start Section What-Is? -->
-    <section id="what-is" class="why-us section" style="padding-top: 0px !important">
+    <section
+      id="what-is"
+      class="why-us section"
+      style="padding-top: 80px !important; background-color: rgba(241, 244, 255, 0.977) !important"
+    >
       <div class="container">
         <div class="row">
           <div class="col-lg-8 offset-lg-2 text-center">
-            <div class="section-heading">
+            <div class="section-heading" style="margin-bottom: 0px !important">
               <h4>Apa itu <b class="text-blue"> DiveraTech?</b></h4>
               <p class="text-black text-weight-400">
-                <b class="text-blue">DiveraTech</b> adalah mitra terpercaya yang hadir dan berfokus
-                pada pembuatan aplikasi website, aplikasi mobile, dan solusi teknologi kustom untuk
-                membantu Anda membangun solusi teknologi yang cerdas dan efisien. Kami tidak hanya
-                fokus pada pembuatan aplikasi, tetapi juga berkomitmen untuk menciptakan nilai
-                tambah dan meningkatkan efisiensi melalui teknologi yang tepat sasaran dan sesuai
-                dengan kebutuhan bisnis Anda. Kami telah melayani berbagai klien dari berbagai
-                sektor untuk menciptakan sistem yang relevan dan berdampak.
+                <strong class="text-blue">DiveraTech</strong> adalah mitra teknologi andal yang
+                membantu Anda merancang, membangun, dan mengelola solusi digital secara menyeluruh.
+                Kami berfokus pada pengembangan website profesional, aplikasi mobile, hingga solusi
+                perangkat lunak siap pakai yang dirancang untuk mempercepat pertumbuhan bisnis Anda.
+                <br />
+                Dengan tim yang ahli di bidang UI/UX Design, Artificial Intelligence & Machine
+                Learning, serta integrasi sistem, kami memastikan setiap solusi yang kami tawarkan
+                tidak hanya fungsional tetapi juga efisien, mudah digunakan, dan relevan dengan
+                kebutuhan pasar saat ini. Kami juga menyediakan layanan Support & Maintenance untuk
+                menjaga performa sistem Anda tetap optimal, serta IT & Management Consulting untuk
+                membantu Anda mengambil keputusan strategis berbasis teknologi.
+                <br />
+                <strong class="text-blue">DiveraTech</strong> telah dipercaya oleh berbagai klien
+                dari beragam sektor industri untuk menghadirkan solusi digital yang berdampak nyata
+                dan tepat sasaran. Bersama kami, bangun fondasi teknologi yang lebih cerdas, cepat,
+                dan scalable.
               </p>
             </div>
           </div>
@@ -296,25 +245,32 @@ export default {
     <section class="Komitmen">
       <div class="komitmen-wrapper">
         <div class="komitmen-text">
-          <h3 class="text-blue text-bold mb-2">Komitmen Kami</h3>
+          <div class="section-heading">
+            <h4 class="text-bold mb-2">Komitmen Kami</h4>
+          </div>
           <p class="text-weight-400 mb-1" style="text-align: justify !important">
-            Di <b class="text-blue">DiveraTech</b>, kami lebih dari sekadar membangun aplikasi
-            website dan mobile. Kami juga mengembangkan sistem informasi berbasis web, dashboard
-            analitik, dan solusi teknologi custom yang dirancang khusus untuk memenuhi kebutuhan
-            unik bisnis Anda.
+            Di <b class="text-blue">DiveraTech</b>, kami tidak hanya menciptakan aplikasi website
+            dan aplikasi mobile, tapi juga merancang berbagai solusi digital berbasis teknologi
+            cerdas — mulai dari dashboard analitik, sistem informasi berbasis web, hingga solusi
+            AI/ML dan integrasi sistem yang disesuaikan dengan kebutuhan spesifik tiap bisnis.
           </p>
           <p class="text-weight-400 mb-1" style="text-align: justify !important">
-            Kami percaya bahwa teknologi harus menyederhanakan, bukan memperumit. Karena itu, kami
-            berkomitmen untuk:
+            Kami percaya bahwa teknologi yang baik adalah teknologi yang memudahkan, bukan
+            membingungkan. Karena itu, kami berkomitmen untuk:
           </p>
           <ul>
-            <li><b>Menyederhanakan proses teknologi</b></li>
-            <li><b>Memaksimalkan fungsi setiap solusi</b></li>
-            <li><b>Menciptakan solusi yang berdampak nyata bagi bisnis Anda</b></li>
+            <li><b>Menyederhanakan proses digitalisasi</b></li>
+            <li><b>Mengoptimalkan fungsi dan performa dari setiap solusi</b></li>
+            <li><b>Menciptakan solusi yang berdampak nyata bagi bisnis anda</b></li>
           </ul>
+          <p class="text-weight-400 mb-1" style="text-align: justify !important">
+            Dengan kombinasi antara desain yang user-friendly, teknologi terkini, dan dukungan yang
+            berkelanjutan, <b class="text-blue">DiveraTech</b> hadir untuk memastikan setiap langkah
+            transformasi digital Anda berjalan lebih cepat, tepat, dan berkelanjutan.
+          </p>
         </div>
         <div class="komitmen-image">
-          <img src="/assets/images/office.png" alt="Tim DiveraTech bekerja bersama" />
+          <img :src="'/assets/images/office.png'" alt="Tim DiveraTech bekerja bersama" />
         </div>
       </div>
     </section>
@@ -323,7 +279,9 @@ export default {
 
     <!-- Start Section VMV -->
     <section class="vmv-section">
-      <h2>Visi, Misi, dan Nilai - Nilai Kami</h2>
+      <div class="section-heading">
+        <h4 class="text-blue mb-5">Visi, Misi, dan Nilai - Nilai Kami</h4>
+      </div>
       <div class="vmv-cards">
         <!-- Visi -->
         <div class="vmv-card">
@@ -389,13 +347,106 @@ export default {
     </section>
 
     <!-- EndSection -->
+    <!-- Start Section Layanan -->
+    <div class="layanan section" style="background-color: #fff !important">
+      <div class="container">
+        <div id="layanan" class="row">
+          <!-- Kiri: Deskripsi dan Layanan -->
+          <div class="col-lg-7 align-self-center">
+            <div class="section-heading">
+              <h4>Layanan <b class="text-blue">DiveraTech</b></h4>
+              <img :src="'/assets/images/heading-line-dec.png'" alt="" />
+              <p class="text-black text-weight-400">
+                <span class="text-bold text-blue">DiveraTech</span> siap membantu transformasi
+                digital bisnismu. Mulai dari pembuatan website, aplikasi mobile, hingga solusi
+                software dan konsultasi IT dalam satu tempat.
+              </p>
+            </div>
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="box-item d-flex align-items-center">
+                  <i class="fas fa-check-circle me-2" style="color: #036ece"></i>
+                  <h4 class="text-layanan text-bold text-small mb-0">Website Development</h4>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="box-item d-flex align-items-center">
+                  <i class="fas fa-check-circle me-2" style="color: #036ece"></i>
+                  <h4 class="text-layanan text-bold text-small mb-0">Mobile App Development</h4>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="box-item d-flex align-items-center">
+                  <i class="fas fa-check-circle me-2" style="color: #036ece"></i>
+                  <h4 class="text-layanan text-bold text-small mb-0">
+                    Ready-to-Use Software Solutions
+                  </h4>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="box-item d-flex align-items-center">
+                  <i class="fas fa-check-circle me-2" style="color: #036ece"></i>
+                  <h4 class="text-layanan text-bold text-small mb-0 text-break">AI/ML Solutions</h4>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="box-item d-flex align-items-center">
+                  <i class="fas fa-check-circle me-2" style="color: #036ece"></i>
+                  <h4 class="text-layanan text-bold text-small mb-0">UI/UX Design</h4>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="box-item d-flex align-items-center">
+                  <i class="fas fa-check-circle me-2" style="color: #036ece"></i>
+                  <h4 class="text-layanan text-bold text-small mb-0">Support & Maintenance</h4>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="box-item d-flex align-items-center">
+                  <i class="fas fa-check-circle me-2" style="color: #036ece"></i>
+                  <h4 class="text-layanan text-bold text-small mb-0">IT & Management Consulting</h4>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="box-item d-flex align-items-center">
+                  <i class="fas fa-check-circle me-2" style="color: #036ece"></i>
+                  <h4 class="text-layanan text-bold text-small mb-0">
+                    System Integration Services
+                  </h4>
+                </div>
+              </div>
+
+              <div class="col-lg-12">
+                <div class="col-lg-12 btn-header">
+                  <a href="#cta-section" class="btn btn-header-btn">
+                    Jadwalkan Konsultasi Gratis!
+                  </a>
+                </div>
+                <span class="text-black">*Konsultasi gratis untuk semua calon klien</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Kanan: Gambar -->
+          <div class="col-lg-5">
+            <div class="right-image">
+              <img :src="'/assets/images/about-right-dec.png'" alt="Ilustrasi layanan DiveraTech" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- EndSection -->
 
     <!-- Start Section Kalimat Iklan -->
     <div id="cta-section" class="cta-section" style="background-color: #036ece">
       <div class="container">
         <div class="row justify-content-center align-items-center text-center">
           <div class="col-12">
-            <h2 class="cta-heading">Siap bertransformasi secara digital bersama DiveraTech?</h2>
+            <h3 class="cta-heading mb-4">
+              Siap bertransformasi secara digital bersama DiveraTech?
+            </h3>
             <div class="cta-button">
               <a
                 href="https://wa.me/6281330865531?text=Halo%20DiveraTech%2C%20saya%20tertarik%20untuk%20konsultasi%20proyek%20aplikasi.%20Boleh%20dibantu%3F"
@@ -422,8 +473,10 @@ export default {
                 <span class="text-bold-2 d-block mt-2 text-weight-400"
                   >Siap ngobrol soal kebutuhan IT Anda? Dapatkan solusi yang lebih baik untuk bisnis
                   Anda dengan bekerjasama bersama ahli yang profesional di bidangnya dengan hubungi
-                  kami langsung atau isi form di bawah ini.</span
-                >
+                  kami langsung atau isi form di bawah ini. Tim
+                  <b class="text-blue">DiveraTech</b> siap mendengarkan dan memberikan solusi
+                  terbaik untuk bisnismu.
+                </span>
               </p>
             </div>
           </div>
@@ -495,16 +548,18 @@ export default {
               <h4>About Us</h4>
               <div class="logo">
                 <img
-                  src="/assets/images/Logo/LogoDiveraTech_Lengkap_BGTransparent_TextPutih.png"
+                  :src="'/assets/images/Logo/LogoDiveraTech_Lengkap_BGTransparent_TextPutih.png'"
                   alt=""
+                  style="height: 60px; width: 150px"
                 />
               </div>
               <p class="text-weight-400">
-                Build Smarter. Launch Faster. With <b class="text-bold">DiveraTech</b>
+                Build Smarter. Launch Faster. With <b class="text-bold">DiveraTech!</b>
               </p>
               <p class="text-weight-400" style="text-align: justify !important">
-                DiveraTech adalah mitra terpercaya untuk pengembangan aplikasi website dan mobile
-                yang efisien dan tepat sasaran dengan harga terjangkau
+                <strong>DiveraTech</strong> adalah partner solusi digital yang siap membantu bisnis
+                Anda melalui Layanan IT lengkap dengan cepat, efisien, dan profesional dengan harga
+                terjangkau
               </p>
             </div>
           </div>
@@ -516,6 +571,7 @@ export default {
                 <li><a href="/tentang-kami">Tentang Kami</a></li>
                 <li><a href="#layanan">Layanan Kami</a></li>
                 <li><a href="#portofolio">Portofolio</a></li>
+                <li><a href="#faq">FAQ</a></li>
                 <li><a href="#cta-section">Hubungi Kami</a></li>
               </ul>
             </div>
@@ -545,6 +601,11 @@ export default {
                     ><i class="fab fa-linkedin"></i> LinkedIn</a
                   >
                 </li>
+                <li>
+                  <a href="https://www.facebook.com/people/DiveraTech/61576207515343/#"
+                    ><i class="fab fa-facebook"></i> Facebook</a
+                  >
+                </li>
               </ul>
             </div>
           </div>
@@ -556,7 +617,7 @@ export default {
                 <li>
                   <a href="#">
                     <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3958.0813735149236!2d112.54547827499947!3d-7.231559192774584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7801bc912dd3d5%3A0xb3adb4ba8a9d9d5!2sDiveraTech!5e0!3m2!1sen!2sid!4v1746434422737!5m2!1sen!2sid"
+                      :src="'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3958.0813735149236!2d112.54547827499947!3d-7.231559192774584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7801bc912dd3d5%3A0xb3adb4ba8a9d9d5!2sDiveraTech!5e0!3m2!1sen!2sid!4v1746434422737!5m2!1sen!2sid'"
                       width="350"
                       height="300"
                       style="border: 0"
