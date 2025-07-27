@@ -185,7 +185,7 @@ export default {
         console.error('Error fetching FAQ:', err)
       })
     axios
-      .get('http://127.0.0.1:8000/data-kategori-portofolio')
+      .get('https://backoffice.diveratech.site/data-kategori-portofolio')
       .then((res) => {
         const fetchedKategori = res.data.map((item) => ({
           label: item.value,
@@ -197,7 +197,7 @@ export default {
         console.error('Error fetching kategori portofolio:', err)
       })
     axios
-      .get('http://127.0.0.1:8000/data-portofolio')
+      .get('https://backoffice.diveratech.site/data-portofolio')
       .then((res) => {
         this.portofolioList = res.data
         this.filteredPortofolio = res.data
@@ -207,7 +207,7 @@ export default {
         console.error('Error fetching portofolio:', err)
       })
     axios
-      .get('http://127.0.0.1:8000/data-testimoni', {
+      .get('https://backoffice.diveratech.site/data-testimoni', {
         headers: {
           Accept: 'application/json',
         },

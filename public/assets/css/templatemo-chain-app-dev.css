@@ -1019,7 +1019,7 @@ Banner Style
 
 .main-banner .left-content p {
   margin-bottom: 45px;
-  color: #2a2a2a;
+  color: #000 !important;
   font-weight: 400;
 }
 
@@ -2337,7 +2337,7 @@ responsive
     margin-right: 0;
   }
   .main-banner .left-content p {
-    color: #afafaf;
+    color: #000;
     margin-right: 0;
   }
   .main-banner .left-content .white-button a {
