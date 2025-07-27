@@ -185,26 +185,25 @@ export default {
         this.testimoniList = res.data
         this.$nextTick(() => {
           new Swiper('.testimoniSwiper', {
-            slidesPerView: 3,
-            spaceBetween: 30,
-            loop: true,
+            slidesPerView: 1, // Default untuk mobile
             centeredSlides: true,
+            loop: true,
+            spaceBetween: 10,
+            speed: 600,
+            grabCursor: true,
             autoplay: {
-              delay: 4000,
+              delay: 3000,
               disableOnInteraction: false,
             },
-            navigation: {
-              nextEl: '.swiper-button-next',
-              prevEl: '.swiper-button-prev',
-            },
+
             breakpoints: {
-              0: {
-                slidesPerView: 1,
-              },
               768: {
                 slidesPerView: 2,
               },
-              992: {
+              1024: {
+                slidesPerView: 3,
+              },
+              1280: {
                 slidesPerView: 3,
               },
             },
@@ -258,10 +257,7 @@ export default {
           delay: 3000,
           disableOnInteraction: false,
         },
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
+
         breakpoints: {
           768: {
             slidesPerView: 2,
@@ -705,9 +701,6 @@ export default {
             <div class="swiper-caption text-center">
               <p id="swiper-caption-text" v-if="captionText">{{ captionText }}</p>
             </div>
-
-            <div class="swiper-button-next" id="swiper-button-next"></div>
-            <div class="swiper-button-prev" id="swiper-button-prev"></div>
           </div>
         </div>
       </div>
@@ -755,8 +748,6 @@ export default {
                 </div>
               </div>
             </div>
-            <div class="swiper-button-next" id="swiper-button-next"></div>
-            <div class="swiper-button-prev" id="swiper-button-prev"></div>
           </div>
         </div>
       </div>
