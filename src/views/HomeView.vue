@@ -19,48 +19,14 @@ export default {
       filteredPortofolio: [],
       captionText: '',
       testimoniList: [],
+      portfolioSwiper: null,
+      processSwiper: null,
     }
   },
   mounted() {
-    new Swiper('.portfolioSwiper', {
-      slidesPerView: 3,
-      centeredSlides: true,
-      loop: true,
-      spaceBetween: 10,
-      grabCursor: true,
-      speed: 600,
-      grabCursor: true,
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
+    this.$nextTick(() => {
+      this.initSwiper()
     })
-    new Swiper('.processSwiper', {
-      slidesPerView: 3,
-      centeredSlides: true,
-      spaceBetween: 40,
-      loop: true,
-      grabCursor: true,
-      speed: 600,
-      breakpoints: {
-        // Mobile
-        0: {
-          slidesPerView: 1,
-          spaceBetween: 16,
-        },
-        // Tablet
-        768: {
-          slidesPerView: 2,
-          spaceBetween: 20,
-        },
-        // Desktop
-        992: {
-          slidesPerView: 3,
-          spaceBetween: 30,
-        },
-      },
-    })
-
     const firstVisible = document.querySelector('.portfolioSwiper .swiper-slide img')
     this.captionText = firstVisible?.alt || 'Tanpa caption'
 
@@ -201,7 +167,10 @@ export default {
       .then((res) => {
         this.portofolioList = res.data
         this.filteredPortofolio = res.data
-        this.$nextTick(() => this.updateCaption())
+        this.$nextTick(() => {
+          this.updateCaption()
+          this.initSwiper()
+        })
       })
       .catch((err) => {
         console.error('Error fetching portofolio:', err)
@@ -270,6 +239,66 @@ export default {
     updateCaption() {
       const firstVisible = document.querySelector('.portfolioSwiper .swiper-slide img')
       this.captionText = firstVisible?.alt || 'Tidak ada data'
+    },
+    initSwiper() {
+      if (this.portfolioSwiper) {
+        this.portfolioSwiper.destroy(true, true)
+      }
+      if (this.processSwiper) {
+        this.processSwiper.destroy(true, true)
+      }
+      this.portfolioSwiper = new Swiper('.portfolioSwiper', {
+        slidesPerView: 1, // Default untuk mobile
+        centeredSlides: true,
+        loop: true,
+        spaceBetween: 10,
+        speed: 600,
+        grabCursor: true,
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        breakpoints: {
+          768: {
+            slidesPerView: 2,
+          },
+          1024: {
+            slidesPerView: 3,
+          },
+          1280: {
+            slidesPerView: 4,
+          },
+        },
+      })
+      this.processSwiper = new Swiper('.processSwiper', {
+        slidesPerView: 3,
+        centeredSlides: true,
+        spaceBetween: 40,
+        loop: true,
+        grabCursor: true,
+        speed: 600,
+        breakpoints: {
+          // Mobile
+          0: {
+            slidesPerView: 1,
+            spaceBetween: 16,
+          },
+          // Tablet
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          // Desktop
+          992: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          },
+        },
+      })
     },
   },
 }
@@ -850,7 +879,11 @@ export default {
                   :aria-labelledby="'faq' + index"
                   data-bs-parent="#faqAccordion"
                 >
-                  <div class="accordion-body text-black" v-html="faq.jawaban"></div>
+                  <div
+                    class="accordion-body text-black"
+                    style="color: black !important; font-weight: 500 !important"
+                    v-html="faq.jawaban"
+                  ></div>
                 </div>
               </div>
             </div>
