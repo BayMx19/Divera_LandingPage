@@ -194,7 +194,7 @@ ul {
 p {
   font-size: 15px;
   line-height: 25px !important;
-  font-weight: 300;
+  font-weight: 400;
   /* color: #000 !important; */
 }
 .text-black {
@@ -294,7 +294,7 @@ body {
 .white-button a {
   display: inline-block !important;
   padding: 10px 20px !important;
-  color: #4b8ef1 !important;
+  color: #036ece !important;
   text-transform: capitalize;
   font-size: 15px;
   background-color: #fff;
@@ -350,7 +350,7 @@ body {
 .border-button a {
   display: inline-block !important;
   padding: 10px 20px !important;
-  color: #4b8ef1 !important;
+  color: #036ece !important;
   border: 1px solid #036ece;
   text-transform: capitalize;
   font-size: 15px;
@@ -518,7 +518,7 @@ header
 
 .header-area .main-nav .nav li:hover a,
 .header-area .main-nav .nav li a.active {
-  color: #4b8ef1 !important;
+  color: #036ece !important;
 }
 
 .header-area .main-nav .nav li:last-child a.active {
@@ -527,7 +527,7 @@ header
 
 .background-header .main-nav .nav li:hover a,
 .background-header .main-nav .nav li a.active {
-  color: #4b8ef1 !important;
+  color: #036ece !important;
   opacity: 1;
 }
 
@@ -592,7 +592,7 @@ header
 
 .header-area .main-nav .nav li.submenu ul li a:hover {
   background: #fff;
-  color: #4b8ef1 !important;
+  color: #036ece !important;
   padding-left: 25px;
 }
 
@@ -772,7 +772,7 @@ header
   }
   .header-area.header-sticky .nav li a:hover,
   .header-area.header-sticky .nav li a.active {
-    color: #4b8ef1 !important;
+    color: #036ece !important;
     opacity: 1;
   }
   .header-area.header-sticky .nav li.search-icon a {
@@ -834,7 +834,7 @@ header
   }
   .header-area .main-nav .nav li a:hover {
     background: #eee !important;
-    color: #4b8ef1 !important;
+    color: #036ece !important;
   }
   .header-area .main-nav .nav li.submenu ul {
     position: relative;
@@ -1267,7 +1267,7 @@ Layanan
   padding-top: 80px;
   position: relative;
   padding-bottom: 80px;
-  background-color: rgba(241, 244, 255, 0.977) !important;
+  /* background-color: rgba(241, 244, 255, 0.977) !important; */
 }
 
 .layanan .section-heading {
@@ -2630,7 +2630,7 @@ form textarea {
   border: 1px solid #ccc;
   border-radius: 16px !important;
   padding: 10px 20px !important;
-  width: 100%;
+  width: 100% !important;
   font-size: 1rem;
   background-color: #fff;
   color: #333;
@@ -2688,6 +2688,25 @@ form textarea:focus {
 .btn-header-btn:hover {
   background-color: white;
   color: #036ece;
+  border-color: #036ece;
+}
+.btn-header2-btn {
+  padding: 8px 30px;
+  background-color: white;
+  color: #036ece !important;
+  border: 3px solid #036ece;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+  margin-left: 10px;
+  position: relative;
+}
+
+.btn-header2-btn:hover {
+  background-color: #036ece;
+  color: white !important;
   border-color: #036ece;
 }
 
@@ -3076,4 +3095,453 @@ form .row > div {
   .step-card p {
     font-size: 14px;
   }
+}
+.whatsapp-float {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #25d366;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* ikon selalu di kiri */
+  border-radius: 50px;
+  width: 60px; /* awal hanya cukup untuk icon */
+  height: 60px;
+  padding: 10px 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+  overflow: hidden;
+  transition:
+    width 0.3s ease,
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
+  z-index: 1000;
+  animation: float 2.5s ease-in-out infinite;
+}
+
+.whatsapp-float i {
+  font-size: 28px;
+  flex-shrink: 0; /* icon tidak mengecil */
+}
+
+.whatsapp-text {
+  /* margin-left: 10px; */
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  font-weight: bold !important;
+}
+
+.whatsapp-float:hover {
+  width: 170px;
+  background-color: #1ebe57;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.whatsapp-float:hover .whatsapp-text {
+  opacity: 1;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+.badge-hot {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: #ff0004; /* merah mencolok */
+  color: white !important;
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  animation: blink 1s infinite;
+}
+.badge-hot-catetboss {
+  background-color: #ff0004; /* merah mencolok */
+  color: white !important;
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  margin-left: 8px; /* jarak dari teks */
+  animation: blink 1s infinite;
+}
+
+@media (max-width: 768px) {
+  .badge-hot {
+    display: none;
+  }
+}
+/* Animasi kelap-kelip */
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.1);
+  }
+}
+
+.produk-text-header {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #036ece;
+  margin-left: 100px;
+}
+@media (max-width: 968px) {
+  .produk-text-header {
+    margin-left: 0px;
+  }
+}
+.produk-landing .produk-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+}
+.produk-landing .produk-card .card-title {
+  font-weight: bold;
+  font-size: 20px;
+}
+.produk-landing .produk-card .card-text p {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.produk-landing.card-img-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.produk-landing .card-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: none;
+}
+
+.produk-landing .produk-card .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(3, 110, 206, 0.8);
+  color: #fff !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  text-align: center;
+}
+
+.produk-landing .produk-card:hover .overlay {
+  opacity: 1;
+}
+
+.produk-landing.produk-card .overlay-buttons {
+  display: flex;
+  gap: 10px !important;
+  margin-top: 15px;
+  justify-content: center;
+}
+
+.produk-landing .produk-card .overlay .btn-primary {
+  font-size: 14px;
+  padding: 6px 12px;
+  background-color: #fff;
+  color: #036ece;
+  border: 2px solid transparent;
+}
+
+.produk-landing .produk-card .overlay .btn-primary:hover {
+  background-color: #036ece;
+  color: #fff;
+  border: 2px solid white;
+}
+
+.produk-landing .produk-card .overlay .btn-secondary {
+  font-size: 14px;
+  padding: 6px 12px;
+  background-color: #ff9900;
+  color: #fff;
+  border: 2px solid transparent;
+}
+
+.produk-landing .produk-card .overlay .btn-secondary:hover {
+  background-color: #fff;
+  color: #ff9900;
+  border: 2px solid #ff9900;
+}
+@media (max-width: 768px) {
+  .produk-landing.card-img-wrapper {
+    aspect-ratio: 16 / 9;
+  }
+
+  .produk-landing .overlay {
+    padding: 15px;
+  }
+
+  .produk-landing .overlay .card-title {
+    font-size: 1rem;
+  }
+
+  .produk-landing .overlay .card-text {
+    font-size: 0.9rem;
+  }
+
+  .produk-landing .overlay .btn-primary {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+.paket-landing-templates .paket-main-card {
+  border-radius: 12px;
+  padding: 15px;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  background-color: #036ece;
+  color: white;
+}
+
+.paket-landing-templates .paket-main-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.paket-landing-templates .paket-main-card .card-title {
+  font-weight: bold;
+  font-size: 22px;
+  color: white;
+}
+
+/* Inner Card */
+.paket-landing-templates .paket-inner-card {
+  border-radius: 12px;
+  background: #f8f9fa;
+}
+
+.paket-landing-templates .paket-inner-card .card-body {
+  padding: 20px;
+}
+
+.paket-landing-templates .card-price {
+  font-weight: bold !important;
+  margin-bottom: 10px;
+}
+
+.paket-landing-templates .card-price .currency,
+.card-price .suffix {
+  font-size: 16px;
+}
+
+.paket-landing-templates .card-price .amount {
+  font-size: 32px;
+  color: #036ece;
+  font-weight: 700;
+}
+
+.paket-landing-templates .card-text {
+  font-size: 14px;
+  color: #333;
+}
+
+.paket-landing-templates .paket-features {
+  list-style: none;
+  padding-left: 0;
+  text-align: left;
+  margin-top: 10px;
+}
+
+.paket-landing-templates .paket-features li {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #333;
+}
+
+.paket-landing-templates .paket-features li::before {
+  content: '✔';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #036ece;
+  font-weight: bold;
+}
+
+.line-landing-page {
+  width: 200px;
+  height: 3px;
+  background-color: #036ece;
+  border: none;
+  margin: 40px auto;
+  position: relative;
+  z-index: 9999;
+  border-radius: 2px;
+}
+
+.btn-lihat-selengkapnya {
+  padding: 8px 20px;
+  border-radius: 16px;
+  font-weight: bold;
+  color: white;
+  background-color: #036ece;
+  border: 2px solid #036ece;
+}
+
+.btn-lihat-selengkapnya:hover {
+  color: #036ece;
+  background-color: white;
+  border: 2px solid #036ece;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 0, 4, 0.5);
+  }
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 10px rgba(255, 0, 4, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 0, 4, 0);
+  }
+}
+
+.box-item-hot {
+  animation: pulse 1.5s infinite;
+  border: 1px solid #ff0004;
+  border-radius: 8px; /* biar lebih halus */
+}
+
+.paket-landingpage .paket-main-card {
+  border-radius: 12px;
+  padding: 15px;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  background-color: #036ece;
+}
+
+.paket-landingpage .paket-main-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.paket-landingpage .paket-main-card .card-title {
+  font-weight: bold;
+  font-size: 22px;
+  color: white;
+}
+
+/* Inner Card */
+.paket-landingpage .paket-inner-card {
+  border-radius: 12px;
+  background: #f8f9fa;
+}
+
+.paket-landingpage .paket-inner-card .card-body {
+  padding: 20px;
+}
+
+.paket-landingpage .card-price {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.paket-landingpage .card-price .currency,
+.paket-landingpage .card-price .suffix {
+  font-size: 16px;
+}
+
+.paket-landingpage .card-price .amount {
+  font-size: 32px;
+  color: #036ece;
+  font-weight: bold;
+}
+
+.paket-landingpage .card-text {
+  font-size: 14px;
+  color: #333;
+}
+.paket-landingpage .paket-features {
+  list-style: none;
+  padding-left: 0;
+  text-align: left;
+  margin-top: 10px;
+}
+
+.paket-landingpage .paket-features li {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #333;
+}
+
+.paket-landingpage .paket-features li::before {
+  content: '✔'; /* centang */
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #036ece; /* biru */
+  font-weight: bold;
+}
+.paket-modal .paket-card {
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+.paket-modal .bg-blue {
+  background: #036ece;
+}
+.paket-modal .text-blue {
+  color: #036ece;
+}
+.paket-modal .btn-outline-blue {
+  border: 2px solid #036ece;
+  color: white;
+  font-weight: 600;
+}
+.paket-modal .btn-outline-blue:hover,
+.paket-modal .btn-outline-blue.active {
+  background: white;
+  color: #036ece;
+  border: 2px solid #036ece;
+}
+.paket-modal .paket-card.selected {
+  border: 3px solid #036ece;
+  box-shadow: 0 0 15px rgba(0, 123, 255, 0.5);
+}
+.modal-open {
+  overflow: hidden !important;
+  padding-right: 0 !important; /* hilangin pergeseran scrollbar */
 }

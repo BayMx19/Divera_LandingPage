@@ -329,10 +329,8 @@ export default {
                 <li class="scroll-to-section"><a href="#portofolio">Portofolio</a></li>
                 <li>
                   <div class="btn-navbar-btn">
-                    <a
-                      href="https://wa.me/6281330865531?text=Halo%20DiveraTech%2C%20saya%20tertarik%20untuk%20konsultasi%20proyek%20aplikasi.%20Boleh%20dibantu%3F"
-                      ><i class="bi bi-whatsapp icon-bold"></i> Hubungi Kami</a
-                    >
+                    <a href="/produk">Produk Kami</a>
+                    <span class="badge-hot"><i class="bi bi-fire"></i> Hot!</span>
                   </div>
                 </li>
               </ul>
@@ -376,6 +374,12 @@ export default {
                       <a href="#cta-section" class="btn btn-header-btn">
                         Mulai Konsultasi Gratis!
                       </a>
+                      <a href="/produk" class="btn btn-header2-btn">
+                        Lihat Produk
+                        <span class="badge-hot" style="right: -30px !important"
+                          ><i class="bi bi-fire"></i> Hot!</span
+                        ></a
+                      >
                     </div>
                   </div>
                 </div>
@@ -396,10 +400,10 @@ export default {
     </div>
     <!-- EndSection -->
 
-    <!-- Start Section Why Choose Us? -->
-    <section
+    <!-- Start Section why choose us -->
+    <div
       id="why-us"
-      class="why-us section"
+      class="services section"
       style="background-color: rgba(241, 244, 255, 0.977) !important"
     >
       <div class="container">
@@ -496,68 +500,6 @@ export default {
           </div>
         </div>
       </div>
-    </section>
-
-    <!-- EndSection -->
-    <!-- Start Section Data Trend -->
-    <div id="data" class="services section">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 offset-lg-2">
-            <div
-              class="section-heading wow fadeInDown"
-              data-wow-duration="1s"
-              data-wow-delay="0.5s"
-            >
-              <h4 class="text-black">Tren Digital yang Tak Bisa Diabaikan</h4>
-              <p class="text-black">
-                Bisnis yang mengadopsi aplikasi dan website kustom terbukti lebih unggul dalam
-                <b>efisiensi</b>, <b>loyalitas pelanggan</b>, dan <b>pengalaman pengguna</b>.
-                Waktunya bertumbuh bersama <b class="text-blue">DiveraTech</b>.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-4">
-            <div class="service-item">
-              <h4 class="text-blue">Aplikasi Bisnis Meningkatkan Loyalitas Pelanggan</h4>
-              <p class="text-black">
-                Bisnis yang memiliki aplikasi menunjukkan retensi pelanggan
-                <strong>35% lebih tinggi</strong> dibanding bisnis yang hanya mengandalkan media
-                sosial atau marketplace. <br /><em class="text-bold"
-                  >— Adobe Digital Economy Index, 2022</em
-                >
-              </p>
-            </div>
-          </div>
-
-          <div class="col-lg-4">
-            <div class="service-item">
-              <h4 class="text-blue">Website Internal Meningkatkan Efisiensi Operasional</h4>
-              <p class="text-black">
-                Sebanyak <strong>68% pelaku UMKM</strong> memilih menggunakan aplikasi web internal
-                untuk mempercepat proses kerja, otomatisasi operasional, dan menekan biaya harian.
-                <br /><em class="text-bold">— Clutch Survey, 2023</em>
-              </p>
-            </div>
-          </div>
-
-          <div class="col-lg-4">
-            <div class="service-item">
-              <h4 class="text-blue">Website Kustom = Tingkatkan Kepercayaan</h4>
-              <p class="text-black">
-                <strong>76% konsumen</strong> lebih percaya pada bisnis yang menghadirkan pengalaman
-                digital yang konsisten lewat website dan aplikasi kustom di semua platform.
-                <br /><em class="text-bold">— Forbes, 2024</em>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
 
     <!-- EndSection -->
@@ -590,13 +532,20 @@ export default {
                   <h4 class="text-layanan text-bold text-small mb-0">Mobile App Development</h4>
                 </div>
               </div>
-              <div class="col-lg-6">
-                <div class="box-item d-flex align-items-center">
-                  <i class="fas fa-check-circle me-2" style="color: #036ece"></i>
-                  <h4 class="text-layanan text-bold text-small mb-0">
-                    Ready-to-Use Software Solutions
-                  </h4>
-                </div>
+              <div class="col-lg-6 position-relative">
+                <a href="/produk" style="text-decoration: none !important">
+                  <div
+                    class="box-item d-flex align-items-center w-100"
+                    style="border: 1px solid #ff0004"
+                    s
+                  >
+                    <i class="fas fa-check-circle me-2" style="color: #036ece"></i>
+                    <h4 class="text-layanan text-bold text-small mb-0">
+                      Ready-to-Use Software Solutions
+                    </h4>
+                  </div>
+                </a>
+                <span class="badge-hot"><i class="bi bi-fire"></i> Hot!</span>
               </div>
               <div class="col-lg-6">
                 <div class="box-item d-flex align-items-center">
@@ -707,52 +656,6 @@ export default {
     </section>
     <!-- Endsection -->
     <!-- Start Section testimoni -->
-    <!-- Start Section Testimoni -->
-    <section
-      id="testimoni"
-      style="padding-top: 40px; padding-bottom: 40px"
-      class="testimoni section"
-    >
-      <div class="container">
-        <div class="row mt-4 mb-4">
-          <div class="col-lg-8 offset-lg-2 text-center">
-            <div class="section-heading">
-              <h4>Apa Kata Mereka?</h4>
-              <p class="text-black text-weight-400">
-                Beberapa testimoni dari klien kami yang puas. Klik panah untuk melihat lebih banyak.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="row mb-4">
-          <div class="swiper testimoniSwiper">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide" v-for="item in testimoniList" :key="item.id">
-                <div class="testimoni-card">
-                  <div class="testimoni-header">
-                    <img
-                      :src="
-                        item.foto && item.foto.trim() !== ''
-                          ? baseUrl + '/storage/' + item.foto
-                          : '/assets/images/default_avatars.jpg'
-                      "
-                      alt="Foto Testimoni"
-                      class="testimoni-avatar"
-                    />
-                    <div class="testimoni-info">
-                      <div class="testimoni-name">{{ item.nama }}</div>
-                      <div class="testimoni-project">{{ item.nama_project || '-' }}</div>
-                    </div>
-                  </div>
-                  <div class="testimoni-text" v-html="item.testimoni"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- End Section Testimoni -->
 
     <!-- Endsection -->
     <!-- Section Proses -->
@@ -832,6 +735,78 @@ export default {
       </div>
     </section>
     <!-- EndSection -->
+    <!-- Start Section Testimoni -->
+    <section
+      id="testimoni"
+      style="padding-top: 40px; padding-bottom: 40px"
+      class="testimoni section"
+    >
+      <div class="container">
+        <div class="row mt-4 mb-4">
+          <div class="col-lg-8 offset-lg-2 text-center">
+            <div class="section-heading">
+              <h4>Apa Kata Mereka?</h4>
+              <p class="text-black text-weight-400">
+                Beberapa testimoni dari klien kami yang puas. Klik panah untuk melihat lebih banyak.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="row mb-4">
+          <div class="swiper testimoniSwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide" v-for="item in testimoniList" :key="item.id">
+                <div class="testimoni-card">
+                  <div class="testimoni-header">
+                    <img
+                      :src="
+                        item.foto && item.foto.trim() !== ''
+                          ? baseUrl + '/storage/' + item.foto
+                          : '/assets/images/default_avatars.jpg'
+                      "
+                      alt="Foto Testimoni"
+                      class="testimoni-avatar"
+                    />
+                    <div class="testimoni-info">
+                      <div class="testimoni-name">{{ item.nama }}</div>
+                      <div class="testimoni-project">{{ item.nama_project || '-' }}</div>
+                    </div>
+                  </div>
+                  <div class="testimoni-text" v-html="item.testimoni"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Section Testimoni -->
+
+    <!-- Start Section Kalimat Iklan -->
+    <div id="cta-section" class="cta-section" style="background-color: #036ece">
+      <div class="container">
+        <div class="row justify-content-center align-items-center text-center">
+          <div class="col-12">
+            <h3 class="cta-heading">Jangan Lewatkan Peluang Ini!</h3>
+            <p class="cta-text">
+              Wujudkan ide dan solusi digital Anda bersama <b>DiveraTech</b>. Dari website
+              profesional hingga aplikasi canggih, kami bantu Anda hadir lebih kuat di dunia
+              digital.
+            </p>
+            <div class="cta-button">
+              <a
+                href="https://wa.me/6281330865531?text=Halo%20DiveraTech%2C%20saya%20tertarik%20untuk%20konsultasi%20proyek%20aplikasi.%20Boleh%20dibantu%3F"
+                class="btn btn-primary"
+                target="_blank"
+                ><i class="fab fa-whatsapp"></i> Hubungi Kami</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- EndSection -->
     <!-- Start Section FAQ -->
     <section id="faq" class="section" style="padding-top: 80px; padding-bottom: 80px">
       <div class="container">
@@ -899,34 +874,8 @@ export default {
     </section>
     <!-- EndSection -->
 
-    <!-- Start Section Kalimat Iklan -->
-    <div id="cta-section" class="cta-section" style="background-color: #036ece">
-      <div class="container">
-        <div class="row justify-content-center align-items-center text-center">
-          <div class="col-12">
-            <h3 class="cta-heading">Jangan Lewatkan Peluang Ini!</h3>
-            <p class="cta-text">
-              Wujudkan ide dan solusi digital Anda bersama <b>DiveraTech</b>. Dari website
-              profesional hingga aplikasi canggih, kami bantu Anda hadir lebih kuat di dunia
-              digital.
-            </p>
-            <div class="cta-button">
-              <a
-                href="https://wa.me/6281330865531?text=Halo%20DiveraTech%2C%20saya%20tertarik%20untuk%20konsultasi%20proyek%20aplikasi.%20Boleh%20dibantu%3F"
-                class="btn btn-primary"
-                target="_blank"
-                ><i class="fab fa-whatsapp"></i> Hubungi Kami</a
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- EndSection -->
-
     <!-- Start Section Contact Us -->
-    <section id="contact" class="contact section" style="padding-top: 80px; padding-bottom: 80px">
+    <!-- <section id="contact" class="contact section" style="padding-top: 80px; padding-bottom: 80px">
       <div class="container">
         <div class="row">
           <div class="col-lg-8 offset-lg-2 text-center">
@@ -997,10 +946,17 @@ export default {
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- EndSection -->
-
+    <a
+      href="https://wa.me/6281330865531?text=Halo%20DiveraTech%2C%20saya%20tertarik%20untuk%20konsultasi%20proyek%20aplikasi.%20Boleh%20dibantu%3F"
+      target="_blank"
+      class="whatsapp-float"
+    >
+      <i class="fab fa-whatsapp"></i>
+      <span class="whatsapp-text">Hubungi Kami!</span>
+    </a>
     <!-- Start Section Footer -->
     <footer id="newsletter">
       <div class="container">

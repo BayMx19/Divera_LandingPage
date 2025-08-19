@@ -146,10 +146,8 @@ export default {
                 <li class="scroll-to-section"><a href="/#portofolio">Portofolio</a></li>
                 <li>
                   <div class="btn-navbar-btn">
-                    <a
-                      href="https://wa.me/6281330865531?text=Halo%20DiveraTech%2C%20saya%20tertarik%20untuk%20konsultasi%20proyek%20aplikasi.%20Boleh%20dibantu%3F"
-                      ><i class="bi bi-whatsapp icon-bold"></i> Hubungi Kami</a
-                    >
+                    <a href="/produk">Produk Kami</a>
+                    <span class="badge-hot"><i class="bi bi-fire"></i> Hot!</span>
                   </div>
                 </li>
               </ul>
@@ -253,7 +251,7 @@ export default {
           <p class="text-weight-400 mb-1" style="text-align: justify !important">
             Di <b class="text-blue">DiveraTech</b>, kami tidak hanya menciptakan aplikasi website
             dan aplikasi mobile, tapi juga merancang berbagai solusi digital berbasis teknologi
-            cerdas — mulai dari dashboard analitik, sistem informasi berbasis web, hingga solusi
+            cerdas, mulai dari dashboard analitik, sistem informasi berbasis web, hingga solusi
             AI/ML dan integrasi sistem yang disesuaikan dengan kebutuhan spesifik tiap bisnis.
           </p>
           <p class="text-weight-400 mb-1" style="text-align: justify !important">
@@ -377,13 +375,20 @@ export default {
                   <h4 class="text-layanan text-bold text-small mb-0">Mobile App Development</h4>
                 </div>
               </div>
-              <div class="col-lg-6">
-                <div class="box-item d-flex align-items-center">
-                  <i class="fas fa-check-circle me-2" style="color: #036ece"></i>
-                  <h4 class="text-layanan text-bold text-small mb-0">
-                    Ready-to-Use Software Solutions
-                  </h4>
-                </div>
+              <div class="col-lg-6 position-relative">
+                <a href="/produk" style="text-decoration: none !important">
+                  <div
+                    class="box-item d-flex align-items-center w-100"
+                    style="border: 1px solid #ff0004"
+                    s
+                  >
+                    <i class="fas fa-check-circle me-2" style="color: #036ece"></i>
+                    <h4 class="text-layanan text-bold text-small mb-0">
+                      Ready-to-Use Software Solutions
+                    </h4>
+                  </div>
+                </a>
+                <span class="badge-hot"><i class="bi bi-fire"></i> Hot!</span>
               </div>
               <div class="col-lg-6">
                 <div class="box-item d-flex align-items-center">
@@ -539,7 +544,14 @@ export default {
     </section>
 
     <!-- EndSection -->
-
+    <a
+      href="https://wa.me/6281330865531?text=Halo%20DiveraTech%2C%20saya%20tertarik%20untuk%20konsultasi%20proyek%20aplikasi.%20Boleh%20dibantu%3F"
+      target="_blank"
+      class="whatsapp-float"
+    >
+      <i class="fab fa-whatsapp"></i>
+      <span class="whatsapp-text">Hubungi Kami!</span>
+    </a>
     <!-- Start Section Footer -->
     <footer id="newsletter">
       <div class="container">
@@ -640,7 +652,6 @@ export default {
         </div>
       </div>
     </footer>
-
     <!-- EndSection   -->
   </main>
 </template>
