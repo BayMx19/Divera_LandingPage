@@ -173,7 +173,7 @@
             <!-- Template Cards -->
             <div
               class="col-lg-4 col-md-6 col-sm-12"
-              v-for="template in displayedTemplates"
+              v-for="template in filteredTemplatesLimited"
               :key="template.id"
             >
               <div class="card h-100 shadow-sm produk-card">
@@ -673,8 +673,8 @@ export default {
   name: 'LandingTemplates',
   data() {
     return {
-      // baseUrl: 'https://backoffice.diveratech.site/',
-      baseUrl: 'http://127.0.0.1:8000/',
+      baseUrl: 'https://backoffice.diveratech.site/',
+      // baseUrl: 'http://127.0.0.1:8000/',
       categories: ['All'],
       selectedCategory: 'All',
       currentPage: 1,
@@ -710,11 +710,15 @@ export default {
       }
       return this.templates.filter((tpl) => tpl.kategori === this.selectedCategory)
     },
-    displayedTemplates() {
-      // Ambil maksimal 3 template dari hasil filter
-      return this.filteredTemplates.slice(0, 3)
+    filteredTemplatesLimited() {
+      const filtered =
+        this.selectedCategory === 'All'
+          ? this.templates
+          : this.templates.filter((t) => t.kategori === this.selectedCategory)
+
+      return filtered.slice(0, 3)
     },
-    ges() {
+    totalPages() {
       return Math.ceil(this.templates.length / this.perPage)
     },
     paginatedTemplates() {
@@ -909,7 +913,7 @@ export default {
         }
 
         // POST ke Laravel (CSRF sudah di-except)
-        const response = await axios.post('http://localhost:8000/api/orders', formData)
+        const response = await axios.post('https://backoffice.diveratech.site/api/orders', formData)
         this.form.invoice_number = response.data.data.invoice_number
         // Jika sukses, ambil snap_token dan panggil Midtrans
         if (response.data.success) {
@@ -923,7 +927,7 @@ export default {
               try {
                 // Panggil endpoint Laravel untuk update status & kirim email
                 const successResponse = await axios.post(
-                  `http://localhost:8000/api/payment-success`,
+                  `https://backoffice.diveratech.site/api/payment-success`,
                   {
                     order_id: this.form.invoice_number, // pastikan invoice_number tersimpan di form
                   },

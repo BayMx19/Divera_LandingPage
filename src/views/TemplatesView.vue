@@ -168,7 +168,7 @@
             <!-- Template Cards -->
             <div
               class="col-lg-4 col-md-6 col-sm-12"
-              v-for="template in filteredTemplatesLimited"
+              v-for="template in paginatedTemplatesFiltered"
               :key="template.id"
             >
               <div class="card h-100 shadow-sm produk-card">
@@ -730,8 +730,8 @@ export default {
   name: 'LandingTemplates',
   data() {
     return {
-      // baseUrl: 'https://backoffice.diveratech.site/',
-      baseUrl: 'http://127.0.0.1:8000/',
+      baseUrl: 'https://backoffice.diveratech.site/',
+      // baseUrl: 'http://127.0.0.1:8000/',
       categories: ['All'],
       selectedCategory: 'All',
       currentPage: 1,
@@ -776,7 +776,11 @@ export default {
       return filtered.slice(0, 12)
     },
     totalPages() {
-      return Math.ceil(this.templates.length / this.perPage)
+      const filtered =
+        this.selectedCategory === 'All'
+          ? this.templates
+          : this.templates.filter((t) => t.kategori === this.selectedCategory)
+      return Math.ceil(filtered.length / this.perPage)
     },
     paginatedTemplates() {
       const start = (this.currentPage - 1) * this.perPage
@@ -799,6 +803,15 @@ export default {
         if (this.form.durasi_tahun == 3) tambahan = 2200000
       }
       return this.form.harga + tambahan
+    },
+    paginatedTemplatesFiltered() {
+      const filtered =
+        this.selectedCategory === 'All'
+          ? this.templates
+          : this.templates.filter((t) => t.kategori === this.selectedCategory)
+
+      const start = (this.currentPage - 1) * this.perPage
+      return filtered.slice(start, start + this.perPage)
     },
   },
 
@@ -970,7 +983,7 @@ export default {
         }
 
         // POST ke Laravel (CSRF sudah di-except)
-        const response = await axios.post('http://localhost:8000/api/orders', formData)
+        const response = await axios.post('https://backoffice.diveratech.site/api/orders', formData)
         this.form.invoice_number = response.data.data.invoice_number
         // Jika sukses, ambil snap_token dan panggil Midtrans
         if (response.data.success) {
@@ -984,7 +997,7 @@ export default {
               try {
                 // Panggil endpoint Laravel untuk update status & kirim email
                 const successResponse = await axios.post(
-                  `http://localhost:8000/api/payment-success`,
+                  `https://backoffice.diveratech.site/api/payment-success`,
                   {
                     order_id: this.form.invoice_number, // pastikan invoice_number tersimpan di form
                   },
