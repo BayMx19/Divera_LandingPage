@@ -80,7 +80,7 @@
                           >Rp. 1.199.000</span
                         >
                         <br />
-                        <span class="produk-text-header">Rp. 399.000</span>
+                        <span class="produk-text-header">Rp. 499.000</span>
                         <span style="font-size: 1.2rem; font-weight: 600; color: #036ece">
                           (Satu kali bayar)<span style="color: #ff0004">*</span></span
                         >
@@ -124,6 +124,7 @@
     </div>
     <!-- EndSection -->
     <!-- Section: Landing Page Templates -->
+    <!-- Section: Landing Page Templates -->
     <section
       id="landing-templates"
       class="produk-section py-5"
@@ -146,34 +147,54 @@
               </div>
             </div>
           </div>
+
+          <!-- Filter Buttons -->
           <div class="row g-4">
-            <div class="kategori-filters text-center">
+            <div
+              class="kategori-filters text-center mb-4"
+              style="
+                padding: 0px 200px !important;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px 15px;
+              "
+            >
               <button
                 v-for="category in categories"
                 :key="category"
                 @click="selectedCategory = category"
-                :class="['filter-button', { active: selectedCategory === category }]"
-                class="me-2"
+                :class="['filter-button me-2', { active: selectedCategory === category }]"
               >
                 {{ category }}
               </button>
             </div>
+
+            <!-- Template Cards -->
             <div
               class="col-lg-4 col-md-6 col-sm-12"
-              v-for="template in templates"
+              v-for="template in filteredTemplatesLimited"
               :key="template.id"
             >
               <div class="card h-100 shadow-sm produk-card">
                 <div class="card-img-wrapper">
-                  <img :src="template.image" class="card-img-top" :alt="template.title" />
+                  <img
+                    :src="baseUrl + 'storage/' + template.gambar"
+                    class="card-img-top"
+                    :alt="template.judul"
+                  />
                   <div class="overlay">
-                    <h5 class="card-title mb-3">{{ template.title }}</h5>
+                    <h5 class="card-title mb-3">{{ template.judul }}</h5>
 
                     <div class="overlay-buttons">
-                      <a :href="template.previewUrl" target="_blank" class="btn btn-blue mr-3">
-                        Lihat
-                      </a>
-                      <button class="btn btn-secondary" style="margin-left: 10px !important">
+                      <a :href="template.link" target="_blank" class="btn btn-blue mr-3"> Lihat </a>
+                      <button
+                        class="btn btn-secondary"
+                        style="margin-left: 10px !important"
+                        data-bs-toggle="modal"
+                        data-bs-target="#purchaseModal"
+                        @click="form.template_id = template.id"
+                      >
                         Pilih Template
                       </button>
                     </div>
@@ -182,6 +203,8 @@
               </div>
             </div>
           </div>
+
+          <!-- Lihat Selengkapnya -->
           <div class="col-12 text-center mt-5">
             <a href="/templates" class="btn-lihat-selengkapnya btn-lg">
               Lihat Selengkapnya <i class="bi bi-arrow-right"></i>
@@ -190,6 +213,8 @@
         </div>
       </div>
     </section>
+    <!-- End Section -->
+
     <!-- EndSection -->
 
     <!-- Section: CatetBoss -->
@@ -381,14 +406,335 @@
     </footer>
 
     <!-- ...WhatsApp Float & Footer existing... -->
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="purchaseModal"
+      tabindex="-1"
+      aria-labelledby="purchaseModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content p-5">
+          <div class="modal-header">
+            <h5 class="modal-title text-black text-bold" id="purchaseModalLabel">
+              Pilih Paket & Lengkapi Data
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+
+          <div class="modal-body">
+            <!-- Template -->
+            <div class="mb-4">
+              <h6 class="text-blue text-bold">Template yang Dipilih</h6>
+              <p class="text-black">
+                <strong>Nama Template :</strong>
+                <span id="selectedTemplate"> {{ selectedTemplateName }}</span>
+              </p>
+            </div>
+
+            <!-- Paket -->
+            <div class="mb-4">
+              <h6 class="text-blue text-bold">Pilih Paket<span style="color: #ff0004">*</span></h6>
+              <div class="paket-modal mt-2">
+                <div class="row g-3">
+                  <div class="col-lg-4">
+                    <div class="card paket-card h-100">
+                      <div class="card-header text-white bg-blue fw-bold text-center">
+                        Paket Lite
+                      </div>
+                      <div class="card-body text-center">
+                        <p class="card-old-price text-danger text-decoration-line-through">
+                          Rp. 1.199.000
+                        </p>
+                        <h6 class="text-blue text-bold fs-4">Rp. 499.000</h6>
+                        <p><strong>Domain (.site, .my.id, .xyz)</strong></p>
+
+                        <button
+                          class="btn w-100"
+                          :class="form.paket === 'Lite' ? 'btn-success' : 'btn-outline-blue'"
+                          @click="pilihPaket('Lite', 499000)"
+                        >
+                          {{ form.paket === 'Lite' ? 'Dipilih' : 'Pilih Paket' }}
+                        </button>
+                        <input type="hidden" id="paketInput" name="paket" />
+                        <input type="hidden" id="hargaInput" name="harga" />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-4">
+                    <div class="card paket-card h-100">
+                      <div class="card-header text-white bg-blue fw-bold text-center">
+                        Paket Regular
+                      </div>
+                      <div class="card-body text-center">
+                        <p class="card-old-price text-danger text-decoration-line-through">
+                          Rp. 1.599.000
+                        </p>
+                        <h6 class="text-blue text-bold fs-4">Rp. 799.000</h6>
+                        <p><strong>Domain (.com & .id)</strong></p>
+
+                        <button
+                          class="btn w-100"
+                          :class="form.paket === 'Regular' ? 'btn-success' : 'btn-outline-blue'"
+                          @click="pilihPaket('Regular', 799000)"
+                        >
+                          {{ form.paket === 'Regular' ? 'Dipilih' : 'Pilih Paket' }}
+                        </button>
+                        <input type="hidden" id="paketInput" name="paket" />
+                        <input type="hidden" id="hargaInput" name="harga" />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-4">
+                    <div class="card paket-card h-100">
+                      <div class="card-header text-white bg-blue fw-bold text-center">
+                        Paket Pro
+                      </div>
+                      <div class="card-body text-center">
+                        <p class="card-old-price text-danger text-decoration-line-through">
+                          Rp. 1.999.000
+                        </p>
+                        <h6 class="text-blue text-bold fs-4">Rp. 1.199.000</h6>
+                        <p><strong>Domain (.co.id, .tech, .org, .io, .net)</strong></p>
+
+                        <button
+                          class="btn w-100"
+                          :class="form.paket === 'Pro' ? 'btn-success' : 'btn-outline-blue'"
+                          @click="pilihPaket('Pro', 1199000)"
+                        >
+                          {{ form.paket === 'Pro' ? 'Dipilih' : 'Pilih Paket' }}
+                        </button>
+                        <input type="hidden" id="paketInput" name="paket" />
+                        <input type="hidden" id="hargaInput" name="harga" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Nama Domain -->
+            <div class="mb-4">
+              <h6 class="text-blue text-bold">Nama Domain<span style="color: #ff0004">*</span></h6>
+              <input
+                type="text"
+                class="form-control mt-2"
+                placeholder="Contoh: tokoku.com"
+                v-model="form.nama_domain"
+              />
+              <div class="form-text text-muted">
+                <span style="color: #ff0004">*</span>Pastikan sesuai dengan ekstensi paket yang
+                dipilih (.com, .id, dll).
+              </div>
+            </div>
+
+            <!-- Form Data Diri -->
+            <div class="mb-4">
+              <h6 class="text-blue text-bold">Data Diri</h6>
+              <form>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label class="form-label text-black"
+                      >Nama Lengkap<span style="color: #ff0004">*</span></label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Masukkan Nama Lengkap Anda"
+                      v-model="form.nama_lengkap"
+                    />
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label text-black"
+                      >Email<span style="color: #ff0004">*</span></label
+                    >
+                    <input
+                      type="email"
+                      class="form-control"
+                      placeholder="Masukkan Email Anda"
+                      v-model="form.email"
+                    />
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label text-black"
+                      >No. WhatsApp<span style="color: #ff0004">*</span></label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Masukkan Nomor WA Anda"
+                      v-model="form.no_wa"
+                    />
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label text-black"
+                      >Alamat<span style="color: #ff0004">*</span></label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Alamat Lengkap Anda"
+                      v-model="form.alamat"
+                    />
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label text-black"
+                      >Nama Bisnis<span style="color: #ff0004">*</span></label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Masukkan Nama Bisnis Anda"
+                      v-model="form.nama_bisnis"
+                    />
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label text-black"
+                      >Alamat Bisnis<span style="color: #ff0004">*</span></label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Alamat Bisnis Anda"
+                      v-model="form.alamat_bisnis"
+                    />
+                  </div>
+                </div>
+              </form>
+            </div>
+
+            <!-- Paket Berlangganan -->
+            <div class="mb-4">
+              <h6 class="text-blue text-bold">
+                Paket Berlangganan<span style="color: #ff0004">*</span>
+              </h6>
+              <select class="form-select mt-2" v-model="form.durasi_tahun">
+                <option disabled value="">Pilih Paket</option>
+                <option value="1">1 Tahun</option>
+                <option value="2">2 Tahun</option>
+                <option value="3">3 Tahun</option>
+              </select>
+            </div>
+
+            <!-- Total Harga -->
+            <div class="mb-4 text-end">
+              <h6 class="text-blue text-bold">Rincian Harga</h6>
+              <p class="mb-1 text-black">
+                <strong>Subtotal Paket:</strong>
+                <span id="subtotalHarga">Rp. {{ form.harga.toLocaleString('id-ID') }}</span>
+              </p>
+              <p class="mb-1 text-black">
+                <strong>Biaya Tambahan:</strong>
+                <span id="biayaTambahan"
+                  >Rp. {{ (totalBiaya - form.harga).toLocaleString('id-ID') }}</span
+                >
+              </p>
+              <h5 class="fw-bold text-success">
+                Total:
+                <span id="totalHarga" class="text-bold"
+                  >Rp. {{ totalBiaya.toLocaleString('id-ID') }}</span
+                >
+              </h5>
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn-primary" data-bs-dismiss="modal">Batal</button>
+            <button type="button" class="btn-primary" @click="submitOrder" :disabled="loading">
+              <span v-if="!loading">Lanjutkan Pembelian</span>
+              <span v-else>
+                <i class="spinner-border spinner-border-sm me-2"></i> Memproses...
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
   </main>
 </template>
 
 <script>
+import axios from 'axios'
 export default {
-  created() {},
-  name: 'YourComponent',
+  name: 'LandingTemplates',
+  data() {
+    return {
+      // baseUrl: 'https://backoffice.diveratech.site/',
+      baseUrl: 'http://127.0.0.1:8000/',
+      categories: ['All'],
+      selectedCategory: 'All',
+      currentPage: 1,
+      perPage: 9,
+      templates: [],
+      form: {
+        template_id: '',
+        harga: 0,
+        paket: '',
+        nama_domain: '',
+        nama_lengkap: '',
+        email: '',
+        no_wa: '',
+        alamat: '',
+        nama_bisnis: '',
+        alamat_bisnis: '',
+        durasi_tahun: '',
+        subtotal: '',
+        biaya_tambahan: '',
+        total_harga: '',
+        status_pembayaran: '',
+        status_pemesanan: '',
+        invoice_number: '',
+      },
+      loading: false,
+    }
+  },
+  computed: {
+    filteredTemplates() {
+      if (this.selectedCategory === 'All') {
+        return this.templates
+      }
+      return this.templates.filter((tpl) => tpl.kategori === this.selectedCategory)
+    },
+    filteredTemplatesLimited() {
+      return this.filteredTemplates.slice(0, 3)
+    },
+    totalPages() {
+      return Math.ceil(this.templates.length / this.perPage)
+    },
+    paginatedTemplates() {
+      const start = (this.currentPage - 1) * this.perPage
+      return this.templates.slice(start, start + this.perPage)
+    },
+    selectedTemplateName() {
+      const tpl = this.templates.find((t) => t.id === this.form.template_id)
+      return tpl ? tpl.judul : 'Belum ada template dipilih'
+    },
+    totalBiaya() {
+      let tambahan = 0
+      if (this.form.paket === 'Lite') {
+        if (this.form.durasi_tahun == 2) tambahan = 400000
+        if (this.form.durasi_tahun == 3) tambahan = 800000
+      } else if (this.form.paket === 'Regular') {
+        if (this.form.durasi_tahun == 2) tambahan = 700000
+        if (this.form.durasi_tahun == 3) tambahan = 1400000
+      } else if (this.form.paket === 'Pro') {
+        if (this.form.durasi_tahun == 2) tambahan = 1100000
+        if (this.form.durasi_tahun == 3) tambahan = 2200000
+      }
+      return this.form.harga + tambahan
+    },
+  },
+
   mounted() {
+    this.fetchCategories()
+    this.fetchTemplates()
     $(window).scroll(function () {
       var scroll = $(window).scrollTop()
       var box = $('.header-text').height()
@@ -495,35 +841,93 @@ export default {
     document.getElementById('copyright').innerHTML =
       `Copyright © ${yearText} <b>DiveraTech</b>. All Rights Reserved. <br />`
   },
-  methods: {},
-  data() {
-    return {
-      categories: ['All', 'Makanan', 'Fashion', 'Otomotif'],
-      selectedCategory: 'All',
-      templates: [
-        {
-          id: 1,
-          title: 'Template Makanan',
-          description: 'Template khusus restoran, cafe, dan bisnis makanan.',
-          image: '/assets/images/Portfolio/1.png',
-          previewUrl: 'https://template1.diveratech.site',
-        },
-        {
-          id: 2,
-          title: 'Template Fashion',
-          description: 'Template untuk bisnis fashion, clothing, dan aksesoris.',
-          image: '/assets/images/Portfolio/1.png',
-          previewUrl: 'https://template2.diveratech.site',
-        },
-        {
-          id: 3,
-          title: 'Template Otomotif',
-          description: 'Template untuk bengkel, dealer, dan jasa otomotif.',
-          image: '/assets/images/Portfolio/1.png',
-          previewUrl: 'https://template3.diveratech.site',
-        },
-      ],
-    }
+  methods: {
+    goToPage(page) {
+      this.currentPage = page
+    },
+    prevPage() {
+      if (this.currentPage > 1) this.currentPage--
+    },
+    nextPage() {
+      if (this.currentPage < this.totalPages) this.currentPage++
+    },
+    openModal() {
+      this.showModal = true
+      document.body.classList.add('no-scroll')
+    },
+    closeModal() {
+      this.showModal = false
+      document.body.classList.remove('no-scroll')
+    },
+    pilihPaket(paket, harga) {
+      this.form.paket = paket
+      this.form.harga = harga
+    },
+    async fetchCategories() {
+      try {
+        const response = await axios.get(this.baseUrl + 'data-kategori-templates')
+        if (response.data && Array.isArray(response.data)) {
+          this.categories = ['All', ...response.data.map((cat) => cat.value)]
+        }
+      } catch (error) {
+        console.error('Gagal ambil kategori:', error)
+      }
+    },
+    async fetchTemplates() {
+      try {
+        const response = await axios.get(this.baseUrl + 'data-templates')
+        if (response.data && Array.isArray(response.data)) {
+          this.templates = response.data
+        }
+      } catch (error) {
+        console.error('Gagal ambil templates:', error)
+      }
+    },
+    async submitOrder() {
+      try {
+        this.loading = true
+        // Hitung subtotal, biaya tambahan, dan total
+        this.form.subtotal = this.form.harga
+        this.form.biaya_tambahan = this.totalBiaya - this.form.harga
+        this.form.total_harga = this.totalBiaya
+
+        // Buat FormData
+        const formData = new FormData()
+        for (const key in this.form) {
+          if (this.form[key] !== undefined && this.form[key] !== null) {
+            formData.append(key, this.form[key])
+          }
+        }
+
+        // POST ke Laravel (CSRF sudah di-except)
+        const response = await axios.post('http://localhost:8000/api/orders', formData)
+
+        // Jika sukses, ambil snap_token dan panggil Midtrans
+        if (response.data.success) {
+          const snapToken = response.data.snap_token
+
+          window.snap.pay(snapToken, {
+            onSuccess: (result) => {
+              console.log('Payment success:', result)
+            },
+            onPending: (result) => {
+              console.log('Payment pending:', result)
+            },
+            onError: (result) => {
+              console.error('Payment failed:', result)
+            },
+            onClose: () => {
+              console.log('Payment popup closed without finishing')
+            },
+          })
+        }
+      } catch (error) {
+        console.error('Checkout gagal:', error.response?.data || error)
+        alert('Terjadi kesalahan saat membuat order, coba lagi.')
+      } finally {
+        this.loading = false // selesai loading
+      }
+    },
   },
 }
 </script>

@@ -82,7 +82,7 @@
                           >Rp. 1.199.000</span
                         >
                         <br />
-                        <span class="produk-text-header">Rp. 399.000</span>
+                        <span class="produk-text-header">Rp. 499.000</span>
                         <span style="font-size: 1.2rem; font-weight: 600; color: #036ece">
                           (Satu kali bayar)<span style="color: #ff0004">*</span></span
                         >
@@ -145,36 +145,50 @@
 
           <!-- Grid 3x3 -->
           <div class="row g-4">
-            <div class="kategori-filters text-center">
+            <div
+              class="kategori-filters text-center mb-4"
+              style="
+                padding: 0px 200px !important;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px 15px;
+              "
+            >
               <button
                 v-for="category in categories"
                 :key="category"
                 @click="selectedCategory = category"
-                :class="['filter-button', { active: selectedCategory === category }]"
-                class="me-2"
+                :class="['filter-button me-2', { active: selectedCategory === category }]"
               >
                 {{ category }}
               </button>
             </div>
+
+            <!-- Template Cards -->
             <div
               class="col-lg-4 col-md-6 col-sm-12"
-              v-for="template in paginatedTemplates"
+              v-for="template in filteredTemplatesLimited"
               :key="template.id"
             >
               <div class="card h-100 shadow-sm produk-card">
                 <div class="card-img-wrapper">
-                  <img :src="template.image" class="card-img-top" :alt="template.title" />
+                  <img
+                    :src="baseUrl + 'storage/' + template.gambar"
+                    class="card-img-top"
+                    :alt="template.judul"
+                  />
                   <div class="overlay">
-                    <h5 class="card-title mb-3">{{ template.title }}</h5>
+                    <h5 class="card-title mb-3">{{ template.judul }}</h5>
+
                     <div class="overlay-buttons">
-                      <a :href="template.previewUrl" target="_blank" class="btn btn-blue mr-3"
-                        >Lihat</a
-                      >
+                      <a :href="template.link" target="_blank" class="btn btn-blue mr-3"> Lihat </a>
                       <button
                         class="btn btn-secondary"
                         style="margin-left: 10px !important"
                         data-bs-toggle="modal"
                         data-bs-target="#purchaseModal"
+                        @click="form.template_id = template.id"
                       >
                         Pilih Template
                       </button>
@@ -240,7 +254,8 @@
             <div class="mb-4">
               <h6 class="text-blue text-bold">Template yang Dipilih</h6>
               <p class="text-black">
-                <strong>Nama Template:</strong> <span id="selectedTemplate">Landing Page A</span>
+                <strong>Nama Template :</strong>
+                <span id="selectedTemplate"> {{ selectedTemplateName }}</span>
               </p>
             </div>
 
@@ -258,15 +273,15 @@
                         <p class="card-old-price text-danger text-decoration-line-through">
                           Rp. 1.199.000
                         </p>
-                        <h6 class="text-blue text-bold fs-4">Rp. 399.000</h6>
+                        <h6 class="text-blue text-bold fs-4">Rp. 499.000</h6>
                         <p><strong>Domain (.site, .my.id, .xyz)</strong></p>
 
                         <button
-                          class="btn btn-outline-blue w-100 pilih-paket"
-                          data-paket="Lite"
-                          data-harga="399000"
+                          class="btn w-100"
+                          :class="form.paket === 'Lite' ? 'btn-success' : 'btn-outline-blue'"
+                          @click="pilihPaket('Lite', 499000)"
                         >
-                          Pilih Paket
+                          {{ form.paket === 'Lite' ? 'Dipilih' : 'Pilih Paket' }}
                         </button>
                         <input type="hidden" id="paketInput" name="paket" />
                         <input type="hidden" id="hargaInput" name="harga" />
@@ -281,17 +296,17 @@
                       </div>
                       <div class="card-body text-center">
                         <p class="card-old-price text-danger text-decoration-line-through">
-                          Rp. 1.399.000
+                          Rp. 1.599.000
                         </p>
-                        <h6 class="text-blue text-bold fs-4">Rp. 599.000</h6>
-                        <p><strong>Domain (.com)</strong></p>
+                        <h6 class="text-blue text-bold fs-4">Rp. 799.000</h6>
+                        <p><strong>Domain (.com & .id)</strong></p>
 
                         <button
-                          class="btn btn-outline-blue w-100 pilih-paket"
-                          data-paket="Regular"
-                          data-harga="599000"
+                          class="btn w-100"
+                          :class="form.paket === 'Regular' ? 'btn-success' : 'btn-outline-blue'"
+                          @click="pilihPaket('Regular', 799000)"
                         >
-                          Pilih Paket
+                          {{ form.paket === 'Regular' ? 'Dipilih' : 'Pilih Paket' }}
                         </button>
                         <input type="hidden" id="paketInput" name="paket" />
                         <input type="hidden" id="hargaInput" name="harga" />
@@ -306,17 +321,17 @@
                       </div>
                       <div class="card-body text-center">
                         <p class="card-old-price text-danger text-decoration-line-through">
-                          Rp. 1.599.000
+                          Rp. 1.999.000
                         </p>
-                        <h6 class="text-blue text-bold fs-4">Rp. 799.000</h6>
-                        <p><strong>Domain (.id, .co.id, .net)</strong></p>
+                        <h6 class="text-blue text-bold fs-4">Rp. 1.199.000</h6>
+                        <p><strong>Domain (.co.id, .tech, .org, .io, .net)</strong></p>
 
                         <button
-                          class="btn btn-outline-blue w-100 pilih-paket"
-                          data-paket="Pro"
-                          data-harga="799000"
+                          class="btn w-100"
+                          :class="form.paket === 'Pro' ? 'btn-success' : 'btn-outline-blue'"
+                          @click="pilihPaket('Pro', 1199000)"
                         >
-                          Pilih Paket
+                          {{ form.paket === 'Pro' ? 'Dipilih' : 'Pilih Paket' }}
                         </button>
                         <input type="hidden" id="paketInput" name="paket" />
                         <input type="hidden" id="hargaInput" name="harga" />
@@ -329,7 +344,12 @@
             <!-- Nama Domain -->
             <div class="mb-4">
               <h6 class="text-blue text-bold">Nama Domain<span style="color: #ff0004">*</span></h6>
-              <input type="text" class="form-control mt-2" placeholder="Contoh: tokoku.com" />
+              <input
+                type="text"
+                class="form-control mt-2"
+                placeholder="Contoh: tokoku.com"
+                v-model="form.nama_domain"
+              />
               <div class="form-text text-muted">
                 <span style="color: #ff0004">*</span>Pastikan sesuai dengan ekstensi paket yang
                 dipilih (.com, .id, dll).
@@ -349,25 +369,41 @@
                       type="text"
                       class="form-control"
                       placeholder="Masukkan Nama Lengkap Anda"
+                      v-model="form.nama_lengkap"
                     />
                   </div>
                   <div class="col-md-6">
                     <label class="form-label text-black"
                       >Email<span style="color: #ff0004">*</span></label
                     >
-                    <input type="email" class="form-control" placeholder="Masukkan Email Anda" />
+                    <input
+                      type="email"
+                      class="form-control"
+                      placeholder="Masukkan Email Anda"
+                      v-model="form.email"
+                    />
                   </div>
                   <div class="col-md-6">
                     <label class="form-label text-black"
                       >No. WhatsApp<span style="color: #ff0004">*</span></label
                     >
-                    <input type="text" class="form-control" placeholder="Masukkan Nomor WA Anda" />
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Masukkan Nomor WA Anda"
+                      v-model="form.no_wa"
+                    />
                   </div>
                   <div class="col-md-6">
                     <label class="form-label text-black"
                       >Alamat<span style="color: #ff0004">*</span></label
                     >
-                    <input type="text" class="form-control" placeholder="Alamat Lengkap Anda" />
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Alamat Lengkap Anda"
+                      v-model="form.alamat"
+                    />
                   </div>
                   <div class="col-md-6">
                     <label class="form-label text-black"
@@ -377,13 +413,19 @@
                       type="text"
                       class="form-control"
                       placeholder="Masukkan Nama Bisnis Anda"
+                      v-model="form.nama_bisnis"
                     />
                   </div>
                   <div class="col-md-6">
                     <label class="form-label text-black"
                       >Alamat Bisnis<span style="color: #ff0004">*</span></label
                     >
-                    <input type="text" class="form-control" placeholder="Alamat Bisnis Anda" />
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Alamat Bisnis Anda"
+                      v-model="form.alamat_bisnis"
+                    />
                   </div>
                 </div>
               </form>
@@ -394,8 +436,8 @@
               <h6 class="text-blue text-bold">
                 Paket Berlangganan<span style="color: #ff0004">*</span>
               </h6>
-              <select class="form-select mt-2">
-                <option selected>Pilih Paket</option>
+              <select class="form-select mt-2" v-model="form.durasi_tahun">
+                <option disabled value="">Pilih Paket</option>
                 <option value="1">1 Tahun</option>
                 <option value="2">2 Tahun</option>
                 <option value="3">3 Tahun</option>
@@ -406,20 +448,32 @@
             <div class="mb-4 text-end">
               <h6 class="text-blue text-bold">Rincian Harga</h6>
               <p class="mb-1 text-black">
-                <strong>Subtotal Paket:</strong> <span id="subtotalHarga">Rp. 0</span>
+                <strong>Subtotal Paket:</strong>
+                <span id="subtotalHarga">Rp. {{ form.harga.toLocaleString('id-ID') }}</span>
               </p>
               <p class="mb-1 text-black">
-                <strong>Biaya Tambahan:</strong> <span id="biayaTambahan">Rp. 0</span>
+                <strong>Biaya Tambahan:</strong>
+                <span id="biayaTambahan"
+                  >Rp. {{ (totalBiaya - form.harga).toLocaleString('id-ID') }}</span
+                >
               </p>
               <h5 class="fw-bold text-success">
-                Total: <span id="totalHarga" class="text-bold">Rp. 0</span>
+                Total:
+                <span id="totalHarga" class="text-bold"
+                  >Rp. {{ totalBiaya.toLocaleString('id-ID') }}</span
+                >
               </h5>
             </div>
           </div>
 
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-            <button type="button" class="btn btn-blue">Lanjutkan Pembelian</button>
+            <button type="button" class="btn btn-blue" @click="submitOrder" :disabled="loading">
+              <span v-if="!loading">Lanjutkan Pembelian</span>
+              <span v-else>
+                <i class="spinner-border spinner-border-sm me-2"></i> Memproses...
+              </span>
+            </button>
           </div>
         </div>
       </div>
@@ -457,7 +511,7 @@
                       </p>
                       <p class="card-price">
                         <span class="currency">Rp.</span>
-                        <span class="amount">399</span>
+                        <span class="amount">499</span>
                         <span class="suffix">.000</span>
                       </p>
                       <p class="card-text text-bold">Domain (.site), (.my.id), (.xyz)</p>
@@ -490,14 +544,14 @@
                           margin-bottom: 5px;
                         "
                       >
-                        Rp. 1.399.000
+                        Rp. 1.599.000
                       </p>
                       <p class="card-price">
                         <span class="currency">Rp.</span>
-                        <span class="amount">599</span>
+                        <span class="amount">799</span>
                         <span class="suffix">.000</span>
                       </p>
-                      <p class="card-text text-bold">Domain (.com)</p>
+                      <p class="card-text text-bold">Domain (.com) & (.id)</p>
                       <ul class="paket-features">
                         <li>Include Hosting</li>
                         <li>Free SSL Security</li>
@@ -527,14 +581,16 @@
                           margin-bottom: 5px;
                         "
                       >
-                        Rp. 1.599.000
+                        Rp. 1.999.000
                       </p>
                       <p class="card-price">
                         <span class="currency">Rp.</span>
-                        <span class="amount">799</span>
+                        <span class="amount">1.199</span>
                         <span class="suffix">.000</span>
                       </p>
-                      <p class="card-text text-bold">Domain (.id), (.co.id), (.net)</p>
+                      <p class="card-text text-bold">
+                        Domain (.co.id), (.tech), (.org), (.io), (.net)
+                      </p>
                       <ul class="paket-features">
                         <li>Include Hosting</li>
                         <li>Free SSL Security</li>
@@ -662,86 +718,50 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   name: 'LandingTemplates',
   data() {
     return {
-      categories: ['All', 'Makanan', 'Fashion', 'Otomotif'],
+      // baseUrl: 'https://backoffice.diveratech.site/',
+      baseUrl: 'http://127.0.0.1:8000/',
+      categories: ['All'],
       selectedCategory: 'All',
       currentPage: 1,
       perPage: 9,
-      templates: [
-        {
-          id: 1,
-          title: 'Template Makanan',
-          image: '/assets/images/Portfolio/1.png',
-          previewUrl: 'https://template1.diveratech.site',
-        },
-        {
-          id: 2,
-          title: 'Template Fashion',
-          image: '/assets/images/Portfolio/1.png',
-          previewUrl: 'https://template2.diveratech.site',
-        },
-        {
-          id: 3,
-          title: 'Template Otomotif',
-          image: '/assets/images/Portfolio/1.png',
-          previewUrl: 'https://template3.diveratech.site',
-        },
-        { id: 4, title: 'Template UMKM', image: '/assets/images/Portfolio/1.png', previewUrl: '#' },
-        {
-          id: 5,
-          title: 'Template Startup',
-          image: '/assets/images/Portfolio/1.png',
-          previewUrl: '#',
-        },
-        {
-          id: 6,
-          title: 'Template Toko Online',
-          image: '/assets/images/Portfolio/1.png',
-          previewUrl: '#',
-        },
-        {
-          id: 7,
-          title: 'Template Klinik',
-          image: '/assets/images/Portfolio/1.png',
-          previewUrl: '#',
-        },
-        {
-          id: 8,
-          title: 'Template Sekolah',
-          image: '/assets/images/Portfolio/1.png',
-          previewUrl: '#',
-        },
-        {
-          id: 9,
-          title: 'Template Event',
-          image: '/assets/images/Portfolio/1.png',
-          previewUrl: '#',
-        },
-        {
-          id: 10,
-          title: 'Template Freelancer',
-          image: '/assets/images/Portfolio/1.png',
-          previewUrl: '#',
-        },
-        {
-          id: 11,
-          title: 'Template Wedding',
-          image: '/assets/images/Portfolio/1.png',
-          previewUrl: '#',
-        },
-        {
-          id: 12,
-          title: 'Template Travel',
-          image: '/assets/images/Portfolio/1.png',
-          previewUrl: '#',
-        },
-      ],
+      templates: [],
+      form: {
+        template_id: '',
+        harga: 0,
+        paket: '',
+        nama_domain: '',
+        nama_lengkap: '',
+        email: '',
+        no_wa: '',
+        alamat: '',
+        nama_bisnis: '',
+        alamat_bisnis: '',
+        durasi_tahun: '',
+        subtotal: '',
+        biaya_tambahan: '',
+        total_harga: '',
+        status_pembayaran: '',
+        status_pemesanan: '',
+        invoice_number: '',
+      },
+      loading: false,
     }
   },
   computed: {
+    filteredTemplates() {
+      if (this.selectedCategory === 'All') {
+        return this.templates
+      }
+      return this.templates.filter((tpl) => tpl.kategori === this.selectedCategory)
+    },
+    filteredTemplatesLimited() {
+      return this.filteredTemplates.slice(0, 3)
+    },
     totalPages() {
       return Math.ceil(this.templates.length / this.perPage)
     },
@@ -749,6 +769,134 @@ export default {
       const start = (this.currentPage - 1) * this.perPage
       return this.templates.slice(start, start + this.perPage)
     },
+    selectedTemplateName() {
+      const tpl = this.templates.find((t) => t.id === this.form.template_id)
+      return tpl ? tpl.judul : 'Belum ada template dipilih'
+    },
+    totalBiaya() {
+      let tambahan = 0
+      if (this.form.paket === 'Lite') {
+        if (this.form.durasi_tahun == 2) tambahan = 400000
+        if (this.form.durasi_tahun == 3) tambahan = 800000
+      } else if (this.form.paket === 'Regular') {
+        if (this.form.durasi_tahun == 2) tambahan = 700000
+        if (this.form.durasi_tahun == 3) tambahan = 1400000
+      } else if (this.form.paket === 'Pro') {
+        if (this.form.durasi_tahun == 2) tambahan = 1100000
+        if (this.form.durasi_tahun == 3) tambahan = 2200000
+      }
+      return this.form.harga + tambahan
+    },
+  },
+
+  mounted() {
+    this.fetchCategories()
+    this.fetchTemplates()
+    $(window).scroll(function () {
+      var scroll = $(window).scrollTop()
+      var box = $('.header-text').height()
+      var header = $('header').height()
+
+      if (scroll >= box - header) {
+        $('header').addClass('background-header')
+      } else {
+        $('header').removeClass('background-header')
+      }
+    })
+
+    if ($('.menu-trigger').length) {
+      $('.menu-trigger').on('click', function () {
+        $(this).toggleClass('active')
+        $('.header-area .nav').slideToggle(200)
+      })
+    }
+
+    $('.scroll-to-section a[href*=\\#]:not([href=\\#])').on('click', function () {
+      if (
+        location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') &&
+        location.hostname == this.hostname
+      ) {
+        var target = $(this.hash)
+        target = target.length ? target : $('[name=' + this.hash.slice(1) + ']')
+        if (target.length) {
+          var width = $(window).width()
+          if (width < 991) {
+            $('.menu-trigger').removeClass('active')
+            $('.header-area .nav').slideUp(200)
+          }
+          $('html,body').animate(
+            {
+              scrollTop: target.offset().top + 1,
+            },
+            700,
+          )
+          return false
+        }
+      }
+    })
+
+    $(document).ready(function () {
+      $(document).on('scroll', this.onScroll)
+
+      $('.scroll-to-section a[href^="#"]').on('click', function (e) {
+        e.preventDefault()
+        $(document).off('scroll')
+
+        $('.scroll-to-section a').each(function () {
+          $(this).removeClass('active')
+        })
+        $(this).addClass('active')
+
+        var target = this.hash,
+          menu = target
+        var target = $(this.hash)
+        $('html, body')
+          .stop()
+          .animate(
+            {
+              scrollTop: target.offset().top + 1,
+            },
+            500,
+            'swing',
+            function () {
+              window.location.hash = target
+              $(document).on('scroll', this.onScroll)
+            },
+          )
+      })
+    })
+
+    this.onScroll = function () {
+      var scrollPos = $(document).scrollTop()
+      $('.nav a').each(function () {
+        var currLink = $(this)
+        var refElement = $(currLink.attr('href'))
+        if (
+          refElement.position().top <= scrollPos &&
+          refElement.position().top + refElement.height() > scrollPos
+        ) {
+          $('.nav ul li a').removeClass('active')
+          currLink.addClass('active')
+        } else {
+          currLink.removeClass('active')
+        }
+      })
+    }
+
+    this.mobileNav = function () {
+      var width = $(window).width()
+      $('.submenu').on('click', function () {
+        if (width < 767) {
+          $('.submenu ul').removeClass('active')
+          $(this).find('ul').toggleClass('active')
+        }
+      })
+    }
+    const startYear = 2025
+    const currentYear = new Date().getFullYear()
+    const yearText = currentYear > startYear ? `${startYear} - ${currentYear}` : `${startYear}`
+    document.getElementById('copyright').innerHTML =
+      `Copyright © ${yearText} <b>DiveraTech</b>. All Rights Reserved. <br />`
   },
   methods: {
     goToPage(page) {
@@ -768,70 +916,75 @@ export default {
       this.showModal = false
       document.body.classList.remove('no-scroll')
     },
-  },
-  mounted() {
-    const startYear = 2025
-    const currentYear = new Date().getFullYear()
-    const yearText = currentYear > startYear ? `${startYear} - ${currentYear}` : `${startYear}`
-    document.getElementById('copyright').innerHTML =
-      `Copyright © ${yearText} <b>DiveraTech</b>. All Rights Reserved. <br />`
-
-    // 🔥 fungsi untuk hitung total
-    const updateTotal = () => {
-      const paket = document.getElementById('paketInput').value
-      const harga = parseInt(document.getElementById('hargaInput').value || 0)
-      const tahun = parseInt(document.querySelector('.form-select').value || 1)
-
-      let tambahan = 0
-      if (paket === 'Lite') {
-        if (tahun === 2) tambahan = 200000
-        if (tahun === 3) tambahan = 400000
-      } else if (paket === 'Regular') {
-        if (tahun === 2) tambahan = 300000
-        if (tahun === 3) tambahan = 600000
-      } else if (paket === 'Pro') {
-        if (tahun === 2) tambahan = 500000
-        if (tahun === 3) tambahan = 1000000
+    pilihPaket(paket, harga) {
+      this.form.paket = paket
+      this.form.harga = harga
+    },
+    async fetchCategories() {
+      try {
+        const response = await axios.get(this.baseUrl + 'data-kategori-templates')
+        if (response.data && Array.isArray(response.data)) {
+          this.categories = ['All', ...response.data.map((cat) => cat.value)]
+        }
+      } catch (error) {
+        console.error('Gagal ambil kategori:', error)
       }
+    },
+    async fetchTemplates() {
+      try {
+        const response = await axios.get(this.baseUrl + 'data-templates')
+        if (response.data && Array.isArray(response.data)) {
+          this.templates = response.data
+        }
+      } catch (error) {
+        console.error('Gagal ambil templates:', error)
+      }
+    },
+    async submitOrder() {
+      try {
+        this.loading = true
+        // Hitung subtotal, biaya tambahan, dan total
+        this.form.subtotal = this.form.harga
+        this.form.biaya_tambahan = this.totalBiaya - this.form.harga
+        this.form.total_harga = this.totalBiaya
 
-      const total = harga + tambahan
+        // Buat FormData
+        const formData = new FormData()
+        for (const key in this.form) {
+          if (this.form[key] !== undefined && this.form[key] !== null) {
+            formData.append(key, this.form[key])
+          }
+        }
 
-      document.getElementById('subtotalHarga').innerText = `Rp. ${harga.toLocaleString('id-ID')}`
-      document.getElementById('biayaTambahan').innerText = `Rp. ${tambahan.toLocaleString('id-ID')}`
-      document.getElementById('totalHarga').innerText = `Rp. ${total.toLocaleString('id-ID')}`
-    }
+        // POST ke Laravel (CSRF sudah di-except)
+        const response = await axios.post('http://localhost:8000/api/orders', formData)
 
-    // Event pilih paket
-    document.querySelectorAll('.pilih-paket').forEach((btn) => {
-      btn.addEventListener('click', function () {
-        const paket = this.getAttribute('data-paket')
-        const harga = this.getAttribute('data-harga')
+        // Jika sukses, ambil snap_token dan panggil Midtrans
+        if (response.data.success) {
+          const snapToken = response.data.snap_token
 
-        document.getElementById('paketInput').value = paket
-        document.getElementById('hargaInput').value = harga
-
-        // reset tampilan semua card + button
-        document
-          .querySelectorAll('.paket-card')
-          .forEach((card) => card.classList.remove('selected'))
-        document.querySelectorAll('.pilih-paket').forEach((button) => {
-          button.innerText = 'Pilih Paket'
-          button.classList.remove('btn-success')
-          button.classList.add('btn-outline-blue')
-        })
-
-        // tandai yang dipilih
-        this.closest('.paket-card').classList.add('selected')
-        this.innerText = 'Dipilih'
-        this.classList.remove('btn-outline-blue')
-        this.classList.add('btn-success')
-
-        updateTotal()
-      })
-    })
-
-    // Event ganti tahun (form-select)
-    document.querySelector('.form-select').addEventListener('change', updateTotal)
+          window.snap.pay(snapToken, {
+            onSuccess: (result) => {
+              console.log('Payment success:', result)
+            },
+            onPending: (result) => {
+              console.log('Payment pending:', result)
+            },
+            onError: (result) => {
+              console.error('Payment failed:', result)
+            },
+            onClose: () => {
+              console.log('Payment popup closed without finishing')
+            },
+          })
+        }
+      } catch (error) {
+        console.error('Checkout gagal:', error.response?.data || error)
+        alert('Terjadi kesalahan saat membuat order, coba lagi.')
+      } finally {
+        this.loading = false // selesai loading
+      }
+    },
   },
 }
 </script>
