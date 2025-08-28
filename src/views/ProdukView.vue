@@ -173,7 +173,7 @@
             <!-- Template Cards -->
             <div
               class="col-lg-4 col-md-6 col-sm-12"
-              v-for="template in filteredTemplatesLimited"
+              v-for="template in displayedTemplates"
               :key="template.id"
             >
               <div class="card h-100 shadow-sm produk-card">
@@ -647,10 +647,17 @@
 
           <div class="modal-footer">
             <button type="button" class="btn-primary" data-bs-dismiss="modal">Batal</button>
-            <button type="button" class="btn-primary" @click="submitOrder" :disabled="loading">
-              <span v-if="!loading">Lanjutkan Pembelian</span>
+            <button
+              type="button"
+              class="btn-primary"
+              @click="submitOrder"
+              :disabled="loading || loadingPayment"
+            >
+              <span v-if="!loading && !loadingPayment">Lanjutkan Pembelian</span>
               <span v-else>
-                <i class="spinner-border spinner-border-sm me-2"></i> Memproses...
+                <i class="spinner-border spinner-border-sm me-2"></i>
+                <span v-if="loading">Memproses...</span>
+                <span v-else-if="loadingPayment">Memverifikasi Pembayaran..</span>
               </span>
             </button>
           </div>
@@ -693,6 +700,7 @@ export default {
         invoice_number: '',
       },
       loading: false,
+      loadingPayment: false,
     }
   },
   computed: {
@@ -702,10 +710,11 @@ export default {
       }
       return this.templates.filter((tpl) => tpl.kategori === this.selectedCategory)
     },
-    filteredTemplatesLimited() {
+    displayedTemplates() {
+      // Ambil maksimal 3 template dari hasil filter
       return this.filteredTemplates.slice(0, 3)
     },
-    totalPages() {
+    ges() {
       return Math.ceil(this.templates.length / this.perPage)
     },
     paginatedTemplates() {
@@ -901,14 +910,35 @@ export default {
 
         // POST ke Laravel (CSRF sudah di-except)
         const response = await axios.post('http://localhost:8000/api/orders', formData)
-
+        this.form.invoice_number = response.data.data.invoice_number
         // Jika sukses, ambil snap_token dan panggil Midtrans
         if (response.data.success) {
           const snapToken = response.data.snap_token
 
           window.snap.pay(snapToken, {
-            onSuccess: (result) => {
-              console.log('Payment success:', result)
+            onSuccess: async (result) => {
+              // console.log('Payment success:', result)
+              this.loadingPayment = true
+
+              try {
+                // Panggil endpoint Laravel untuk update status & kirim email
+                const successResponse = await axios.post(
+                  `http://localhost:8000/api/payment-success`,
+                  {
+                    order_id: this.form.invoice_number, // pastikan invoice_number tersimpan di form
+                  },
+                )
+
+                if (successResponse.data.success) {
+                  alert('Pembayaran berhasil! Email konfirmasi telah dikirim.')
+                  window.location.reload()
+                }
+              } catch (err) {
+                console.error('Gagal update status pembayaran:', err)
+                alert('Pembayaran berhasil tapi gagal kirim email. Hubungi admin.')
+              } finally {
+                this.loadingPayment = false // selesai spinner email
+              }
             },
             onPending: (result) => {
               console.log('Payment pending:', result)
